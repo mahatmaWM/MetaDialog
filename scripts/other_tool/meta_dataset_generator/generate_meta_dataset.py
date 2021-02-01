@@ -3,8 +3,9 @@ import json
 import argparse
 import sys
 import os
+import logging
 import random
-from raw_data_loader import RawDataLoaderBase, SLUDataLoader, StanfordDataLoader, TourSGDataLoader, SMPDataLoader
+from raw_data_loader import RawDataLoaderBase, SMPDataLoader
 from data_generator import DataGeneratorBase, MiniIncludeGenerator, VanillaDataGenerator
 from data_statistic import raw_data_statistic, label_stats, multi_label_stats, few_shot_data_statistic
 
@@ -13,6 +14,10 @@ DEFAULT_INPUT_PATH = 'D:/Data/Project/Data/stanford/'
 DEFAULT_OUTPUT_DIR = 'D:/Data/Project/Data/MetaData/'
 DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
 
+def configure_logging(level=logging.INFO):
+    format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
+    datefmt = '%Y-%m-%d %H:%M:%S'
+    logging.basicConfig(level=level, format=format, datefmt=datefmt)
 
 def dump_data(opt, data):
     """
@@ -45,7 +50,7 @@ def dump_data(opt, data):
             a log file records generation settings.
     """
     output_dir = opt.output_dir
-    print('Dump data to dir: ', output_dir)
+    logging.info('Dump data to dir: {}'.format(output_dir))
     dump_dir_name = "{}.{}.spt_s_{}.q_s_{}.ep_{}.lt_{}.ci_{}".format(
         opt.dataset, opt.mark, opt.support_shots, opt.query_shot, opt.episode_num, opt.label_type, opt.eval_config_id
     )
@@ -57,7 +62,7 @@ def dump_data(opt, data):
     else:
         os.makedirs(dump_path, exist_ok=True)
 
-    print('Output to: {}'.format(dump_path))
+    logging.info('Output to: {}'.format(dump_path))
 
     for part_name, part in data.items():
         file_path = os.path.join(dump_path, '{}.json'.format(part_name))
@@ -70,13 +75,7 @@ def dump_data(opt, data):
 
 
 def build_data_loader(opt) -> RawDataLoaderBase:
-    if opt.dataset in ['atis', 'snips']:
-        data_loader = SLUDataLoader(opt)
-    elif opt.dataset == 'stanford':
-        data_loader = StanfordDataLoader(opt)
-    elif opt.dataset == 'toursg':
-        data_loader = TourSGDataLoader(opt)
-    elif opt.dataset == 'smp':
+    if opt.dataset == 'smp':
         data_loader = SMPDataLoader(opt)
     else:
         raise NotImplementedError
@@ -199,7 +198,7 @@ def main():
     parser.add_argument("--remove_rate", type=float, default=80, help="the rate for removing duplicate sample")
     parser.add_argument("--use_fix_support", default=False, action="store_true", help="use fix support in dev data")
     opt = parser.parse_args()
-    print('Parameter:\n', json.dumps(vars(opt), indent=2))
+    logging.info('Parameter:{}\n'.format(json.dumps(vars(opt), indent=2)))
 
     if opt.seed >= 0:
         random.seed(opt.seed)
@@ -218,15 +217,15 @@ def main():
 
     if opt.task == 'sl':
         opt.way = -1
-        print('Sequence labeling only support use entire domains label set as ways.')
+        logging.info('Sequence labeling only support use entire domains label set as ways.')
 
     if 'fs' == opt.style:
-        print('Start generate meta data.')
+        logging.info('Start generate meta data.')
         generator = MiniIncludeGenerator(opt)
         if opt.dataset == 'smp':
             """train"""
             train_meta_data = generator.gen_data(raw_data['train'])
-            print('Train: Few_shot_data gathered and start to dump data')
+            logging.info('Train: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, train_meta_data)
 
             """dev & test"""
@@ -238,12 +237,12 @@ def main():
             else:
                 dev_meta_data = generator.gen_data(raw_data['dev'])
 
-            print('Dev: Few_shot_data gathered and start to dump data')
+            logging.info('Dev: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, dev_meta_data)
             meta_data = {'train': train_meta_data, 'dev': dev_meta_data, 'test': dev_meta_data}
         else:
             meta_data = generator.gen_data(raw_data)
-            print('Few_shot_data gathered and start to dump data')
+            logging.info('Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, meta_data)
 
             if opt.split_basis == 'domain':  # we pre-split domain by sentence level label
@@ -256,8 +255,9 @@ def main():
 
     # Dump data to disk
     dump_data(opt, meta_data)
-    print('Process finished')
+    logging.info('Process finished')
 
 
 if __name__ == "__main__":
+    configure_logging()
     main()

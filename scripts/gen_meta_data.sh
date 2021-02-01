@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo usage: pass dataset list as param, split with space
-echo eg: source gen_mate_data.sh atis
+echo eg: source gen_mate_data.sh smp
 
 dataset_lst=(smp)
 #dataset_lst=(toursg)
@@ -44,8 +44,8 @@ use_fix_support=--use_fix_support
 # ======= default path (for quick distribution) ==========
 #input_dir=/Users/lyk/Work/Dialogue/FewShot/SMP正式数据集/
 #output_dir=/Users/lyk/Work/Dialogue/FewShot/SMP正式数据集/SmpMetaData/
-input_dir=/Users/lyk/Work/Dialogue/FewShot/SMP/
-output_dir=/Users/lyk/Work/Dialogue/FewShot/SMP/smp2/
+input_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_1/
+output_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_1/
 
 echo \[START\] set jobs on dataset \[ ${dataset_lst[@]} \]
 # === Loop for all case and run ===

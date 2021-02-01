@@ -133,13 +133,13 @@ transition=learn
 
 
 # ======= default path (for quick distribution) ==========
-pretrained_model_path=/users4/yklai/corpus/BERT/pytorch/chinese_L-12_H-768_A-12
-pretrained_vocab_path=/users4/yklai/corpus/BERT/pytorch/chinese_L-12_H-768_A-12/vocab.txt
+pretrained_model_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
+pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese/vocab.txt
 
 #pretrained_model_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 #pretrained_vocab_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 
-base_data_dir=/users4/yklai/code/Dialogue/release/MetaDialog/data/smp/
+base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_1/
 
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
@@ -175,7 +175,8 @@ do
                                                         # model names
                                                         model_name=sl.bert.dec_${decoder}.enc_${embedder}.ems_${emission}${do_div_emission}.mlp_${tap_mlp}_random_${tap_random_init_r}.e_scl_${emission_scaler}${ems_scale_r}_${emission_normalizer}.lb_${label_reps}_scl_${ple_scaler}${ple_scale_r}.t_scl_${trans_scaler}${trans_scale_r}_${trans_normalizer}.t_i_${trans_init}.${mask_trans}_.sim_${similarity}.lr_${lr}.up_lr_${upper_lr}.bs_${train_batch_size}_${test_batch_size}.sp_b_${grad_acc}.w_ep_${warmup_epoch}.ep_${epoch}--fix_dev_spt${do_debug}
 
-                                                        data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}${use_schema}--fix_dev_spt/
+                                                        # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}${use_schema}--fix_dev_spt/
+                                                        data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
                                                         file_mark=${dataset}.shots_${support_shots}.cross_id_${cross_data_id}.m_seed_${seed}
                                                         train_file_name=train.json
                                                         dev_file_name=dev.json
