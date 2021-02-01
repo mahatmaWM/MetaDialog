@@ -19,6 +19,7 @@ def configure_logging(level=logging.INFO):
     datefmt = '%Y-%m-%d %H:%M:%S'
     logging.basicConfig(level=level, format=format, datefmt=datefmt)
 
+
 def dump_data(opt, data):
     """
     data: json format data
