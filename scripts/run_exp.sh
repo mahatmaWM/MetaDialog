@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+# 跑序列标注的入口，在MetaDialog目录下创建log目录 source scripts/run_exp.sh 0
 echo usage: pass gpu id list as param, split with ,
-echo eg: source run_bert_siamese.sh 3,4 stanford
+echo eg: source scripts/run_exp.sh 0
 
 gpu_list=$1
 
@@ -11,6 +12,7 @@ do_debug=--do_debug
 #restore=--restore_cpt
 restore=
 
+# TODO 任务切换
 task=sc
 #task=sl
 
@@ -19,12 +21,10 @@ use_schema=--use_schema
 
 
 # ======= dataset setting ======
-dataset_lst=($2 $3)
+dataset_lst=(smp)
 support_shots_lst=(3)
-
-query_shot=8
-
-episode=100
+query_shot=4
+episode=50
 
 cross_data_id=0  # for smp
 
@@ -116,6 +116,7 @@ ple_scale_r_lst=(0.5)
 #ple_scale_r=1
 #ple_scale_r=0.01
 
+# TODO 什么用？
 tap_random_init=--tap_random_init
 tap_mlp=
 #tap_mlp=--tap_mlp
@@ -127,27 +128,23 @@ emb_log=
 #decoder_lst=(sms)
 #decoder_lst=(crf)
 #decoder_lst=(crf sms)
-#decoder_lst=(mlc)
-#decoder_lst=(eamlc)
-#decoder_lst=(msmlc)
-#decoder_lst=(krnmsmlc)
 
 # -------- SC decoder setting --------
 
 # ======= default path (for quick distribution) ==========
 # bert base path
-pretrained_model_path=/users4/yklai/corpus/BERT/pytorch/chinese_L-12_H-768_A-12
-pretrained_vocab_path=/users4/yklai/corpus/BERT/pytorch/chinese_L-12_H-768_A-12/vocab.txt
+pretrained_model_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
+pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese/vocab.txt
 
 # electra small path
 #pretrained_model_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 #pretrained_vocab_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 
 # data path
-base_data_dir=/users4/yklai/code/Dialogue/FewShot/MetaDial/data/SmpMetaData/
+base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_1/
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
-# === Loop for all case and run ===
+# === 类似网格搜索，尝试各种参数对应的模型效果 ===
 for seed in ${seed_lst[@]}
 do
   for dataset in ${dataset_lst[@]}
@@ -173,7 +170,8 @@ do
                                             # model names
                                             model_name=sc.ga_${grad_acc}_ple_${ple_scale_r}.bs_${train_batch_size}.bert.${task}.sim_${similarity}.ems_${emission}_${emission_normalizer}.${use_schema}--fix_dev_spt${do_debug}
 
-                                            data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}${use_schema}--fix_dev_spt/
+                                            # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}${use_schema}--fix_dev_spt/
+                                            data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
                                             file_mark=${dataset}.shots_${support_shots}.cross_id_${cross_data_id}.m_seed_${seed}
                                             train_file_name=train.json
                                             dev_file_name=dev.json
@@ -223,12 +221,12 @@ do
                                                 ${tap_mlp} \
                                                 ${emb_log} \
                                                 ${do_div_emission} \
-                                                --transition learn \
-                                                --load_feature > ./sclog/${model_name}.DATA.${file_mark}.log
-                                            echo [CLI]
-                                            echo Model: ${model_name}
-                                            echo Task:  ${file_mark}
-                                            echo [CLI]
+                                                --transition learn > ./log/${model_name}.DATA.${file_mark}.log
+                                                # --load_feature > ./log/${model_name}.DATA.${file_mark}.log
+                                            # echo [CLI]
+                                            # echo Model: ${model_name}
+                                            # echo Task:  ${file_mark}
+                                            # echo [CLI]
                                         done
                                     done
                                 done

@@ -10,14 +10,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
                     stream=sys.stdout)
 logger = logging.getLogger(__name__)
 
-
-"""  Default path setting """
-DEFAULT_RAW_DIR = '/users4/ythou/Projects/TaskOrientedDialogue/data/FewShotNLU/RawData/'
-DEFAULT_DATA_DIR = '/users4/ythou/Projects/TaskOrientedDialogue/data/FewShotNLU/Data/'
-BERT_BASE_UNCASED = '/users4/ythou/Projects/Resources/bert-base-uncased/uncased_L-12_H-768_A-12/'
-BERT_BASE_UNCASED_VOCAB = '/users4/ythou/Projects/Resources/bert-base-uncased/uncased_L-12_H-768_A-12/vocab.txt'
-
-
 def define_args(parser, *args_builders):
     """ Set program args"""
     for args_builder in args_builders:
@@ -31,8 +23,8 @@ def basic_args(parser):
     group.add_argument('--dev_path', required=False, help='the path to the validation file.')
     group.add_argument('--test_path', required=False, help='the path to the testing file.')
     group.add_argument("--eval_script", default='./scripts/conlleval.pl', help="The path to the evaluation script")
-    group.add_argument("--bert_path", type=str, default=BERT_BASE_UNCASED, help="path to pretrained BERT")
-    group.add_argument("--bert_vocab", type=str, default=BERT_BASE_UNCASED_VOCAB, help="path to BERT vocab file")
+    group.add_argument("--bert_path", type=str, default='', help="path to pretrained BERT")
+    group.add_argument("--bert_vocab", type=str, default='', help="path to BERT vocab file")
     group.add_argument('--output_dir', help='The dir to the output file, and to save model,eg: ./')
     group.add_argument("--saved_model_path", default='', help="path to the pre-trained model file")
     group.add_argument("--embedding_cache", type=str, default='/users4/ythou/Projects/Homework/ComputationalSemantic/.word_vectors_cache',
