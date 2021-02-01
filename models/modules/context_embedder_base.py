@@ -5,13 +5,6 @@ import sys
 from transformers import BertModel, ElectraModel
 from torchnlp.word_to_vector import GloVe
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                    datefmt='%m/%d/%Y %H:%M:%S',
-                    level=logging.INFO,
-                    stream=sys.stdout)
-logger = logging.getLogger(__name__)
-
-
 class ContextEmbedderBase(torch.nn.Module):
     def __init__(self):
         super(ContextEmbedderBase, self).__init__()
