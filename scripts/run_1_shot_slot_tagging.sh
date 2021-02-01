@@ -8,8 +8,8 @@ echo log file path ../result/
 gpu_list=$1
 
 # Comment one of follow 2 to switch debugging status
-#do_debug=--do_debug
-do_debug=
+do_debug=--do_debug
+# do_debug=
 
 task=sl
 
@@ -23,13 +23,13 @@ word_piece_data=True
 
 
 # Cross evaluation's data
-#cross_data_id_lst=(1)  # for debug
-cross_data_id_lst=(1 2 3 4 5 6 7)  # for snips
+cross_data_id_lst=(1)  # for debug
+# cross_data_id_lst=(1 2 3 4 5 6 7)  # for snips
 #cross_data_id_lst=(1 2 3 4)  # for ner
 
 # ====== train & test setting ======
-#seed_lst=(0)
-seed_lst=(10150 10151 10152 10153 10154 10155 10156 10157 10158 10159)
+seed_lst=(0)
+# seed_lst=(10150 10151 10152 10153 10154 10155 10156 10157 10158 10159)
 
 #lr_lst=(0.000001 0.000005 0.00005)
 lr_lst=(0.00001)
@@ -144,9 +144,9 @@ label_trans_normalizer=none
 
 
 # ======= default path (for quick distribution) ==========
-bert_base_uncased=/users4/yklai/corpus/BERT/pytorch/uncased_L-12_H-768_A-12/
-bert_base_uncased_vocab=/users4/yklai/corpus/BERT/pytorch/uncased_L-12_H-768_A-12/vocab.txt
-base_data_dir=/users4/yklai/code/Dialogue/FewShot/release/baseline+pw_data/ # acl20 data
+bert_base_uncased=/data/chrism_bak/pre_embeddings/pytorch_bert/bert-base-uncased
+bert_base_uncased_vocab=/data/chrism_bak/pre_embeddings/pytorch_bert/bert-base-uncased/vocab.txt
+base_data_dir=/data/chrism_bak/few_shot_learn_data/new_FewShotNLU_data_ACL20/ # acl20 data
 
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
