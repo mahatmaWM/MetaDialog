@@ -20,11 +20,11 @@ from models.modules.transition_scorer import FewShotTransitionScorer
 from models.few_shot_seq_labeler import FewShotSeqLabeler
 
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                    datefmt='%m/%d/%Y %H:%M:%S',
-                    level=logging.INFO,
-                    stream=sys.stdout)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(format='%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s',
+#                     datefmt='%Y-%m-%d %H:%M:%S',
+#                     level=logging.INFO,
+#                     stream=sys.stdout)
+# logging = logging.getlogging(__name__)
 
 
 RawResult = collections.namedtuple("RawResult", ["feature", "prediction"])
@@ -50,10 +50,10 @@ class TesterBase:
 
     def do_test(self, model: torch.nn.Module, test_features: List[FewShotFeature], id2label: dict,
                 log_mark: str = 'test_pred'):
-        logger.info("***** Running eval *****")
+        logging.info("***** Running eval *****")
         # print("***** Running eval *****")
-        logger.info("  Num features = %d", len(test_features))
-        logger.info("  Batch size = %d", self.batch_size)
+        logging.info("  Num features = %d", len(test_features))
+        logging.info("  Batch size = %d", self.batch_size)
         all_results = []
 
         model.eval()
@@ -433,5 +433,5 @@ def eval_check_points(opt, tester, test_features, test_id2label, device):
         test_score = tester.do_test(testing_model, test_features, test_id2label, log_mark='test_pred')
         if test_score > max_score:
             max_score = test_score
-        logger.info('cpt_file:{} - test:{}'.format(cpt_file, test_score))
+        logging.info('cpt_file:{} - test:{}'.format(cpt_file, test_score))
     return max_score

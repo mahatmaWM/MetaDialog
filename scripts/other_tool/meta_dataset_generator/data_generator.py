@@ -66,7 +66,7 @@ class MiniIncludeGenerator(DataGeneratorBase):
             ...,
             episode_n
         ],
-    'intent/domain_name2': [episode1, episode2, ..., episode_n]}
+        'intent/domain_name2': [episode1, episode2, ..., episode_n]}
         """
         few_shot_data = {}
         abandoned_domains = []

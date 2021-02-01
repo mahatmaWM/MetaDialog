@@ -5,11 +5,11 @@ import sys
 import random
 import numpy as np
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                    datefmt='%m/%d/%Y %H:%M:%S',
-                    level=logging.INFO,
-                    stream=sys.stdout)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
+#                     datefmt='%m/%d/%Y %H:%M:%S',
+#                     level=logging.INFO,
+#                     stream=sys.stdout)
+# logging = logging.getlogging(__name__)
 
 
 def set_device_environment(opt):
@@ -21,7 +21,7 @@ def set_device_environment(opt):
         n_gpu = 1
         # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
         torch.distributed.init_process_group(backend='nccl')
-    logger.info("device: {} n_gpu: {}, distributed training: {}, 16-bits trainiing: {}".format(
+    logging.info("device: {} n_gpu: {}, distributed training: {}, 16-bits trainiing: {}".format(
         device, n_gpu, bool(opt.local_rank != -1), opt.fp16))
 
     random.seed(opt.seed)

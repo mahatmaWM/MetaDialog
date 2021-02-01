@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-
+# 数据预处理的入口
 echo usage: pass dataset list as param, split with space
-echo eg: source gen_mate_data.sh smp
+echo eg: source gen_mate_data.sh
 
 dataset_lst=(smp)
-#dataset_lst=(toursg)
-#dataset_lst=(stanford)
-#dataset_lst=(atis stanford toursg)
 
 # ======= size setting ======
 support_shots_lst=(3)
@@ -22,7 +19,9 @@ remove_rate=80
 # ====== general setting =====
 seed_lst=(0)
 
+# TODO 任务切换
 task=sc
+# task=sl
 
 #dup_query=--dup_query  # dup_query set empty to not allow duplication between query and support
 dup_query=
@@ -42,10 +41,10 @@ label_type_lst=(attribute)
 use_fix_support=--use_fix_support
 
 # ======= default path (for quick distribution) ==========
-#input_dir=/Users/lyk/Work/Dialogue/FewShot/SMP正式数据集/
-#output_dir=/Users/lyk/Work/Dialogue/FewShot/SMP正式数据集/SmpMetaData/
-input_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_1/
-output_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_1/
+# input_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_3/
+# output_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_3/
+input_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
+output_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
 
 echo \[START\] set jobs on dataset \[ ${dataset_lst[@]} \]
 # === Loop for all case and run ===

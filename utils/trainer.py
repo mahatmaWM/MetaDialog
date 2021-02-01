@@ -19,14 +19,14 @@ from utils.model_helper import make_model, load_model
 from models.few_shot_seq_labeler import FewShotSeqLabeler
 
 
-logging.basicConfig(
-    format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-    datefmt='%m/%d/%Y %H:%M:%S',
-    level=logging.INFO,
-    # stream=sys.stderr
-    # stream=sys.stdout
-)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(
+#     format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
+#     datefmt='%m/%d/%Y %H:%M:%S',
+#     level=logging.INFO,
+#     # stream=sys.stderr
+#     # stream=sys.stdout
+# )
+# logging = logging.getlogging(__name__)
 
 
 class TrainerBase:
@@ -92,10 +92,10 @@ class TrainerBase:
         num_train_steps = int(
             len(train_features) / self.batch_size / self.gradient_accumulation_steps * num_train_epochs)
 
-        logger.info("***** Running training *****")
-        logger.info("  Num features = %d", len(train_features))
-        logger.info("  Batch size = %d", self.batch_size)
-        logger.info("  Num steps = %d", num_train_steps)
+        logging.info("***** Running training *****")
+        logging.info("  Num features = %d", len(train_features))
+        logging.info("  Batch size = %d", self.batch_size)
+        logging.info("  Num steps = %d", num_train_steps)
         global_step = 0  # used for args.fp16
         total_step = 0
         best_dev_score_now = best_dev_score_now
@@ -155,11 +155,11 @@ class TrainerBase:
                     else:
                         no_loss_decay_steps += 1
                         if no_loss_decay_steps >= self.opt.convergence_window:
-                            logger.info('=== Reach convergence point!!!!!! ====')
+                            logging.info('=== Reach convergence point!!!!!! ====')
                             print('=== Reach convergence point!!!!!! ====')
                             is_convergence = True
                 if no_new_best_dev_num >= self.opt.convergence_dev_num > 0:
-                    logger.info('=== Reach convergence point!!!!!! ====')
+                    logging.info('=== Reach convergence point!!!!!! ====')
                     print('=== Reach convergence point!!!!!! ====')
                     is_convergence = True
                 if is_convergence:
@@ -208,7 +208,7 @@ class TrainerBase:
         is_nan = False
         for (name_opti, param_opti), (name_model, param_model) in zip(param_to_optimize, named_params_model):
             if name_opti != name_model:
-                logger.error("name_opti != name_model: {} {}".format(name_opti, name_model))
+                logging.error("name_opti != name_model: {} {}".format(name_opti, name_model))
                 raise ValueError
             if param_model.grad is not None:
                 if test_nan and torch.isnan(param_model.grad).sum() > 0:
@@ -226,12 +226,12 @@ class TrainerBase:
         """
         for (name_opti, param_opti), (name_model, param_model) in zip(named_params_optimizer, named_params_model):
             if name_opti != name_model:
-                logger.error("name_opti != name_model: {} {}".format(name_opti, name_model))
+                logging.error("name_opti != name_model: {} {}".format(name_opti, name_model))
                 raise ValueError
             param_model.data.copy_(param_opti.data)
 
     def make_check_point(self, model, step):
-        logger.info("Save model check point to file:%s", os.path.join(
+        logging.info("Save model check point to file:%s", os.path.join(
             self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
         torch.save(
             self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
@@ -239,12 +239,12 @@ class TrainerBase:
     def make_check_point_(self, model, step):
         """ deal with IO error version """
         try:
-            logger.info("Save model check point to file:%s", os.path.join(
+            logging.info("Save model check point to file:%s", os.path.join(
                 self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
             torch.save(
                 self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
         except IOError:
-            logger.info("Failed to make cpt, sleeping ...")
+            logging.info("Failed to make cpt, sleeping ...")
             time.sleep(300)
             self.make_check_point_(model, step)
 
@@ -257,16 +257,16 @@ class TrainerBase:
             dev_model.label_mask = self.opt.dev_label_mask.to(self.device)
 
         dev_score = self.tester.do_test(dev_model, dev_features, dev_id2label, log_mark='dev_pred')
-        logger.info("  dev score(F1) = {}".format(dev_score))
+        logging.info("  dev score(F1) = {}".format(dev_score))
         print("  dev score(F1) = {}".format(dev_score))
         best_model = None
         test_score = None
         if dev_score > best_score:
-            logger.info(" === Found new best!! === ")
+            logging.info(" === Found new best!! === ")
             ''' store new best model  '''
             best_model = self.clone_model(model)  # copy model to avoid writen by latter training
             ''' save model file '''
-            logger.info("Save model to file:%s", os.path.join(self.opt.output_dir, 'model.pl'))
+            logging.info("Save model to file:%s", os.path.join(self.opt.output_dir, 'model.pl'))
             torch.save(self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.pl'))
 
             ''' get current best model's test score '''
@@ -276,7 +276,7 @@ class TrainerBase:
                     test_model.label_mask = self.opt.test_label_mask.to(self.device)
 
                 test_score = self.tester.do_test(test_model, test_features, test_id2label, log_mark='test_pred')
-                logger.info("  test score(F1) = {}".format(test_score))
+                logging.info("  test score(F1) = {}".format(test_score))
                 print("  test score(F1) = {}".format(test_score))
         # reset the model status
         model.train()
@@ -295,7 +295,7 @@ class TrainerBase:
         best_model = None
         all_cpt_file = sorted(all_cpt_file, key=lambda x: int(x.replace('model.step', '').replace('.cpt.pl', '')))
         for cpt_file in all_cpt_file:
-            logger.info('testing check point: {}'.format(cpt_file))
+            logging.info('testing check point: {}'.format(cpt_file))
             model = load_model(os.path.join(self.opt.output_dir, cpt_file))
             dev_score, test_score, copied_model = self.model_selection(
                 model, best_score, dev_features, dev_id2label, test_features, test_id2label)
@@ -333,7 +333,7 @@ class TrainerBase:
                             param.grad.data = param.grad.data / self.opt.loss_scale
                 is_nan = self.set_optimizer_params_grad(self.param_to_optimize, model.named_parameters(), test_nan=True)
                 if is_nan:
-                    logger.info("FP16 TRAINING: Nan in gradients, reducing loss scaling")
+                    logging.info("FP16 TRAINING: Nan in gradients, reducing loss scaling")
                     self.opt.loss_scale = self.opt.loss_scale / 2
                     model.zero_grad()
                     return global_step, model, is_nan

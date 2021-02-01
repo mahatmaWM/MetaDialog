@@ -27,11 +27,11 @@ from models.modules.scale_controller import build_scale_controller, ScaleControl
 from utils.device_helper import prepare_model
 
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                    datefmt='%m/%d/%Y %H:%M:%S',
-                    level=logging.INFO,
-                    stream=sys.stdout)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
+#                     datefmt='%m/%d/%Y %H:%M:%S',
+#                     level=logging.INFO,
+#                     stream=sys.stdout)
+# logging = logging.getlogging(__name__)
 
 
 def make_scaler_args(name : str, normalizer: ScaleControllerBase, scale_r: float = None):
@@ -120,7 +120,7 @@ def make_model(opt, config):
             transition_scorer = None
             decoder = RuleSequenceLabeler(config['id2label'])
         elif opt.decoder == 'crf':
-            # logger.info('We only support back-off trans training now!')
+            # logging.info('We only support back-off trans training now!')
             # Notice: only train back-off now
             trans_normalizer = build_scale_controller(name=opt.trans_normalizer)
             trans_scaler = build_scale_controller(
@@ -190,7 +190,7 @@ def load_model(path):
             model.load_state_dict(cpt['state_dict'])
             return model
     except IOError as e:
-        logger.info("Failed to load model from {} \n {}".format(path, e))
+        logging.info("Failed to load model from {} \n {}".format(path, e))
         return None
 
 

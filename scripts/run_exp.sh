@@ -16,7 +16,7 @@ restore=
 task=sc
 #task=sl
 
-use_schema=--use_schema
+# use_schema=--use_schema
 #use_schema=
 
 
@@ -141,7 +141,7 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 #pretrained_vocab_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 
 # data path
-base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_1/
+base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
 # === 类似网格搜索，尝试各种参数对应的模型效果 ===
@@ -168,9 +168,9 @@ do
                                         for ple_scale_r in ${ple_scale_r_lst[@]}
                                         do
                                             # model names
-                                            model_name=sc.ga_${grad_acc}_ple_${ple_scale_r}.bs_${train_batch_size}.bert.${task}.sim_${similarity}.ems_${emission}_${emission_normalizer}.${use_schema}--fix_dev_spt${do_debug}
-
-                                            # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}${use_schema}--fix_dev_spt/
+                                            model_name=sc.ga_${grad_acc}_ple_${ple_scale_r}.bs_${train_batch_size}.bert.${task}.sim_${similarity}.ems_${emission}_${emission_normalizer}.${do_debug}
+                                            # TODO cross_data_id
+                                            # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}/
                                             data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
                                             file_mark=${dataset}.shots_${support_shots}.cross_id_${cross_data_id}.m_seed_${seed}
                                             train_file_name=train.json
