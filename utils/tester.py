@@ -19,7 +19,6 @@ from utils.model_helper import make_model, load_model
 from models.modules.transition_scorer import FewShotTransitionScorer
 from models.few_shot_seq_labeler import FewShotSeqLabeler
 
-
 RawResult = collections.namedtuple("RawResult", ["feature", "prediction"])
 
 
@@ -30,6 +29,7 @@ class TesterBase:
         - distributed gpu [accelerating]
         - padding when forward [better result & save space]
     """
+
     def __init__(self, opt, device, n_gpu):
         if opt.gradient_accumulation_steps < 1:
             raise ValueError("Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(
@@ -41,10 +41,12 @@ class TesterBase:
         self.device = device
         self.n_gpu = n_gpu
 
-    def do_test(self, model: torch.nn.Module, test_features: List[FewShotFeature], id2label: dict,
+    def do_test(self,
+                model: torch.nn.Module,
+                test_features: List[FewShotFeature],
+                id2label: dict,
                 log_mark: str = 'test_pred'):
         logging.info("***** Running eval *****")
-        # print("***** Running eval *****")
         logging.info("  Num features = %d", len(test_features))
         logging.info("  Batch size = %d", self.batch_size)
         all_results = []
@@ -61,8 +63,8 @@ class TesterBase:
                 feature = test_features[feature_gid.item()]
                 all_results.append(RawResult(feature=feature, prediction=prediction))
                 if model.emb_log:
-                    model.emb_log.write('text_' + str(feature_gid.item()) + '\t'
-                                        + '\t'.join(feature.test_feature_item.data_item.seq_in) + '\n')
+                    model.emb_log.write('text_' + str(feature_gid.item()) + '\t' +
+                                        '\t'.join(feature.test_feature_item.data_item.seq_in) + '\n')
 
         # close file handler
         if model.emb_log:
@@ -102,6 +104,7 @@ class FewShotTester(TesterBase):
             - distributed gpu [accelerating]
             - padding when forward [better result & save space]
     """
+
     def __init__(self, opt, device, n_gpu):
         super(FewShotTester, self).__init__(opt, device, n_gpu)
 
@@ -127,6 +130,7 @@ class FewShotTester(TesterBase):
     def eval_one_few_shot_batch(self, b_id, fs_batch: List[RawResult], id2label: dict, log_mark: str) -> float:
         pred_file_name = '{}.{}.txt'.format(log_mark, b_id)
         output_prediction_file = os.path.join(self.opt.output_dir, pred_file_name)
+        logging.info('output_prediction_file={}'.format(output_prediction_file))
         if self.opt.task == 'sl':
             self.writing_sl_prediction(fs_batch, output_prediction_file, id2label)
             precision, recall, f1 = self.eval_with_script(output_prediction_file)
@@ -180,9 +184,9 @@ class FewShotTester(TesterBase):
                 raise RuntimeError("Failed to align the pred_ids to texts: {},{} \n{},{} \n{},{}".format(
                     len(pred_ids), pred_ids,
                     len(feature.test_feature_item.data_item.seq_in), feature.test_feature_item.data_item.seq_in,
-                    len(feature.test_feature_item.data_item.seq_out), feature.test_feature_item.data_item.seq_out
-                ))
-            for pred_id, word, true_label in zip(pred_ids, feature.test_feature_item.data_item.seq_in, feature.test_feature_item.data_item.seq_out):
+                    len(feature.test_feature_item.data_item.seq_out), feature.test_feature_item.data_item.seq_out))
+            for pred_id, word, true_label in zip(pred_ids, feature.test_feature_item.data_item.seq_in,
+                                                 feature.test_feature_item.data_item.seq_out):
                 pred_label = id2label[pred_id]
                 writing_content.append('{0} {1} {2}'.format(word, true_label, pred_label))
             writing_content.append('')
@@ -198,7 +202,7 @@ class FewShotTester(TesterBase):
             std_results = p.stdout.readlines()
             if self.opt.verbose:
                 for r in std_results:
-                    print(r)
+                    logging.info(r)
             std_results = str(std_results[1]).split()
         precision = float(std_results[3].replace('%;', ''))
         recall = float(std_results[5].replace('%;', ''))
@@ -261,7 +265,7 @@ class FewShotTester(TesterBase):
         ) = batch
 
         prediction = model(
-        # loss, prediction = model(
+            # loss, prediction = model(
             test_token_ids,
             test_segment_ids,
             test_nwp_index,
@@ -322,6 +326,7 @@ class FewShotTester(TesterBase):
 
 
 class SchemaFewShotTester(FewShotTester):
+
     def __init__(self, opt, device, n_gpu):
         super(SchemaFewShotTester, self).__init__(opt, device, n_gpu)
 
@@ -415,8 +420,7 @@ class SchemaFewShotTester(FewShotTester):
 
 def eval_check_points(opt, tester, test_features, test_id2label, device):
     all_cpt_file = list(filter(lambda x: '.cpt.pl' in x, os.listdir(opt.saved_model_path)))
-    all_cpt_file = sorted(all_cpt_file,
-                          key=lambda x: int(x.replace('model.step', '').replace('.cpt.pl', '')))
+    all_cpt_file = sorted(all_cpt_file, key=lambda x: int(x.replace('model.step', '').replace('.cpt.pl', '')))
     max_score = 0
     for cpt_file in all_cpt_file:
         cpt_model = load_model(os.path.join(opt.saved_model_path, cpt_file))

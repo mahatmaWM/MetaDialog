@@ -251,7 +251,6 @@ class TrainerBase:
 
         dev_score = self.tester.do_test(dev_model, dev_features, dev_id2label, log_mark='dev_pred')
         logging.info("  dev score(F1) = {}".format(dev_score))
-        logging.info("  dev score(F1) = {}".format(dev_score))
         best_model = None
         test_score = None
         if dev_score > best_score:
@@ -268,7 +267,6 @@ class TrainerBase:
                     test_model.label_mask = self.opt.test_label_mask.to(self.device)
 
                 test_score = self.tester.do_test(test_model, test_features, test_id2label, log_mark='test_pred')
-                logging.info("  test score(F1) = {}".format(test_score))
                 logging.info("  test score(F1) = {}".format(test_score))
         # reset the model status
         model.train()
