@@ -21,7 +21,7 @@ from utils.model_helper import make_model, load_model
 def configure_logging(level=logging.INFO):
     format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
     datefmt = '%Y-%m-%d %H:%M:%S'
-    logging.basicConfig(level=level, format=format, datefmt=datefmt)
+    logging.basicConfig(level=level, format=format, datefmt=datefmt, stream=sys.stdout)
 
 def get_training_data_and_feature(opt, data_loader, preprocessor):
     """ prepare feature and data """

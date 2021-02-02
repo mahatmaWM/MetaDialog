@@ -17,7 +17,7 @@ DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.forma
 def configure_logging(level=logging.INFO):
     format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
     datefmt = '%Y-%m-%d %H:%M:%S'
-    logging.basicConfig(level=level, format=format, datefmt=datefmt)
+    logging.basicConfig(level=level, format=format, datefmt=datefmt, stream=sys.stdout)
 
 
 def dump_data(opt, data):
