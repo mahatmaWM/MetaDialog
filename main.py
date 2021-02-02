@@ -84,7 +84,7 @@ def main():
     ''' device & environment '''
     device, n_gpu = set_device_environment(opt)
     os.makedirs(opt.output_dir, exist_ok=True)
-    logging.info("Environment: device {}, n_gpu {}".format(device, n_gpu))
+    logging.info("Environment: device={}, n_gpu={}".format(device, n_gpu))
 
     ''' data & feature '''
     data_loader = FewShotRawDataLoader(opt)

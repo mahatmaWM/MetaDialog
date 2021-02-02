@@ -4,12 +4,6 @@ import os
 import sys
 
 
-# logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-#                     datefmt='%m/%d/%Y %H:%M:%S',
-#                     level=logging.INFO,
-#                     stream=sys.stdout)
-# logging = logging.getlogging(__name__)
-
 def define_args(parser, *args_builders):
     """ Set program args"""
     for args_builder in args_builders:
@@ -27,7 +21,7 @@ def basic_args(parser):
     group.add_argument("--bert_vocab", type=str, default='', help="path to BERT vocab file")
     group.add_argument('--output_dir', help='The dir to the output file, and to save model,eg: ./')
     group.add_argument("--saved_model_path", default='', help="path to the pre-trained model file")
-    group.add_argument("--embedding_cache", type=str, default='/users4/ythou/Projects/Homework/ComputationalSemantic/.word_vectors_cache',
+    group.add_argument("--embedding_cache", type=str, default='./.word_vectors_cache',
                        help="path to embedding cache dir. if use pytorch nlp, use this path to avoid downloading")
 
     group = parser.add_argument_group('Function')

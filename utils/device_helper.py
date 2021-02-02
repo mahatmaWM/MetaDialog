@@ -5,13 +5,6 @@ import sys
 import random
 import numpy as np
 
-# logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-#                     datefmt='%m/%d/%Y %H:%M:%S',
-#                     level=logging.INFO,
-#                     stream=sys.stdout)
-# logging = logging.getlogging(__name__)
-
-
 def set_device_environment(opt):
     if opt.local_rank == -1 or opt.no_cuda:
         device = torch.device("cuda" if torch.cuda.is_available() and not opt.no_cuda else "cpu")
@@ -21,7 +14,7 @@ def set_device_environment(opt):
         n_gpu = 1
         # Initializes the distributed backend which will take care of sychronizing nodes/GPUs
         torch.distributed.init_process_group(backend='nccl')
-    logging.info("device: {} n_gpu: {}, distributed training: {}, 16-bits trainiing: {}".format(
+    logging.info("device: {} n_gpu: {}, distributed training: {}, 16-bits training: {}".format(
         device, n_gpu, bool(opt.local_rank != -1), opt.fp16))
 
     random.seed(opt.seed)

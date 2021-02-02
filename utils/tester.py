@@ -20,13 +20,6 @@ from models.modules.transition_scorer import FewShotTransitionScorer
 from models.few_shot_seq_labeler import FewShotSeqLabeler
 
 
-# logging.basicConfig(format='%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s',
-#                     datefmt='%Y-%m-%d %H:%M:%S',
-#                     level=logging.INFO,
-#                     stream=sys.stdout)
-# logging = logging.getlogging(__name__)
-
-
 RawResult = collections.namedtuple("RawResult", ["feature", "prediction"])
 
 

@@ -27,13 +27,6 @@ from models.modules.scale_controller import build_scale_controller, ScaleControl
 from utils.device_helper import prepare_model
 
 
-# logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-#                     datefmt='%m/%d/%Y %H:%M:%S',
-#                     level=logging.INFO,
-#                     stream=sys.stdout)
-# logging = logging.getlogging(__name__)
-
-
 def make_scaler_args(name : str, normalizer: ScaleControllerBase, scale_r: float = None):
     ret = None
     if name == 'learn':
