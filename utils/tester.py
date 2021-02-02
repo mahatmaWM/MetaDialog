@@ -156,7 +156,7 @@ class FewShotTester(TesterBase):
             tp, fp, fn = self.update_f1_frag(pred_label, label, tp, fp, fn)  # update tp, fp, fn
 
         with open(output_prediction_file, "w") as writer:
-            json.dump(writing_content, writer, indent=2)
+            json.dump(writing_content, writer, ensure_ascii=False, indent=2)
         return self.compute_f1(tp, fp, fn)
 
     def update_f1_frag(self, pred_label, label, tp=0, fp=0, fn=0):
