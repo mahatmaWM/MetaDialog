@@ -8,6 +8,7 @@ gpu_list=$1
 task=sc
 #task=sl
 epoch=3
+do_debug=True
 
 # ====== 尝试的各种参数组合 ======
 dataset_lst=(smp)
@@ -40,6 +41,7 @@ ple_normalizer=none
 ple_scaler=fix
 label_reps=sep
 query_shot=4
+tap_mlp=True
 episode=50
 cross_data_id=0  # for smp
 test_batch_size=2
@@ -95,6 +97,7 @@ do
                                             export OMP_NUM_THREADS=2  # threads num for each task
                                             CUDA_VISIBLE_DEVICES=${gpu_list} python main.py --task ${task} \
                                                 --seed ${seed} \
+                                                --do_debug ${do_debug} \
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
@@ -121,9 +124,7 @@ do
                                                 --ple_normalizer ${ple_normalizer} \
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
-                                                --tap_random_init ${tap_random_init} \
                                                 --tap_mlp ${tap_mlp} \
-                                                --emb_log ${emb_log} \
                                                 --transition learn > ./log/${model_name}.DATA.${file_mark}.log
                                                 # --load_feature > ./log/${model_name}.DATA.${file_mark}.log
                                         done
