@@ -140,7 +140,7 @@ class TrainerBase:
                 loss_now = loss.item() if update_model else loss.item() + loss_now
                 if self.opt.convergence_window > 0 and update_model:
                     if global_step % 100 == 0 or total_step % len(data_loader) == 0:
-                        logging.info('Current loss {}, global step {}, min loss now {}, no loss decay step {}'.format(
+                        logging.info('Current loss={}, global step={}, min loss now={}, no loss decay step={}'.format(
                             loss_now, global_step, min_loss, no_loss_decay_steps))
                     if loss_now < min_loss:
                         min_loss = loss_now
@@ -149,10 +149,8 @@ class TrainerBase:
                         no_loss_decay_steps += 1
                         if no_loss_decay_steps >= self.opt.convergence_window:
                             logging.info('=== Reach convergence point!!!!!! ====')
-                            logging.info('=== Reach convergence point!!!!!! ====')
                             is_convergence = True
                 if no_new_best_dev_num >= self.opt.convergence_dev_num > 0:
-                    logging.info('=== Reach convergence point!!!!!! ====')
                     logging.info('=== Reach convergence point!!!!!! ====')
                     is_convergence = True
                 if is_convergence:
@@ -267,7 +265,7 @@ class TrainerBase:
                     test_model.label_mask = self.opt.test_label_mask.to(self.device)
 
                 test_score = self.tester.do_test(test_model, test_features, test_id2label, log_mark='test_pred')
-                logging.info("  test score(F1) = {}".format(test_score))
+                logging.info("test score(F1) = {}".format(test_score))
         # reset the model status
         model.train()
         return dev_score, test_score, best_model

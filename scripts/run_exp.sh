@@ -93,8 +93,7 @@ do
                                             echo Task:  ${file_mark}
                                             echo [CLI]
                                             export OMP_NUM_THREADS=2  # threads num for each task
-                                            CUDA_VISIBLE_DEVICES=${gpu_list} python main.py
-                                                --task ${task} \
+                                            CUDA_VISIBLE_DEVICES=${gpu_list} python main.py --task ${task} \
                                                 --seed ${seed} \
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
