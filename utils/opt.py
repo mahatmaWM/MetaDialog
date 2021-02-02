@@ -33,7 +33,7 @@ def basic_args(parser):
     group.add_argument("--do_train", default=False, action='store_true', help="Whether to run training.")
     group.add_argument("--do_predict", default=False, action='store_true', help="Whether to run eval on the dev set.")
     group.add_argument("--do_debug", default=False, action='store_true', help="debug model, only load few data.")
-    group.add_argument("-doft", "--do_overfit_test", default=False, action='store_true', help="debug model, test/dev on train")
+    group.add_argument("--do_overfit_test", default=False, action='store_true', help="debug model, test/dev on train")
     group.add_argument("--verbose", default=False, action='store_true', help="Verbose logging")
     group.add_argument('--seed', type=int, default=42, help="the ultimate answer")
 
@@ -80,7 +80,7 @@ def train_args(parser):
                        help="Whether to use 16-bit float precision instead of 32-bit")
     group.add_argument('--loss_scale', type=float, default=128,
                        help='Loss scaling, positive power of 2 values can improve fp16 convergence.')
-    group.add_argument('-d_cpt', '--delete_checkpoint', default=False, action='store_true',
+    group.add_argument('--delete_checkpoint', default=False, action='store_true',
                        help="Only keep the best model to save disk space")
 
     group = parser.add_argument_group('PerformanceTricks')  # Training Tricks
@@ -96,7 +96,7 @@ def train_args(parser):
 
     # for few shot seq labeling model
     group = parser.add_argument_group('FewShotSetting')  # Training Tricks
-    group.add_argument("--warmup_epoch", type=int, default=-1,
+    group.add_argument("--warmup_epoch", type=int, default=2,
                        help="set > 0 to active warm up training. "
                             "Train model in two step: "
                             "1: fix bert part  "
@@ -143,16 +143,16 @@ def model_args(parser):
     group.add_argument("--emission", default='mnet', type=str,
                        choices=['mnet', 'rank', 'proto', 'proto_with_label', 'tapnet'],
                        help="Method for calculate emission score")
-    group.add_argument("-e_nm", "--emission_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
+    group.add_argument("--emission_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
                        help="normalize emission into 1-0")
-    group.add_argument("-e_scl", "--emission_scaler", type=str, default=None,
+    group.add_argument("--emission_scaler", type=str, default=None,
                        choices=['learn', 'fix', 'relu', 'exp', 'softmax', 'norm', 'none'],
                        help="method to scale emission and transition into 1-0")
     group.add_argument("--ems_scale_r", default=1, type=float, help="Scale transition to x times")
     # proto with label setting
-    group.add_argument("-ple_nm", "--ple_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
+    group.add_argument("--ple_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
                        help="normalize scaled label embedding into 1-0")
-    group.add_argument("-ple_scl", "--ple_scaler", type=str, default=None,
+    group.add_argument("--ple_scaler", type=str, default=None,
                        choices=['learn', 'fix', 'relu', 'exp', 'softmax', 'norm', 'none'],
                        help="method to scale label embedding into 1-0")
     group.add_argument("--ple_scale_r", default=1, type=float, help="Scale label embedding to x times")
@@ -168,7 +168,7 @@ def model_args(parser):
     group.add_argument("--tap_proto_r", default=1, type=float,
                        help="the rate of prototype in mixing with label reps")
     # Matching Network setting
-    group.add_argument('-dbt', "--div_by_tag_num", default=False, action='store_true',
+    group.add_argument("--div_by_tag_num", default=False, action='store_true',
                        help="(For MNet) Divide emission by each tag's token num in support set")
 
     group.add_argument("--emb_log", default=False, action='store_true', help="Save embedding log in all emission step")
@@ -178,9 +178,9 @@ def model_args(parser):
     group.add_argument('--transition', default='learn',
                        choices=['merge', 'target', 'source', 'learn', 'none', 'learn_with_label'],
                        help='transition for target domain')
-    group.add_argument("-t_nm", "--trans_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
+    group.add_argument("--trans_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
                        help="normalize back-off transition into 1-0")
-    group.add_argument("-t_scl", "--trans_scaler", default=None,
+    group.add_argument("--trans_scaler", default=None,
                        choices=['learn', 'fix', 'relu', 'exp', 'softmax', 'norm', 'none'],
                        help='transition matrix scaler, such as re-scale the value to non-negative')
 
@@ -189,13 +189,13 @@ def model_args(parser):
     group.add_argument("--trans_r", default=1, type=float, help="Transition trade-off rate of src(=1) and tgt(=0)")
     group.add_argument("--trans_scale_r", default=1, type=float, help="Scale transition to x times")
 
-    group.add_argument("-lt_nm", "--label_trans_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
+    group.add_argument("--label_trans_normalizer", type=str, default='', choices=['softmax', 'norm', 'none'],
                        help="normalize transition FROM LABEL into 1-0")
-    group.add_argument("-lt_scl", "--label_trans_scaler", default='fix', choices=['none', 'fix', 'learn'],
+    group.add_argument("--label_trans_scaler", default='fix', choices=['none', 'fix', 'learn'],
                        help='transition matrix FROM LABEL scaler, such as re-scale the value to non-negative')
     group.add_argument("--label_trans_scale_r", default=1, type=float, help="Scale transition FROM LABEL to x times")
 
-    group.add_argument('-mk_tr', "--mask_transition", default=False, action='store_true',
+    group.add_argument("--mask_transition", default=False, action='store_true',
                        help="Block out-of domain transitions.")
     group.add_argument("--add_transition_rules", default=False, action='store_true', help="Block invalid transitions.")
 

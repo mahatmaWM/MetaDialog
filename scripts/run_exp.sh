@@ -3,164 +3,77 @@
 echo usage: pass gpu id list as param, split with ,
 echo eg: source scripts/run_exp.sh 0
 
+# TODO 使用哪些GPU 任务切换
 gpu_list=$1
-
-# Comment one of follow 2 to switch debugging status
-do_debug=--do_debug
-#do_debug=
-
-#restore=--restore_cpt
-restore=
-
-# TODO 任务切换
 task=sc
 #task=sl
-
-# use_schema=--use_schema
-#use_schema=
-
-
-# ======= dataset setting ======
-dataset_lst=(smp)
-support_shots_lst=(3)
-query_shot=4
-episode=50
-
-cross_data_id=0  # for smp
-
-# ====== train & test setting ======
-seed_lst=(0)
-#seed_lst=(6150 6151 6152)
-
-#lr_lst=(0.000001 0.000005 0.00005)
-lr_lst=(0.00001)
-
-clip_grad=5
-
-decay_lr_lst=(0.5)
-#decay_lr_lst=(-1)
-
-#upper_lr_lst=( 0.5 0.01 0.005)
-#upper_lr_lst=(0.01)
-upper_lr_lst=(0.001)
-#upper_lr_lst=(0.0001)
-#upper_lr_lst=(0.0005)
-#upper_lr_lst=(0.1)
-#upper_lr_lst=(0.001 0.1)
-
-#fix_embd_epoch_lst=(1)
-fix_embd_epoch_lst=(-1)
-#fix_embd_epoch_lst=(1 2)
-
-warmup_epoch=2
-#warmup_epoch=1
-#warmup_epoch=-1
-
-
-train_batch_size_lst=(4)
-#train_batch_size_lst=(8)
-#train_batch_size_lst=(4 8)
-
-#test_batch_size=16
-test_batch_size=2
-#test_batch_size=8
-
-#grad_acc=2
-grad_acc=4
 epoch=3
 
-# ==== model setting =========
-# ---- encoder setting -----
-
-#embedder=electra
-embedder=bert
-#embedder=sep_bert
-
-
-# --------- emission setting --------
-#emission_lst=(mnet)
-#emission_lst=(tapnet)
-emission_lst=(proto_with_label)
-#emission_lst=(proto)
-#emission_lst=(mnet proto)
-
-
-#similarity=cosine
-#similarity=l2
-similarity=dot
-
-emission_normalizer=none
-#emission_normalizer=softmax
-#emission_normalizer=norm
-
-#emission_scaler=none
-#emission_scaler=fix
-emission_scaler=learn
-#emission_scaler=relu
-#emission_scaler=exp
-
-
-do_div_emission=-dbt
-#do_div_emission=
-
+# ====== 尝试的各种参数组合 ======
+dataset_lst=(smp)
+seed_lst=(0)
+#seed_lst=(6150 6151 6152)
+support_shots_lst=(3)
+train_batch_size_lst=(4)
+#train_batch_size_lst=(4 8)
+decay_lr_lst=(0.5)
+#decay_lr_lst=(-1)
+fix_embd_epoch_lst=(-1)
+#fix_embd_epoch_lst=(1 2)
+lr_lst=(0.00001)
+#lr_lst=(0.000001 0.000005 0.00005)
+upper_lr_lst=(0.001)
+#upper_lr_lst=(0.001 0.1)
 ems_scale_rate_lst=(0.01)
 #ems_scale_rate_lst=(0.01 0.02 0.05 0.005)
+emission_lst=(proto_with_label)
+#emission_lst=(mnet proto tapnet)
+ple_scale_r_lst=(0.5)
 
-label_reps=sep
-#label_reps=cat
-
+# ====== 其他参数 opt ======
+clip_grad=5
+similarity=dot
+embedder=bert
+emission_normalizer=norm
+emission_scaler=learn
 ple_normalizer=none
 ple_scaler=fix
-#ple_scale_r=0.5
-ple_scale_r_lst=(0.5)
-#ple_scale_r=1
-#ple_scale_r=0.01
-
-# TODO 什么用？
-tap_random_init=--tap_random_init
-tap_mlp=
-#tap_mlp=--tap_mlp
-emb_log=
-#emb_log=--emb_log
-
-# ------ decoder setting -------
-#decoder_lst=(rule)
-#decoder_lst=(sms)
-#decoder_lst=(crf)
-#decoder_lst=(crf sms)
-
-# -------- SC decoder setting --------
+label_reps=sep
+query_shot=4
+episode=50
+cross_data_id=0  # for smp
+test_batch_size=2
+grad_acc=4
 
 # ======= default path (for quick distribution) ==========
 # bert base path
 pretrained_model_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese/vocab.txt
-
 # electra small path
 #pretrained_model_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 #pretrained_vocab_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
-
 # data path
 base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
+
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
 # === 类似网格搜索，尝试各种参数对应的模型效果 ===
 for seed in ${seed_lst[@]}
 do
-  for dataset in ${dataset_lst[@]}
-  do
-    for support_shots in ${support_shots_lst[@]}
+    for dataset in ${dataset_lst[@]}
     do
-        for train_batch_size in ${train_batch_size_lst[@]}
+        for support_shots in ${support_shots_lst[@]}
         do
-              for decay_lr in ${decay_lr_lst[@]}
-              do
-                  for fix_embd_epoch in ${fix_embd_epoch_lst[@]}
-                  do
-                      for lr in ${lr_lst[@]}
-                      do
-                          for upper_lr in ${upper_lr_lst[@]}
-                          do
+            for train_batch_size in ${train_batch_size_lst[@]}
+            do
+                for decay_lr in ${decay_lr_lst[@]}
+                do
+                    for fix_embd_epoch in ${fix_embd_epoch_lst[@]}
+                    do
+                        for lr in ${lr_lst[@]}
+                        do
+                            for upper_lr in ${upper_lr_lst[@]}
+                            do
                                 for ems_scale_r in ${ems_scale_rate_lst[@]}
                                 do
                                     for emission in ${emission_lst[@]}
@@ -168,7 +81,7 @@ do
                                         for ple_scale_r in ${ple_scale_r_lst[@]}
                                         do
                                             # model names
-                                            model_name=sc.ga_${grad_acc}_ple_${ple_scale_r}.bs_${train_batch_size}.bert.${task}.sim_${similarity}.ems_${emission}_${emission_normalizer}.${do_debug}
+                                            model_name=${task}.ga_${grad_acc}.ple_${ple_scale_r}.tbs_${train_batch_size}.sim_${similarity}.ems_${emission}_${emission_normalizer}
                                             # TODO cross_data_id
                                             # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}/
                                             data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
@@ -176,17 +89,13 @@ do
                                             train_file_name=train.json
                                             dev_file_name=dev.json
                                             test_file_name=test.json
-
-                                            echo [CLI]
                                             echo Model: ${model_name}
                                             echo Task:  ${file_mark}
                                             echo [CLI]
                                             export OMP_NUM_THREADS=2  # threads num for each task
-                                            CUDA_VISIBLE_DEVICES=${gpu_list} python main.py ${do_debug} \
+                                            CUDA_VISIBLE_DEVICES=${gpu_list} python main.py
                                                 --task ${task} \
                                                 --seed ${seed} \
-                                                --do_train \
-                                                --do_predict \
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
@@ -195,7 +104,6 @@ do
                                                 --bert_vocab ${pretrained_vocab_path} \
                                                 --train_batch_size ${train_batch_size} \
                                                 --cpt_per_epoch 4 \
-                                                --delete_checkpoint \
                                                 --gradient_accumulation_steps ${grad_acc} \
                                                 --num_train_epochs ${epoch} \
                                                 --learning_rate ${lr} \
@@ -203,30 +111,22 @@ do
                                                 --upper_lr ${upper_lr} \
                                                 --clip_grad ${clip_grad} \
                                                 --fix_embed_epoch ${fix_embd_epoch} \
-                                                --warmup_epoch ${warmup_epoch} \
                                                 --test_batch_size ${test_batch_size} \
                                                 --context_emb ${embedder} \
-                                                ${use_schema} \
                                                 --label_reps ${label_reps} \
-                                                --projection_layer none \
                                                 --emission ${emission} \
                                                 --similarity ${similarity} \
-                                                -e_nm ${emission_normalizer} \
-                                                -e_scl ${emission_scaler} \
+                                                --emission_normalizer ${emission_normalizer} \
+                                                --emission_scaler ${emission_scaler} \
                                                 --ems_scale_r ${ems_scale_r} \
-                                                -ple_nm ${ple_normalizer} \
-                                                -ple_scl ${ple_scaler} \
+                                                --ple_normalizer ${ple_normalizer} \
+                                                --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
-                                                ${tap_random_init} \
-                                                ${tap_mlp} \
-                                                ${emb_log} \
-                                                ${do_div_emission} \
+                                                --tap_random_init ${tap_random_init} \
+                                                --tap_mlp ${tap_mlp} \
+                                                --emb_log ${emb_log} \
                                                 --transition learn > ./log/${model_name}.DATA.${file_mark}.log
                                                 # --load_feature > ./log/${model_name}.DATA.${file_mark}.log
-                                            # echo [CLI]
-                                            # echo Model: ${model_name}
-                                            # echo Task:  ${file_mark}
-                                            # echo [CLI]
                                         done
                                     done
                                 done
@@ -238,12 +138,5 @@ do
         done
     done
 done
-
-# Other candidate option:
-# -doft \
-# --delete_checkpoint \
-# --fp16 \
-
-
 
 echo [FINISH] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
