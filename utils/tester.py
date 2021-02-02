@@ -283,7 +283,6 @@ class FewShotTester(TesterBase):
         return prediction
 
     def get_value_from_order_dict(self, order_dict, key):
-        """"""
         for k, v in order_dict.items():
             if key in k:
                 return v

@@ -447,13 +447,6 @@ class FewShotTrainer(TrainerBase):
         }
         return ret
 
-    def get_value_from_order_dict(self, order_dict, key):
-        """"""
-        for k, v in order_dict.items():
-            if key in k:
-                return v
-        return []
-
     def clone_model(self, model):
         # deal with data parallel model
         best_model: FewShotSeqLabeler

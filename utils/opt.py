@@ -32,10 +32,11 @@ def basic_args(parser):
     group.add_argument('--save_feature', default=False, action='store_true', help='save feature to file')
     group.add_argument("--do_train", default=True, action='store_true', help="Whether to run training.")
     group.add_argument("--do_predict", default=True, action='store_true', help="Whether to run eval on the dev set.")
-    group.add_argument("--do_debug", default=False, action='store_true', help="debug model, only load few data.")
     group.add_argument("--do_overfit_test", default=False, action='store_true', help="debug model, test/dev on train")
-    group.add_argument("--verbose", default=False, action='store_true', help="Verbose logging")
     group.add_argument('--seed', type=int, default=42, help="the ultimate answer")
+    # TODO 调试时用
+    group.add_argument("--do_debug", default=False, action='store_true', help="debug model, only load few data.")
+
 
     group = parser.add_argument_group('Device')  # default to use all available GPUs
     group.add_argument("--local_rank", type=int, default=-1, help="local_rank for distributed training on gpus")
@@ -96,12 +97,8 @@ def train_args(parser):
 
     # for few shot seq labeling model
     group = parser.add_argument_group('FewShotSetting')  # Training Tricks
-    group.add_argument("--warmup_epoch", type=int, default=2,
-                       help="set > 0 to active warm up training. "
-                            "Train model in two step: "
-                            "1: fix bert part  "
-                            "2: train entire model"
-                            "(As we use new optimizer in 2nd stage, it also has restart effects. )")
+    group.add_argument("--warmup_epoch", type=int, default=1,
+                       help="set > 0 to active warm up training.")
     group.add_argument("--fix_embed_epoch", default=-1, type=int, help="Fix embedding for first x epochs.[abandon]")
     group.add_argument("--upper_lr", default=-1, type=float,
                        help="Use different LR for upper structure comparing to embedding LR. -1 to off it")
@@ -170,8 +167,7 @@ def model_args(parser):
     # Matching Network setting
     group.add_argument("--div_by_tag_num", default=False, action='store_true',
                        help="(For MNet) Divide emission by each tag's token num in support set")
-
-    group.add_argument("--emb_log", default=False, action='store_true', help="Save embedding log in all emission step")
+    group.add_argument("--emb_log", default=True, help="Save embedding log in all emission step")
 
     # ===== decoding layer setting =======
     # CRF setting
@@ -217,6 +213,7 @@ def option_check(opt):
         opt.save_feature = False
         opt.cpt_per_epoch = 1
         opt.allow_override = True
+        opt.verbose = True
 
     if not(opt.local_rank == -1 or opt.no_cuda):
         if opt.fp16:
