@@ -185,10 +185,11 @@ def main():
         logging.info('best_model:{}'.format(best_model))
         logging.info('dev:{}, test:{}'.format(best_dev_score, test_score))
 
-    ''' testing '''
+    # 测试
     if opt.do_predict:
         logging.info("***** Perform testing *****")
         tester = tester_class(opt, device, n_gpu)
+        # 应对直接测试时，从目录寻找最优的模型
         if not best_model:  # no trained model load it from disk.
             if not opt.saved_model_path or not os.path.exists(opt.saved_model_path):
                 raise ValueError("No model trained and no trained model file given (or not exist)")
