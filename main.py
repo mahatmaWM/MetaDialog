@@ -163,6 +163,7 @@ def main():
             logging.info('========== Warmup training finished! ==========')
 
         # 真正的训练
+        logging.info('========== real training begin! ==========')
         trained_model, best_dev_score, test_score = trainer.do_train(training_model,
                                                                      train_features,
                                                                      opt.num_train_epochs,
@@ -171,15 +172,17 @@ def main():
                                                                      test_features,
                                                                      test_id2label,
                                                                      best_dev_score_now=0)
+        logging.info('========== real training end! ==========')
 
-        # decide the best model
         # 挑选效果最好的那个模型
         if not opt.eval_when_train:  # select best among check points
-            logging.info('eval_when_train:{}'.format(best_dev_score, test_score))
+            logging.info('eval_when_train is False')
             best_model, best_score, test_score_then = trainer.select_model_from_check_point(
                 train_id2label, dev_features, dev_id2label, test_features, test_id2label, rm_cpt=opt.delete_checkpoint)
         else:  # best model is selected during training
+            logging.info('eval_when_train is True')
             best_model = trained_model
+        logging.info('best_model:{}'.format(best_model))
         logging.info('dev:{}, test:{}'.format(best_dev_score, test_score))
 
     ''' testing '''
