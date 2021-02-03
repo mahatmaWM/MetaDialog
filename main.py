@@ -175,6 +175,7 @@ def main():
         # decide the best model
         # 挑选效果最好的那个模型
         if not opt.eval_when_train:  # select best among check points
+            logging.info('eval_when_train:{}'.format(best_dev_score, test_score))
             best_model, best_score, test_score_then = trainer.select_model_from_check_point(
                 train_id2label, dev_features, dev_id2label, test_features, test_id2label, rm_cpt=opt.delete_checkpoint)
         else:  # best model is selected during training

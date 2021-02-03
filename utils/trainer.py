@@ -283,6 +283,7 @@ class TrainerBase:
                                       test_id2label=None,
                                       rm_cpt=True):
         all_cpt_file = list(filter(lambda x: '.cpt.pl' in x, os.listdir(self.opt.output_dir)))
+        logging.info('select_model_from_check_point:{}'.format(all_cpt_file))
         best_score = 0
         test_score_then = 0
         best_model = None
