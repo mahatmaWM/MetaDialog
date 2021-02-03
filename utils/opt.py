@@ -27,20 +27,21 @@ def basic_args(parser):
     group = parser.add_argument_group('Function')
     parser.add_argument("--task", default='sc', choices=['sl', 'sc'],
                         help="Task: sl:sequence labeling, sc:single label sent classify")
-    group.add_argument('--allow_override', default=True, action='store_true', help='allow override experiment file')
-    group.add_argument('--load_feature', default=False, action='store_true', help='load feature from file')
-    group.add_argument('--save_feature', default=False, action='store_true', help='save feature to file')
-    group.add_argument("--do_train", default=True, action='store_true', help="Whether to run training.")
-    group.add_argument("--do_predict", default=True, action='store_true', help="Whether to run eval on the dev set.")
-    group.add_argument("--do_overfit_test", default=False, action='store_true', help="debug model, test/dev on train")
+    group.add_argument('--allow_override', default=True, help='allow override experiment file')
+    group.add_argument('--load_feature', default=False, help='load feature from file')
+    group.add_argument('--save_feature', default=False, help='save feature to file')
+    group.add_argument("--do_train", default=True, help="Whether to run training.")
+    group.add_argument("--do_predict", default=True, help="Whether to run eval on the dev set.")
+    group.add_argument("--do_overfit_test", default=False, help="debug model, test/dev on train")
     group.add_argument('--seed', type=int, default=42, help="the ultimate answer")
+    group.add_argument("--verbose", default=False, help="Verbose logging")
     # TODO 调试时用
-    group.add_argument("--do_debug", default=False, action='store_true', help="debug model, only load few data.")
+    group.add_argument("--do_debug", default=False, help="debug model, only load few data.")
 
 
     group = parser.add_argument_group('Device')  # default to use all available GPUs
     group.add_argument("--local_rank", type=int, default=-1, help="local_rank for distributed training on gpus")
-    group.add_argument("--no_cuda", default=False, action='store_true', help="Whether not to use CUDA when available")
+    group.add_argument("--no_cuda", default=False, help="Whether not to use CUDA when available")
     return parser
 
 
