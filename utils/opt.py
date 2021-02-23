@@ -134,7 +134,7 @@ def model_args(parser):
                        help="(For MNet) Divide emission by each tag's token num in support set")
 
     group = parser.add_argument_group('Decoder')
-    group.add_argument("--decoder", default='crf', type=str, choices=['crf', 'sms', 'rule', 'sc'],
+    group.add_argument("--decoder", default='crf', type=str, choices=['crf', 'sms', 'rule'],
                        help="decode method")
 
     # ===== emission layer setting =========

@@ -118,6 +118,7 @@ class FewShotTester(TesterBase):
         data_loader = DataLoader(dataset, sampler=sampler, batch_size=self.batch_size, collate_fn=pad_collate)
         return data_loader
 
+    # TODO 这里为什么sl的时候每次计算出来的都是0
     def eval_predictions(self, all_results: List[RawResult], id2label: dict, log_mark: str) -> float:
         """ Our result score is average score of all few-shot batches. """
         all_batches = self.reform_few_shot_batch(all_results)

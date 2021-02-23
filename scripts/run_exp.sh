@@ -99,7 +99,7 @@ do
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
                                                 --output_dir ${data_dir}${model_name}.DATA.${file_mark} \
-                                                --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
+                                                # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
                                                 --bert_path ${pretrained_model_path} \
                                                 --bert_vocab ${pretrained_vocab_path} \
                                                 --train_batch_size ${train_batch_size} \

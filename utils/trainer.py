@@ -265,7 +265,7 @@ class TrainerBase:
                     test_model.label_mask = self.opt.test_label_mask.to(self.device)
 
                 test_score = self.tester.do_test(test_model, test_features, test_id2label, log_mark='test_pred')
-                logging.info("test score(F1) = {}".format(test_score))
+                logging.info("  test score(F1) = {}".format(test_score))
         # reset the model status
         model.train()
         return dev_score, test_score, best_model
