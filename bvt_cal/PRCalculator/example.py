@@ -14,7 +14,7 @@ from calculator.nlu_pr_calculator import NluPRCalculator
 data = load_data_by_json()
 # data = load_data()
 
-print len(data)
+print(len(data))
 df = format(data)
 
 compare_columns = [['true_domain_name', 'pred_domain_name'],
@@ -44,8 +44,8 @@ nlu_pr_handle = NluPRCalculator(
 
 
 cal_df, cal_case_df = nlu_pr_handle.cal()
-print cal_df
-print '--' * 20
+print(cal_df)
+print('--' * 20)
 a = [1, 2, 3]
 index = [i for i, x in enumerate(a) if x == 1]
-print index
+print(index)

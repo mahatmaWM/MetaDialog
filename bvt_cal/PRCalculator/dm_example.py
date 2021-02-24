@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 import sys
-from PRCalculator.calculator.dm_prf_calculator import DMMetricsCal
-from PRCalculator.compare.compare_based import CompareBased
+from ..PRCalculator.calculator.dm_prf_calculator import DMMetricsCal
+from ..PRCalculator.compare.compare_based import CompareBased
 
 
 def example(df):
@@ -30,6 +30,7 @@ def example(df):
 
     final_metrics, final_case, ori_df = dm_metrics_handle.cal(df=dataframe)
     return final_metrics, final_case, ori_df
+
 
 if __name__ == "__main__":
     import pandas as pd

@@ -5,6 +5,7 @@
 # @Email : jacobjzhang@tencent.com
 # @File  : nlu_pr_example.py
 
+
 import pandas as pd
 from calculator.nlu_pr_calculator import NluPRCalculator
 
@@ -12,6 +13,7 @@ from calculator.nlu_pr_calculator import NluPRCalculator
 def app_key_domain():
     """按照app_key统计domain的指标"""
     data_frame = pd.read_excel('nlu_example.xlsx')
+    # data_frame.head(6)
     right_level_column = 'compare_result'  # 指定正确等级的列名
     label_columns = ['domain_name', 'intent_name', 'slots']  # 指定true, pred列名(脱敏于true_**, pred_**)
     unique_columns = ['corpus_id']   # 可唯一代表数据的列名（数据可存在多行, 表示多组true, pred关系）
@@ -28,9 +30,9 @@ def app_key_domain():
     )
 
     cal_df, cal_case_df = nlu_pr_handle.cal()
-    print '--' * 10, 'app_key_domain',  '--' * 10
-    print cal_df.head()
-    print '----' * 20, '\n\n'
+    print('--' * 10, 'app_key_domain',  '--' * 10)
+    print(cal_df.head())
+    print('----' * 20, '\n\n')
 
 
 def domain_slots():
@@ -52,9 +54,9 @@ def domain_slots():
     )
 
     cal_df, cal_case_df = nlu_pr_handle.cal()
-    print '--' * 10, 'domain_slots', '--' * 10
-    print cal_df.head()
-    print '----' * 20, '\n\n'
+    print('--' * 10, 'domain_slots', '--' * 10)
+    print(cal_df.head())
+    print('----' * 20, '\n\n')
 
 
 def app_key_domain_intent():
@@ -76,11 +78,11 @@ def app_key_domain_intent():
     )
 
     cal_df, cal_case_df = nlu_pr_handle.cal()
-    print '--' * 10, 'app_key_domain_intent', '--' * 10
+    print('--' * 10, 'app_key_domain_intent', '--' * 10)
     cal_df = cal_df.sort_values(by=['domain_name'])
-    print cal_df.head()
-    print '----' * 20, '\n\n'
-    print cal_case_df.head()
+    print(cal_df.head())
+    print('----' * 20, '\n\n')
+    print(cal_case_df.head())
 
 
 def main():
