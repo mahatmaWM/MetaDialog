@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 import sys
-from ..PRCalculator.calculator.dm_prf_calculator import DMMetricsCal
-from ..PRCalculator.compare.compare_based import CompareBased
+from calculator.dm_prf_calculator import DMMetricsCal
+from compare.compare_based import CompareBased
 
 
 def example(df):
@@ -14,12 +14,12 @@ def example(df):
     label_columns = ('domain_name', 'intent_name', 'slots')
 
     unique_columns = ('corpus_id', )
-    agg_columns = ('app_key', 'domain_name')
+    agg_columns = ('domain_name',)
     compare_handle = CompareBased()
 
     compare_result = 'compare_result'
-    dataframe = compare_handle.compare(compare_columns=label_columns,
-                                       data_frame=df, result_column=compare_result)
+    # dataframe = compare_handle.compare(compare_columns=label_columns,
+    #                                    data_frame=df, result_column=compare_result)
 
     dm_metrics_handle = DMMetricsCal(
         compare_result_column=compare_result,
@@ -28,12 +28,14 @@ def example(df):
         label_columns=label_columns,
     )
 
-    final_metrics, final_case, ori_df = dm_metrics_handle.cal(df=dataframe)
-    return final_metrics, final_case, ori_df
+    final_metrics, final_case = dm_metrics_handle.cal(data_frame=df)
+    return final_metrics, final_case
 
 
 if __name__ == "__main__":
     import pandas as pd
-    df = pd.read_excel('nlu_example.xlsx')
-    final_metrics, final_case, ori_df = example(df=df)
-    print(final_metrics.head())
+    # df = pd.read_excel('nlu_example.xlsx')
+    df = pd.read_excel('select_data100.xlsx')
+    final_metrics, final_case = example(df=df)
+    final_metrics_all = final_metrics[final_metrics['level'] == 'all']
+    print(final_metrics_all)
