@@ -52,6 +52,8 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 # electra small path
 #pretrained_model_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
 #pretrained_vocab_path=/users4/yklai/corpus/electra/chinese_electra_small_discriminator
+
+# --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
 # data path
 base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
 
@@ -99,7 +101,6 @@ do
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
                                                 --output_dir ${data_dir}${model_name}.DATA.${file_mark} \
-                                                # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
                                                 --bert_path ${pretrained_model_path} \
                                                 --bert_vocab ${pretrained_vocab_path} \
                                                 --train_batch_size ${train_batch_size} \
@@ -123,7 +124,6 @@ do
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
                                                 --transition learn > ./log/${model_name}.DATA.${file_mark}.log
-                                                # --load_feature > ./log/${model_name}.DATA.${file_mark}.log
                                         done
                                     done
                                 done
