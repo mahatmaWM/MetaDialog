@@ -29,7 +29,7 @@ def basic_args(parser):
                         help="Task: sl:sequence labeling, sc:single label sent classify")
     group.add_argument('--allow_override', default=True, help='allow override experiment file')
     group.add_argument('--load_feature', default=False, help='load feature from file')
-    group.add_argument('--save_feature', default=False, help='save feature to file')
+    group.add_argument('--save_feature', default=True, help='save feature to file')
     group.add_argument("--do_train", default=True, help="Whether to run training.")
     group.add_argument("--do_predict", default=True, help="Whether to run eval on the dev set.")
     group.add_argument("--do_overfit_test", default=False, help="debug model, test/dev on train")
@@ -211,7 +211,7 @@ def option_check(opt):
         if not opt.do_overfit_test:
             opt.num_train_epochs = 3
         opt.load_feature = False
-        opt.save_feature = False
+        opt.save_feature = True
         opt.cpt_per_epoch = 1
         opt.allow_override = True
         opt.verbose = True

@@ -37,6 +37,7 @@ def get_training_data_and_feature(opt, data_loader, preprocessor):
                 get_training_data_and_feature(opt, data_loader, preprocessor)
             opt.load_feature, opt.save_feature = True, False  # restore option
     else:
+        # TODO train_max_len 二维list才是存的batch比较直接的信息？？？
         train_examples, train_max_len, train_max_support_size = data_loader.load_data(path=opt.train_path)
         dev_examples, dev_max_len, dev_max_support_size = data_loader.load_data(path=opt.dev_path)
         train_label2id, train_id2label = make_dict(opt, train_examples)

@@ -81,7 +81,6 @@ class FewShotTextClassifier(torch.nn.Module):
         if self.training:
             loss = self.decoder.forward(logits=logits, mask=test_output_mask, tags=test_target)
         else:
-
             prediction = self.decoder.decode(logits=logits)
             # we block pad label(id=0) before by - 1, here, we add 1 back
             prediction = self.add_back_pad_label(prediction)

@@ -83,17 +83,17 @@ class FewShotRawDataLoader(RawDataLoaderBase):
             # Notice: the batch here means few shot batch, not training batch
             for batch_id, batch in enumerate(domain):
                 one_batch_examples = []
-                support_data_items, test_data_items = self.batch2data_items(batch)
+                support_data_items, query_data_items = self.batch2data_items(batch)
                 all_support_size.append(len(support_data_items))
                 ''' Pair each test sample with full support set '''
-                for test_id, test_data_item in enumerate(test_data_items):
+                for query_id, query_data_item in enumerate(query_data_items):
                     gid = len(examples)
                     example = FewShotExample(
                         gid=gid,
                         batch_id=batch_id,
-                        test_id=test_id,
+                        test_id=query_id,
                         domain_name=domain_n,
-                        test_data_item=test_data_item,
+                        test_data_item=query_data_item,
                         support_data_items=support_data_items,
                     )
                     examples.append(example)
@@ -104,8 +104,8 @@ class FewShotRawDataLoader(RawDataLoaderBase):
 
     def batch2data_items(self, batch: dict) -> (List[DataItem], List[DataItem]):
         support_data_items = self.get_data_items(parts=batch['support'])
-        test_data_items = self.get_data_items(parts=batch['query'])
-        return support_data_items, test_data_items
+        query_data_items = self.get_data_items(parts=batch['query'])
+        return support_data_items, query_data_items
 
     def get_data_items(self, parts: dict) -> List[DataItem]:
         data_item_lst = []

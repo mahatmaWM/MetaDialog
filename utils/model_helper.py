@@ -106,6 +106,7 @@ def make_model(opt, config):
         emission_scorer = TapNetEmissionScorer(similarity_scorer, ems_scaler)
     else:
         raise TypeError('wrong component type')
+
     ''' Build decoder '''
     if opt.task == 'sl':  # for sequence labeling
         if opt.decoder == 'sms':
@@ -141,6 +142,7 @@ def make_model(opt, config):
                                                                      label_scaler=label_trans_scaler)
             else:
                 raise ValueError('Wrong choice of transition.')
+
             if opt.add_transition_rules and 'id2label' in config:  # 0 is [PAD] label id, here remove it.
                 non_pad_id2label = copy.deepcopy(config['id2label']).__delitem__(0)
                 for k, v in non_pad_id2label.items():
@@ -156,6 +158,7 @@ def make_model(opt, config):
         decoder = SingleLabelTextClassifier()
     else:
         raise TypeError('wrong task type')
+
     ''' Build the whole model '''
     if opt.task == 'sl':
         seq_labeler = SchemaFewShotSeqLabeler if opt.use_schema else FewShotSeqLabeler
