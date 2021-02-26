@@ -110,7 +110,7 @@ class TrainerBase:
 
         for epoch_id in trange(int(num_train_epochs), desc="Epoch"):
             for step, batch in enumerate(tqdm(data_loader, desc="Train-Batch Progress")):
-                print()
+                # logging.info('batch={}'.format(batch))
                 if self.n_gpu == 1:
                     batch = tuple(t.to(self.device) for t in batch)  # multi-gpu does scattering it-self
                 ''' loss '''

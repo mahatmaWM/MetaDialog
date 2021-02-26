@@ -18,6 +18,10 @@ from utils.trainer import FewShotTrainer, SchemaFewShotTrainer, prepare_optimize
 from utils.tester import FewShotTester, SchemaFewShotTester, eval_check_points
 from utils.model_helper import make_model, load_model
 
+import torch
+import inspect
+from utils.gpu_mem_track import MemTracker  # 引用显存跟踪代码
+
 
 def configure_logging(level=logging.INFO):
     format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
@@ -39,12 +43,15 @@ def get_training_data_and_feature(opt, data_loader, preprocessor):
     else:
         # TODO train_max_len 二维list才是存的batch比较直接的信息？？？
         train_examples, train_max_len, train_max_support_size = data_loader.load_data(path=opt.train_path)
+        logging.info('example0={}'.format(train_examples[0]))
         dev_examples, dev_max_len, dev_max_support_size = data_loader.load_data(path=opt.dev_path)
         train_label2id, train_id2label = make_dict(opt, train_examples)
         dev_label2id, dev_id2label = make_dict(opt, dev_examples)
         logging.info(' Finish train dev prepare dict ')
         train_features = preprocessor.construct_feature(train_examples, train_max_support_size, train_label2id,
                                                         train_id2label)
+        logging.info('train_label2id={}'.format(json.dumps(train_label2id, ensure_ascii=False, indent=2)))
+        logging.info('train_features0={}'.format(train_features[0]))
         dev_features = preprocessor.construct_feature(dev_examples, dev_max_support_size, dev_label2id, dev_id2label)
         logging.info(' Finish prepare train dev features ')
 
@@ -72,12 +79,16 @@ def get_testing_data_feature(opt, data_loader, preprocessor):
         logging.info(' Finish prepare test feature')
         if opt.save_feature:
             save_feature(opt.test_path.replace('.json', '.saved.pk'), test_features, test_label2id, test_id2label)
+            # save_feature1(opt.test_path.replace('.json', '.test_feature.json'), test_features, test_label2id, test_id2label)
     return test_features, test_label2id, test_id2label
 
 
 def main():
     """ to start the experiment """
     ''' set option '''
+    frame = inspect.currentframe()
+    gpu_tracker = MemTracker(frame)      # 创建显存检测对象
+    gpu_tracker.track()                  # 开始检测
     parser = argparse.ArgumentParser()
     parser = define_args(parser, basic_args, train_args, test_args, preprocess_args, model_args)
     opt = parser.parse_args()
@@ -87,9 +98,11 @@ def main():
     device, n_gpu = set_device_environment(opt)
     os.makedirs(opt.output_dir, exist_ok=True)
     logging.info("Environment: device={}, n_gpu={}".format(device, n_gpu))
+    gpu_tracker.track()                  # 开始检测
     ''' data & feature '''
     data_loader = FewShotRawDataLoader(opt)
     preprocessor = make_preprocessor(opt)
+    gpu_tracker.track()                  # 开始检测
     # 训练数据准备
     if opt.do_train:
         train_features, train_label2id, train_id2label, dev_features, dev_label2id, dev_id2label = \
@@ -105,6 +118,7 @@ def main():
         if opt.mask_transition and opt.task == 'sl':
             opt.train_label_mask = None
             opt.dev_label_mask = None
+    gpu_tracker.track()                  # 开始检测
     # 预测数据准备
     if opt.do_predict:
         test_features, test_label2id, test_id2label = get_testing_data_feature(opt, data_loader, preprocessor)
@@ -122,6 +136,9 @@ def main():
     ''' select training & testing mode '''
     trainer_class = SchemaFewShotTrainer if opt.use_schema else FewShotTrainer
     tester_class = SchemaFewShotTester if opt.use_schema else FewShotTester
+
+    gpu_tracker.track()                  # 开始检测
+
     ''' training '''
     best_model = None
     if opt.do_train:
@@ -133,7 +150,18 @@ def main():
         else:
             training_model = make_model(opt, config={'num_tags': len(train_label2id)})
 
+        gpu_tracker.track()                  # 开始检测
         training_model = prepare_model(opt, training_model, device, n_gpu)
+        gpu_tracker.track()                  # 开始检测
+        # TODO 增加显存相关的检测
+        import numpy as np
+        para = sum([np.prod(list(p.size())) for p in training_model.parameters()])
+        type_size = 4
+        logging.info('Model {} : params: {:4f}M'.format(training_model._get_name(), para * type_size / 1000 / 1000))
+
+
+
+
         if opt.mask_transition and opt.task == 'sl':
             training_model.label_mask = opt.train_label_mask.to(device)
 
