@@ -56,7 +56,7 @@ def preprocess_args(parser):
 
 def train_args(parser):
     group = parser.add_argument_group('Train')
-    group.add_argument("--restore_cpt", action='store_true', help="Restart training from a checkpoint ")
+    group.add_argument("--restore_cpt", default=False, help="Restart training from a checkpoint ")
     group.add_argument("--cpt_per_epoch", default=2, type=int, help="The num of check points of each epoch")
     group.add_argument("--convergence_window", default=5000, type=int,
                        help="A observation window for early stop when model is in convergence, set <0 to disable")

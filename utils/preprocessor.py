@@ -9,6 +9,7 @@ from transformers import BertTokenizer
 from utils.data_loader import FewShotExample, DataItem
 from utils.iter_helper import pad_tensor
 from utils.config import SP_TOKEN_NO_MATCH, SP_LABEL_O, SP_TOKEN_O
+import logging
 
 
 FeatureItem = collections.namedtuple(   # text or raw features
@@ -608,6 +609,7 @@ def make_mask(token_ids: torch.Tensor, label_ids: torch.Tensor) -> (torch.Tensor
 
 
 def save_feature(path, features, label2id, id2label):
+    logging.info('feature path={}'.format(path))
     with open(path, 'wb') as writer:
         saved_features = {
             'features': features,
@@ -615,6 +617,16 @@ def save_feature(path, features, label2id, id2label):
             'id2label': id2label,
         }
         pickle.dump(saved_features, writer)
+
+def save_feature1(path, features, label2id, id2label):
+    logging.info('feature path={}'.format(path))
+    with open(path, 'wb') as writer:
+        saved_features = {
+            'features': features,
+            'label2id': label2id,
+            'id2label': id2label,
+        }
+        json.dump(saved_features, writer, ensure_ascii=False, indent=2)
 
 
 def load_feature(path):
