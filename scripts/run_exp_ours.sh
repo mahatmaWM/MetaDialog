@@ -5,8 +5,8 @@ echo eg: source scripts/run_exp.sh 0
 
 # TODO 使用哪些GPU 任务切换
 gpu_list=$1
-#task=sc
-task=sl
+task=sc
+#task=sl
 epoch=3
 
 # ====== 尝试的各种参数组合 ======
@@ -55,8 +55,8 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 
 # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
 # data path
-base_data_dir=../FewJoint/SMP_Final_Origin2_3/
-#base_data_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
+#base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
+base_data_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
 
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
