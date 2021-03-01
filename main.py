@@ -87,7 +87,7 @@ def main():
     """ to start the experiment """
     ''' set option '''
     frame = inspect.currentframe()
-    gpu_tracker = MemTracker(frame, verbose=False, device=1)      # 创建显存检测对象
+    gpu_tracker = MemTracker(frame, verbose=False, device=0)      # 创建显存检测对象
     gpu_tracker.track()                  # 开始检测
     parser = argparse.ArgumentParser()
     parser = define_args(parser, basic_args, train_args, test_args, preprocess_args, model_args)
