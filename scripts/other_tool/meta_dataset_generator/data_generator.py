@@ -235,6 +235,8 @@ class MiniIncludeGenerator(DataGeneratorBase):
                     repeat_num -= 1
             else:
                 self.add_data_to_set(remained_data, s_in, s_out, lb)
+        logging.info('selected_data={}'.format(selected_data))
+        logging.info('remained_data={}'.format(remained_data))
 
         if self.opt.check:
             # check support shot

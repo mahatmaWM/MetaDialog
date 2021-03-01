@@ -6,11 +6,13 @@ echo eg: source gen_mate_data.sh
 dataset_lst=(smp)
 
 # ======= size setting ======
+# 一个episode中，每个意图包含多少个support样本（比如domain下面有3个意图就是9个样本）
 support_shots_lst=(3)
 #support_shots_lst=(5)
-episode_num=50  # We could over generation and select part of for each epoch
 query_shot=4
-word_piece_data=True
+
+# 控制一个epoch里面有多少个episode
+episode_num=50
 way=-1
 
 remove_rate=80
@@ -20,8 +22,8 @@ remove_rate=80
 seed_lst=(0)
 
 # TODO 任务切换
-task=sc
-# task=sl
+# task=sc
+task=sl
 
 #dup_query=--dup_query  # dup_query set empty to not allow duplication between query and support
 dup_query=
@@ -32,19 +34,18 @@ check=--check
 
 # ====== train & test setting ======
 split_basis=domain
+# split_basis=sent_label
 
 #eval_confif_id_lst=(1)  # for snips
 #eval_config_id_lst=(0 1 2 3 4 5)  # for toursg
 label_type_lst=(attribute)
 
 #use_fix_support=
-use_fix_support=--use_fix_support
+# use_fix_support=--use_fix_support
 
 # ======= default path (for quick distribution) ==========
-# input_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_3/
-# output_dir=/Users/wangming/workspace/MetaDialog/FewJoint/SMP_Final_Origin2_3/
-input_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
-output_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
+input_dir=../FewJoint/SMP_Final_Origin2_3/
+output_dir=../FewJoint/SMP_Final_Origin2_3/
 
 echo \[START\] set jobs on dataset \[ ${dataset_lst[@]} \]
 # === Loop for all case and run ===
@@ -71,8 +72,7 @@ do
         --seed ${seed} \
         --split_basis ${split_basis} \
         --remove_rate ${remove_rate} \
-        ${use_fix_support} \
-        --mark ${mark} ${dup_query} ${allow_override} ${check} > ${output_dir}${dataset}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode_num}${use_fix_support}.log
+        --mark ${mark} ${dup_query} ${allow_override} ${check} > ${output_dir}${task}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode_num}.log
     done
   done
 done
