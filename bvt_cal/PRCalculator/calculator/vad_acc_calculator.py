@@ -30,7 +30,7 @@
 import sys
 import pandas as pd
 
-reload(sys)
+# reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
@@ -129,5 +129,5 @@ if __name__ == "__main__":
     vad_handle = VadCalculator(data_frame=df, agg_columns=['domain', ],
                                unique_columns=['session_id', ])
     metrics_df, case_info = vad_handle.cal()
-    print metrics_df
-    print case_info.head()
+    print(metrics_df)
+    print(case_info.head())

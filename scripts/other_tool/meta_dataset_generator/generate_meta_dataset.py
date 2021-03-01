@@ -9,9 +9,16 @@ from raw_data_loader import RawDataLoaderBase, SMPDataLoader
 from data_generator import DataGeneratorBase, MiniIncludeGenerator, VanillaDataGenerator
 from data_statistic import raw_data_statistic, label_stats, multi_label_stats, few_shot_data_statistic
 
+<<<<<<< HEAD
 # DEFAULT_ID = '0'
 # DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
 
+=======
+DEFAULT_ID = '0'
+DEFAULT_INPUT_PATH = 'F:\git\MetaDialog\FewJoint\SMP_Final_Origin2_3\\'
+DEFAULT_OUTPUT_DIR = 'F:\git\MetaDialog\FewJoint\SMP_Final_Origin2_3\\'
+DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
+>>>>>>> dbf05d993ba230641cacea1e2c3dee02a4090680
 
 def configure_logging(level=logging.INFO):
     format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
@@ -156,11 +163,17 @@ def split_eval_set_with_domain(opt, few_shot_data):
 def main():
     parser = argparse.ArgumentParser()
     # file path
+<<<<<<< HEAD
     parser.add_argument("--input_path", type=str, default='', help="path to the raw data dir")
     parser.add_argument("--output_dir", type=str, default='', help="path to the result data dir")
     parser.add_argument("--dataset",
                         default='smp',
                         help='dataset name to be processed',
+=======
+    parser.add_argument("--input_path", type=str, default=DEFAULT_INPUT_PATH, help="path to the raw data dir")
+    parser.add_argument("--output_dir", type=str, default=DEFAULT_OUTPUT_DIR, help="path to the result data dir")
+    parser.add_argument("--dataset", default='smp', help='dataset name to be processed',
+>>>>>>> dbf05d993ba230641cacea1e2c3dee02a4090680
                         choices=['atis', 'stanford', 'toursg', 'snips', 'smp'])
 
     # data size

@@ -196,8 +196,8 @@ class MiniIncludeGenerator(DataGeneratorBase):
         ''' Step1: Sample learning shots, and record the selected data's id '''
         for label in label_set:
             while shot_counts[label] < support_shot_num:
-                sampled_id = random.choice(
-                    tmp_label_bucket[label])  # sample 1 data from all data contains current label.
+                sampled_id = random.choice(tmp_label_bucket[label])  # sample 1 data from all data contains current label.
+                # 如果这个id被选中了，就从tem_label_bucket中删除，避免再次选中
                 self.update_label_bucket(sampled_id, tmp_label_bucket, d_id2label)  # remove selected data ids
                 self.update_shot_counts(sampled_id, shot_counts, d_id2label)  # +1 shot for all labels of sampled data
                 selected_data_ids.append(sampled_id)
@@ -300,6 +300,7 @@ class MiniIncludeGenerator(DataGeneratorBase):
         """ remove selected data ids """
         labels = d_id2label[sampled_id]
         for label in labels:
+            # TODO 如果选中的这个data_id在tmp_label_bucket中，则删掉？？那如果是重复采样的，是不是就把重复的地方全都删掉了？？？
             if sampled_id in tmp_label_bucket[label]:
                 tmp_label_bucket[label].remove(sampled_id)
 
