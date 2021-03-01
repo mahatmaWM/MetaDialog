@@ -22,8 +22,8 @@ remove_rate=80
 seed_lst=(0)
 
 # TODO 任务切换
-#task=sc
-task=sl
+task=sc
+#task=sl
 
 #dup_query=--dup_query  # dup_query set empty to not allow duplication between query and support
 dup_query=
@@ -44,8 +44,11 @@ label_type_lst=(attribute)
 # use_fix_support=--use_fix_support
 
 # ======= default path (for quick distribution) ==========
-input_dir=../FewJoint/SMP_Final_Origin2_3/
-output_dir=../FewJoint/SMP_Final_Origin2_3/
+#input_dir=../FewJoint/SMP_Final_Origin2_3/data/shiyuanyang/MetaDialog
+input_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
+output_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
+
+#output_dir=../FewJoint/SMP_Final_Origin2_3/
 
 echo \[START\] set jobs on dataset \[ ${dataset_lst[@]} \]
 # === Loop for all case and run ===
