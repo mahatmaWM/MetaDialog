@@ -236,10 +236,9 @@ def main():
 
     data_loader = build_data_loader(opt)
     raw_data = data_loader.load_data(opt.input_path)
-    raw_data_statistic(opt, raw_data)
-    # if opt.check:
-        # if opt.dataset != 'smp':
-            # raw_data_statistic(opt, raw_data)
+    if opt.check:
+        if opt.dataset != 'smp':
+            raw_data_statistic(opt, raw_data)
 
     if opt.split_basis == 'sent_label':  # we pre-split domain by sentence level label
         raw_data = split_eval_set_with_label(opt, raw_data)

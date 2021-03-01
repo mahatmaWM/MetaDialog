@@ -84,22 +84,14 @@ class MiniIncludeGenerator(DataGeneratorBase):
             label_bucket, d_id2label = self.get_label_bucket(domain_data)
             # 去掉不合法的label（默认至少出现2次以上）
             all_labels, del_labels = self.get_all_label_set(label_bucket)  # get all label and filter bad labels
-
             ''' remove the samples who has deleted labels'''
             label_bucket = self.del_samples_in_label_bucket(label_bucket, del_labels)
 
             for episode_id in range(self.opt.episode_num):  # sample few-shot episodes
 
                 label_set = self.sample_label_set(all_labels)
-                logging.info('label_set={}'.format(label_set))
-                logging.info('domain_data={}'.format(domain_data))
-                logging.info('label_bucket={}'.format(label_bucket))
-                logging.info('d_id2label={}'.format(d_id2label))
                 # TODO 这里的label会根据sc和sl任务而定
                 support_set, remained_data = self.sample_support_set(domain_data, label_set, label_bucket, d_id2label)
-                logging.info('self.opt.dup_query={}'.format(self.opt.dup_query))
-                logging.info('remained_data={}'.format(remained_data))
-                logging.info('label_set={}'.format(label_set))
                 query_set = self.get_query_set(domain_data if self.opt.dup_query else remained_data, label_set)
                 episodes.append({'support': support_set, 'query': query_set})
                 if episode_id % 100 == 0:
@@ -235,8 +227,6 @@ class MiniIncludeGenerator(DataGeneratorBase):
                     repeat_num -= 1
             else:
                 self.add_data_to_set(remained_data, s_in, s_out, lb)
-        logging.info('selected_data={}'.format(selected_data))
-        logging.info('remained_data={}'.format(remained_data))
 
         if self.opt.check:
             # check support shot
@@ -244,12 +234,12 @@ class MiniIncludeGenerator(DataGeneratorBase):
                 selected_labels = list(itertools.chain.from_iterable(selected_data['labels']))
             elif self.opt.task == 'sl':
                 selected_labels = list(itertools.chain.from_iterable(selected_data['seq_outs']))
-            logging.info('selected_labels = {}'.format(selected_labels))
+            # logging.info('selected_labels = {}'.format(selected_labels))
             label_shots = Counter(selected_labels)
-            logging.info('label_shots = {}'.format(label_shots))
+            # logging.info('label_shots = {}'.format(label_shots))
             error_shot = False
             for lb, s in label_shots.items():
-                logging.info('lb={},s={},support_shots={}'.format(lb, s, self.opt.support_shots))
+                # logging.info('lb={},s={},support_shots={}'.format(lb, s, self.opt.support_shots))
                 if s < self.opt.support_shots:
                     error_shot = True
                     logging.info("Error: Lack shots: lb={}, s={}".format(lb, s))
@@ -266,25 +256,22 @@ class MiniIncludeGenerator(DataGeneratorBase):
 
     def get_query_set(self, data_part, label_set):
         idxes = list(range(len(data_part['seq_ins'])))
-        # logging.info('idxes={}, len={}'.format(idxes, len(idxes)))
         random.shuffle(idxes)
         query_set = {'seq_ins': [], 'labels': [], 'seq_outs': []}
         i = 0
 
         total_data = len(data_part['labels'])
         while len(query_set['labels']) < self.opt.query_shot and len(query_set['labels']) < total_data:
-            logging.info('query set size={}, opt.query_shot={}, total_data={}'.format(len(query_set['labels']), self.opt.query_shot, total_data))
-            if i >= len(idxes):
-                i = i % len(idxes)
-            # logging.info('idxes[{}]={}'.format(i, idxes[i]))
             d_id = idxes[i]
             s_in, s_out, lb = data_part['seq_ins'][d_id], data_part['seq_outs'][d_id], data_part['labels'][d_id]
-            logging.info('sin={},sout={},lb={}'.format(s_in, s_out, lb))
+            if self.opt.task == 'sl':
+                lb = s_out
+
             if set(lb) & set(label_set):  # select data contain current label set
                 if self.opt.way > 0:  # remove non-label_set labels
                     s_out, lb = self.remove_out_set_labels(s_out, lb, label_set)
                 # 把数据添加到query-set里面
-                logging.info('sin={},sout={},lb={}'.format(s_in, s_out, lb))
+                # logging.info('sin={},sout={},lb={}'.format(s_in, s_out, lb))
                 self.add_data_to_set(query_set, s_in, s_out, lb)
                 if self.opt.check and (set(data_part['labels'][d_id]) - set(label_set)):
                     logging.info('Abandon labels:{}'.format(set(data_part['labels'][d_id]) - set(label_set)))
