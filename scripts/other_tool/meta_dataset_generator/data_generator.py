@@ -4,12 +4,14 @@ import random
 from typing import Dict, List, Tuple
 import copy
 import itertools
+import logging
 from collections import Counter
 
 O_LABEL = 'O'
 
 
 class DataGeneratorBase:
+
     def __init__(self, opt):
         self.opt = opt
 
@@ -19,6 +21,7 @@ class DataGeneratorBase:
 
 class VanillaDataGenerator(DataGeneratorBase):
     """ Simple data generator for N-way K-shot few-shot data set. """
+
     def __init__(self, opt):
         super(VanillaDataGenerator, self).__init__(opt)
 
@@ -39,9 +42,7 @@ class VanillaDataGenerator(DataGeneratorBase):
         """
         all_data = {}
         for domain_name, domain_data in raw_data.items():
-            all_data[domain_name] = {
-                'support': {'seq_ins': [], 'labels': [], 'seq_outs': []},
-                'query': domain_data}
+            all_data[domain_name] = {'support': {'seq_ins': [], 'labels': [], 'seq_outs': []}, 'query': domain_data}
         return all_data
 
 
@@ -50,6 +51,7 @@ class MiniIncludeGenerator(DataGeneratorBase):
     Data generator for the situation that one sample can have multiple label, for example: a sentence may have multiple
     slot or belong to multiple classes.
     """
+
     def __init__(self, opt):
         super(MiniIncludeGenerator, self).__init__(opt)
 
@@ -70,25 +72,38 @@ class MiniIncludeGenerator(DataGeneratorBase):
         """
         few_shot_data = {}
         abandoned_domains = []
+        # 每个domain里面的数据都构造episodes
         for domain_name, domain_data in raw_data.items():  # Sample one domain's few shot data
             episodes = []
+            # 丢弃太少的样本（默认50）
             if len(domain_data['labels']) < self.opt.min_domain_size:  # abandon too small domains.
                 abandoned_domains.append([domain_name, len(domain_data['labels'])])
                 continue
 
+            # 获取label（根据sc或者sl任务，选intent的label  或者  token的label）
             label_bucket, d_id2label = self.get_label_bucket(domain_data)
+            # 去掉不合法的label（默认至少出现2次以上）
             all_labels, del_labels = self.get_all_label_set(label_bucket)  # get all label and filter bad labels
 
             ''' remove the samples who has deleted labels'''
             label_bucket = self.del_samples_in_label_bucket(label_bucket, del_labels)
 
             for episode_id in range(self.opt.episode_num):  # sample few-shot episodes
+
                 label_set = self.sample_label_set(all_labels)
+                logging.info('label_set={}'.format(label_set))
+                logging.info('domain_data={}'.format(domain_data))
+                logging.info('label_bucket={}'.format(label_bucket))
+                logging.info('d_id2label={}'.format(d_id2label))
+                # TODO 这里的label会根据sc和sl任务而定
                 support_set, remained_data = self.sample_support_set(domain_data, label_set, label_bucket, d_id2label)
+                logging.info('self.opt.dup_query={}'.format(self.opt.dup_query))
+                logging.info('remained_data={}'.format(remained_data))
+                logging.info('label_set={}'.format(label_set))
                 query_set = self.get_query_set(domain_data if self.opt.dup_query else remained_data, label_set)
                 episodes.append({'support': support_set, 'query': query_set})
                 if episode_id % 100 == 0:
-                    print('\tDomain:', domain_name, episode_id, 'episodes finished')
+                    logging.info('\tDomain:{},{} episodes finished'.format(domain_name, episode_id))
             one_domain_few_shot_data = episodes
             few_shot_data[domain_name] = one_domain_few_shot_data
         return few_shot_data
@@ -127,7 +142,7 @@ class MiniIncludeGenerator(DataGeneratorBase):
         else:
             raise ValueError('Wrong task in args: {}!'.format(self.opt.task))
         for d_id in range(len(domain_data['seq_ins'])):
-            labels = list(set(domain_data[label_field][d_id]))   # all appeared label within a sample
+            labels = list(set(domain_data[label_field][d_id]))  # all appeared label within a sample
             for label in labels:  # add data id into buckets of labels
                 if label in label_bucket:
                     label_bucket[label].append(d_id)
@@ -170,17 +185,19 @@ class MiniIncludeGenerator(DataGeneratorBase):
         ''' Step0: duplicate the label id if some label samples number is smaller than support shot num'''
         for label in label_set:
             if len(tmp_label_bucket[label]) < support_shot_num:
+                logging.info('duplicate')
                 tmp_sample_ids = tmp_label_bucket[label]
                 while len(tmp_sample_ids) < support_shot_num:
                     dup_sample_id = random.choice(tmp_sample_ids)
                     tmp_sample_ids.append(dup_sample_id)
                 tmp_label_bucket[label] = tmp_sample_ids
-        print({k: len(v) for k, v in tmp_label_bucket.items()})
+        logging.info({k: len(v) for k, v in tmp_label_bucket.items()})
 
         ''' Step1: Sample learning shots, and record the selected data's id '''
         for label in label_set:
             while shot_counts[label] < support_shot_num:
-                sampled_id = random.choice(tmp_label_bucket[label])  # sample 1 data from all data contains current label.
+                sampled_id = random.choice(
+                    tmp_label_bucket[label])  # sample 1 data from all data contains current label.
                 self.update_label_bucket(sampled_id, tmp_label_bucket, d_id2label)  # remove selected data ids
                 self.update_shot_counts(sampled_id, shot_counts, d_id2label)  # +1 shot for all labels of sampled data
                 selected_data_ids.append(sampled_id)
@@ -195,7 +212,9 @@ class MiniIncludeGenerator(DataGeneratorBase):
                     can_remove = False
                     break
             if can_remove:
-                if random.randint(1, 100) < self.opt.remove_rate:  # Not to remove all removable data to give chances to extreme cases.
+                if random.randint(
+                        1, 100
+                ) < self.opt.remove_rate:  # Not to remove all removable data to give chances to extreme cases.
                     selected_data_ids.remove(d_id)
                     for label in to_be_removed_labels:
                         if label in shot_counts:
@@ -219,13 +238,19 @@ class MiniIncludeGenerator(DataGeneratorBase):
 
         if self.opt.check:
             # check support shot
-            selected_labels = list(itertools.chain.from_iterable(selected_data['labels']))
+            if self.opt.task == 'sc':
+                selected_labels = list(itertools.chain.from_iterable(selected_data['labels']))
+            elif self.opt.task == 'sl':
+                selected_labels = list(itertools.chain.from_iterable(selected_data['seq_outs']))
+            logging.info('selected_labels = {}'.format(selected_labels))
             label_shots = Counter(selected_labels)
+            logging.info('label_shots = {}'.format(label_shots))
             error_shot = False
             for lb, s in label_shots.items():
+                logging.info('lb={},s={},support_shots={}'.format(lb, s, self.opt.support_shots))
                 if s < self.opt.support_shots:
                     error_shot = True
-                    print("Error: Lack shots:", lb, s)
+                    logging.info("Error: Lack shots: lb={}, s={}".format(lb, s))
             if error_shot:
                 raise RuntimeError('Error in support shot number.')
 
@@ -239,27 +264,36 @@ class MiniIncludeGenerator(DataGeneratorBase):
 
     def get_query_set(self, data_part, label_set):
         idxes = list(range(len(data_part['seq_ins'])))
+        # logging.info('idxes={}, len={}'.format(idxes, len(idxes)))
         random.shuffle(idxes)
         query_set = {'seq_ins': [], 'labels': [], 'seq_outs': []}
         i = 0
 
         total_data = len(data_part['labels'])
         while len(query_set['labels']) < self.opt.query_shot and len(query_set['labels']) < total_data:
+            logging.info('query set size={}, opt.query_shot={}, total_data={}'.format(len(query_set['labels']), self.opt.query_shot, total_data))
+            if i >= len(idxes):
+                i = i % len(idxes)
+            # logging.info('idxes[{}]={}'.format(i, idxes[i]))
             d_id = idxes[i]
             s_in, s_out, lb = data_part['seq_ins'][d_id], data_part['seq_outs'][d_id], data_part['labels'][d_id]
+            logging.info('sin={},sout={},lb={}'.format(s_in, s_out, lb))
             if set(lb) & set(label_set):  # select data contain current label set
                 if self.opt.way > 0:  # remove non-label_set labels
                     s_out, lb = self.remove_out_set_labels(s_out, lb, label_set)
+                # 把数据添加到query-set里面
+                logging.info('sin={},sout={},lb={}'.format(s_in, s_out, lb))
                 self.add_data_to_set(query_set, s_in, s_out, lb)
                 if self.opt.check and (set(data_part['labels'][d_id]) - set(label_set)):
-                    print('Abandon labels:', set(data_part['labels'][d_id]) - set(label_set))
+                    logging.info('Abandon labels:{}'.format(set(data_part['labels'][d_id]) - set(label_set)))
             i += 1
         if self.opt.check:
             selected_labels = itertools.chain.from_iterable(query_set['labels'])
             diff = (set(selected_labels) - set(label_set))
             if diff:
-                print("Error: non-match label-set, \n excess: {}, \n lack: {}".format(
-                    set(selected_labels) - set(label_set), set(selected_labels) - set(label_set)))
+                logging.info("Error: non-match label-set, \n excess: {}, \n lack: {}".format(
+                    set(selected_labels) - set(label_set),
+                    set(selected_labels) - set(label_set)))
         return query_set
 
     def update_label_bucket(self, sampled_id, tmp_label_bucket, d_id2label):
@@ -290,4 +324,3 @@ class MiniIncludeGenerator(DataGeneratorBase):
                 if lb != 'O' and lb not in label_set:
                     seq_out[ind] = 'O'
         return seq_out, lb
-

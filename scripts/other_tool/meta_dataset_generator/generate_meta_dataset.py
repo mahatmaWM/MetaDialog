@@ -9,10 +9,9 @@ from raw_data_loader import RawDataLoaderBase, SMPDataLoader
 from data_generator import DataGeneratorBase, MiniIncludeGenerator, VanillaDataGenerator
 from data_statistic import raw_data_statistic, label_stats, multi_label_stats, few_shot_data_statistic
 
-DEFAULT_ID = '0'
-DEFAULT_INPUT_PATH = 'D:/Data/Project/Data/stanford/'
-DEFAULT_OUTPUT_DIR = 'D:/Data/Project/Data/MetaData/'
-DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
+# DEFAULT_ID = '0'
+# DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
+
 
 def configure_logging(level=logging.INFO):
     format = '%(asctime)s %(filename)s:%(lineno)d %(levelname)s] %(message)s'
@@ -52,9 +51,9 @@ def dump_data(opt, data):
     """
     output_dir = opt.output_dir
     logging.info('Dump data to dir: {}'.format(output_dir))
-    dump_dir_name = "{}.{}.spt_s_{}.q_s_{}.ep_{}.lt_{}.ci_{}".format(
-        opt.dataset, opt.mark, opt.support_shots, opt.query_shot, opt.episode_num, opt.label_type, opt.eval_config_id
-    )
+    dump_dir_name = "{}.{}.spt_s_{}.q_s_{}.ep_{}.lt_{}.ci_{}".format(opt.dataset, opt.mark, opt.support_shots,
+                                                                     opt.query_shot, opt.episode_num, opt.label_type,
+                                                                     opt.eval_config_id)
 
     dump_path = os.path.join(output_dir, dump_dir_name)
 
@@ -102,7 +101,8 @@ def split_eval_set_with_label(opt, raw_data):
         test_data = {'seq_ins': [], 'labels': [], 'seq_outs': []}
         for old_domain_name, old_domain in raw_data:
             for ind in range(len(old_domain['label'])):
-                seq_ins, seq_outs, labels = old_domain['seq_ins'][ind], old_domain['seq_outs'][ind], old_domain['labels'][ind]
+                seq_ins, seq_outs, labels = old_domain['seq_ins'][ind], old_domain['seq_outs'][ind], old_domain[
+                    'labels'][ind]
                 # for label in labels:
                 label = labels[0]  # we assume that co-occur label all belongs to same domain
                 if label in config['test']:
@@ -156,46 +156,74 @@ def split_eval_set_with_domain(opt, few_shot_data):
 def main():
     parser = argparse.ArgumentParser()
     # file path
-    parser.add_argument("--input_path", type=str, default=DEFAULT_INPUT_PATH, help="path to the raw data dir")
-    parser.add_argument("--output_dir", type=str, default=DEFAULT_OUTPUT_DIR, help="path to the result data dir")
-    parser.add_argument("--dataset", default='stanford', help='dataset name to be processed',
+    parser.add_argument("--input_path", type=str, default='', help="path to the raw data dir")
+    parser.add_argument("--output_dir", type=str, default='', help="path to the result data dir")
+    parser.add_argument("--dataset",
+                        default='smp',
+                        help='dataset name to be processed',
                         choices=['atis', 'stanford', 'toursg', 'snips', 'smp'])
 
     # data size
-    parser.add_argument('--episode_num', type=int, default=200,
+    parser.add_argument('--episode_num',
+                        type=int,
+                        default=200,
                         help='num of few-shot episodes, each contain a support and a query set')
-    parser.add_argument('--support_shots', type=int, default=5,
+    parser.add_argument('--support_shots',
+                        type=int,
+                        default=5,
                         help='num of learning shots of each class for K-shot setting')
     parser.add_argument('--query_shot', type=int, default=32, help='sample in a episode for few shot learning style')
-    parser.add_argument('--way', type=int, default=-1,
+    parser.add_argument('--way',
+                        type=int,
+                        default=-1,
                         help='number of classes in N-way-K-shot setting, set <=0 to use all labels (default)')
 
     # bad case filtering
-    parser.add_argument('--min_domain_size', type=int, default=50,
+    parser.add_argument('--min_domain_size',
+                        type=int,
+                        default=50,
                         help='Abandon domains that have data amount less than this value')
-    parser.add_argument('--min_label_appear', type=int, default=2,
+    parser.add_argument('--min_label_appear',
+                        type=int,
+                        default=2,
                         help='Abandon labels with appear-times less than this value, to avoid useless support sample')
 
     # general setting
-    parser.add_argument("--task", default='sc', choices=['sl', 'sc'],
+    parser.add_argument("--task",
+                        default='sc',
+                        choices=['sl', 'sc'],
                         help="Task: sl:sequence labeling, sc:single label sent classify")
-    parser.add_argument("--mark", type=str, default=DEFAULT_ID, help="A special mark in output file name to distinguish.")
+    parser.add_argument("--mark",
+                        type=str,
+                        default='0',
+                        help="A special mark in output file name to distinguish.")
     parser.add_argument('--dup_query', action='store_true', help='allow duplication between query and support set.')
     parser.add_argument('--allow_override', action='store_true', help='allow override generated data.')
     parser.add_argument('--check', action='store_true', help='check data after generation.')
-    parser.add_argument("--style", default='fs',  choices=["fs", "va"],
+    parser.add_argument("--style",
+                        default='fs',
+                        choices=["fs", "va"],
                         help="output data styles. fs: few-shot episode style, va: directly all data in few-shot format")
-    parser.add_argument('--intent_as_domain', action='store_true',
+    parser.add_argument('--intent_as_domain',
+                        action='store_true',
                         help='For sequence labeling in atis & snips, set true to separate domain using sentence-label.')
     parser.add_argument('-sd', '--seed', type=int, default=0, help='random seed, do nothing when sd < 0')
 
     # train/dev/test split
-    parser.add_argument("--split_basis", default='domain', help='basis to split the data into sub-partitions',
+    parser.add_argument("--split_basis",
+                        default='domain',
+                        help='basis to split the data into sub-partitions',
                         choices=['domain', 'sent_label'])
-    parser.add_argument("--eval_config", type=str, default=DEFAULT_CONFIG_PATH,
+    parser.add_argument("--eval_config",
+                        type=str,
+                        default='',
                         help="path json file that specify test/dev/ignore domains/labels.")
-    parser.add_argument("--eval_config_id", type=int, default=DEFAULT_ID, help="eval config id")
-    parser.add_argument("--label_type", type=str, default='both', choices=['cat', 'both', 'act', 'attribute'], help="eval config id")
+    parser.add_argument("--eval_config_id", type=int, default=0, help="eval config id")
+    parser.add_argument("--label_type",
+                        type=str,
+                        default='both',
+                        choices=['cat', 'both', 'act', 'attribute'],
+                        help="eval config id")
     parser.add_argument("--remove_rate", type=float, default=80, help="the rate for removing duplicate sample")
     parser.add_argument("--use_fix_support", default=False, action="store_true", help="use fix support in dev data")
     opt = parser.parse_args()
@@ -209,9 +237,10 @@ def main():
 
     data_loader = build_data_loader(opt)
     raw_data = data_loader.load_data(opt.input_path)
-    if opt.check:
-        if opt.dataset != 'smp':
-            raw_data_statistic(opt, raw_data)
+    raw_data_statistic(opt, raw_data)
+    # if opt.check:
+        # if opt.dataset != 'smp':
+            # raw_data_statistic(opt, raw_data)
 
     if opt.split_basis == 'sent_label':  # we pre-split domain by sentence level label
         raw_data = split_eval_set_with_label(opt, raw_data)
@@ -228,7 +257,6 @@ def main():
             train_meta_data = generator.gen_data(raw_data['train'])
             logging.info('Train: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, train_meta_data)
-
             """dev & test"""
             if opt.use_fix_support:
                 domains = raw_data['support'].keys()
