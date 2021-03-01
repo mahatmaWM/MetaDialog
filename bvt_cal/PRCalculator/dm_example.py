@@ -15,7 +15,7 @@ def example(df):
 
     unique_columns = ('corpus_id', )
     agg_columns = ('domain_name',)
-    compare_handle = CompareBased()
+    # compare_handle = CompareBased()
 
     compare_result = 'compare_result'
     # dataframe = compare_handle.compare(compare_columns=label_columns,
@@ -34,8 +34,11 @@ def example(df):
 
 if __name__ == "__main__":
     import pandas as pd
+    pd.set_option('display.max_columns', 1000)
+    pd.set_option('display.width', 1000)
+    pd.set_option('display.max_colwidth', 1000)
     # df = pd.read_excel('nlu_example.xlsx')
-    df = pd.read_excel('select_data100.xlsx')
+    df = pd.read_excel('merge_data.xlsx')
     final_metrics, final_case = example(df=df)
     final_metrics_all = final_metrics[final_metrics['level'] == 'all']
     print(final_metrics_all)

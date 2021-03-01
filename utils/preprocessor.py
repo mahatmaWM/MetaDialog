@@ -666,7 +666,7 @@ def make_label_mask(opt, path, label2id):
         for domain_n, domain in raw_data.items():
             # Notice: the batch here means few shot batch, not training batch
             batch = domain[0]
-            supports_labels = batch['support']['seq_outs']
+            supports_labels = batch['support']['f']
             all_support_labels = set(collections._chain.from_iterable(supports_labels))
             for lb_from in all_support_labels:
                 for lb_to in all_support_labels:

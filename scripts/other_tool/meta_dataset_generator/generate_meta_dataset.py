@@ -10,8 +10,8 @@ from data_generator import DataGeneratorBase, MiniIncludeGenerator, VanillaDataG
 from data_statistic import raw_data_statistic, label_stats, multi_label_stats, few_shot_data_statistic
 
 DEFAULT_ID = '0'
-DEFAULT_INPUT_PATH = 'D:/Data/Project/Data/stanford/'
-DEFAULT_OUTPUT_DIR = 'D:/Data/Project/Data/MetaData/'
+DEFAULT_INPUT_PATH = 'F:\git\MetaDialog\FewJoint\SMP_Final_Origin2_3\\'
+DEFAULT_OUTPUT_DIR = 'F:\git\MetaDialog\FewJoint\SMP_Final_Origin2_3\\'
 DEFAULT_CONFIG_PATH = 'D:/Data/Project/Data/MetaData/config/config{}.json'.format(DEFAULT_ID)
 
 def configure_logging(level=logging.INFO):
@@ -158,7 +158,7 @@ def main():
     # file path
     parser.add_argument("--input_path", type=str, default=DEFAULT_INPUT_PATH, help="path to the raw data dir")
     parser.add_argument("--output_dir", type=str, default=DEFAULT_OUTPUT_DIR, help="path to the result data dir")
-    parser.add_argument("--dataset", default='stanford', help='dataset name to be processed',
+    parser.add_argument("--dataset", default='smp', help='dataset name to be processed',
                         choices=['atis', 'stanford', 'toursg', 'snips', 'smp'])
 
     # data size
