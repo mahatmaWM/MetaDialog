@@ -16,7 +16,7 @@ def basic_args(parser):
     group.add_argument('--train_path', required=False, help='the path to the training file.')
     group.add_argument('--dev_path', required=False, help='the path to the validation file.')
     group.add_argument('--test_path', required=False, help='the path to the testing file.')
-    group.add_argument("--eval_script", default='./scripts/conlleval.pl', help="The path to the evaluation script")
+    group.add_argument("--eval_script", default='./conlleval.pl', help="The path to the evaluation script")
     group.add_argument("--bert_path", type=str, default='', help="path to pretrained BERT")
     group.add_argument("--bert_vocab", type=str, default='', help="path to BERT vocab file")
     group.add_argument('--output_dir', help='The dir to the output file, and to save model,eg: ./')

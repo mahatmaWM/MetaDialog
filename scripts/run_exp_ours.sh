@@ -56,7 +56,11 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
 # data path
 #base_data_dir=/data/chrism/few_shot_learn_data/FewJoint/SMP_Final_Origin2_3/
+<<<<<<< HEAD
 base_data_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
+=======
+base_data_dir=../FewJoint/SMP_3_our_test_50/
+>>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
 
 
 echo [START] set jobs on dataset [ ${dataset_lst[@]} ] on gpu [ ${gpu_list} ]
@@ -96,7 +100,11 @@ do
                                             echo Task:  ${file_mark}
                                             echo [CLI]
                                             export OMP_NUM_THREADS=2  # threads num for each task
+<<<<<<< HEAD
                                             CUDA_VISIBLE_DEVICES=${gpu_list} python main.py --task ${task} \
+=======
+                                            CUDA_VISIBLE_DEVICES=${gpu_list} python ../main.py --task ${task} \
+>>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
                                                 --seed ${seed} \
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
@@ -124,7 +132,11 @@ do
                                                 --ple_normalizer ${ple_normalizer} \
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
+<<<<<<< HEAD
                                                 --transition learn > ./log/${model_name}.DATA.${file_mark}.log
+=======
+                                                --transition learn > ../log/${model_name}.DATA.${file_mark}.log
+>>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
                                         done
                                     done
                                 done

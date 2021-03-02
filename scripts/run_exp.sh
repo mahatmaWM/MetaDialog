@@ -7,7 +7,11 @@ echo eg: source scripts/run_exp.sh 0
 gpu_list=$1
 #task=sc
 task=sl
+<<<<<<< HEAD
 epoch=3
+=======
+epoch=1
+>>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
 
 # ====== 尝试的各种参数组合 ======
 dataset_lst=(smp)
