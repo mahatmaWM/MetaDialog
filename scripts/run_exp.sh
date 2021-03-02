@@ -7,7 +7,7 @@ echo eg: source scripts/run_exp.sh 0
 gpu_list=$1
 #task=sc
 task=sl
-epoch=3
+epoch=1
 
 # ====== 尝试的各种参数组合 ======
 dataset_lst=(smp)

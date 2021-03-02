@@ -22,8 +22,8 @@ remove_rate=80
 seed_lst=(0)
 
 # TODO 任务切换
-#task=sc
-task=sl
+task=sc
+#task=sl
 
 #dup_query=--dup_query  # dup_query set empty to not allow duplication between query and support
 dup_query=
