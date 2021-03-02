@@ -96,7 +96,11 @@ do
                                             echo Task:  ${file_mark}
                                             echo [CLI]
                                             export OMP_NUM_THREADS=2  # threads num for each task
+<<<<<<< HEAD
                                             CUDA_VISIBLE_DEVICES=${gpu_list} python main.py --task ${task} \
+=======
+                                            CUDA_VISIBLE_DEVICES=${gpu_list} python ../main.py --task ${task} \
+>>>>>>> c66124c7501046ba2269cdf7be9fc0c00db812ce
                                                 --seed ${seed} \
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
@@ -124,7 +128,11 @@ do
                                                 --ple_normalizer ${ple_normalizer} \
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
+<<<<<<< HEAD
                                                 --transition learn > ./log/${model_name}.DATA.${file_mark}.log
+=======
+                                                --transition learn > ../log/${model_name}.DATA.${file_mark}.log
+>>>>>>> c66124c7501046ba2269cdf7be9fc0c00db812ce
                                         done
                                     done
                                 done
