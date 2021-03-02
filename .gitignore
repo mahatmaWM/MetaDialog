@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+*gpu_mem_track.txt
 # C extensions
 *.so
 
