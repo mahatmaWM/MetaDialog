@@ -140,7 +140,7 @@ class FewShotTester(TesterBase):
         for b_id, fs_batch in all_batches:
             f1 = self.eval_one_few_shot_batch(b_id, fs_batch, id2label, log_mark)
             all_scores.append(f1)
-        self.merge_all_eval_batchs(self.opt.output_dir, log_mark)
+        # self.merge_all_eval_batchs(self.opt.output_dir, log_mark)
         return sum(all_scores) * 1.0 / len(all_scores)
 
     def eval_one_few_shot_batch(self, b_id, fs_batch: List[RawResult], id2label: dict, log_mark: str) -> float:

@@ -5,8 +5,8 @@ echo eg: source scripts/run_exp.sh 0
 
 # TODO 使用哪些GPU 任务切换
 gpu_list=$1
-#task=sc
-task=sl
+task=sc
+#task=sl
 epoch=1
 
 # ====== 尝试的各种参数组合 ======
@@ -102,6 +102,7 @@ do
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
                                                 --output_dir ${data_dir}${model_name}${file_mark} \
+                                                --saved_model_path ${data_dir}${model_name}${file_mark} \
                                                 --bert_path ${pretrained_model_path} \
                                                 --bert_vocab ${pretrained_vocab_path} \
                                                 --train_batch_size ${train_batch_size} \
