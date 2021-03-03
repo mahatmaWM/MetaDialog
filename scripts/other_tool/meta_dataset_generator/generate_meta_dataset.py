@@ -224,7 +224,7 @@ def main():
                         choices=['cat', 'both', 'act', 'attribute'],
                         help="eval config id")
     parser.add_argument("--remove_rate", type=float, default=80, help="the rate for removing duplicate sample")
-    parser.add_argument("--use_fix_support", default=False, action="store_true", help="use fix support in dev data")
+    parser.add_argument("--use_fix_support", default=True, help="use fix support in dev data")
     opt = parser.parse_args()
     logging.info('Parameter:{}\n'.format(json.dumps(vars(opt), indent=2)))
 

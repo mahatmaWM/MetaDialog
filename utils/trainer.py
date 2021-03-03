@@ -73,7 +73,8 @@ class TrainerBase:
                  dev_id2label=None,
                  test_features=None,
                  test_id2label=None,
-                 best_dev_score_now=0):
+                 best_dev_score_now=0,
+                 gpu_tracker=None):
         """
         do training and dev model selection
         :param model:
@@ -102,19 +103,24 @@ class TrainerBase:
         no_new_best_dev_num = 0
         no_loss_decay_steps = 0
         is_convergence = False
-
+        if gpu_tracker is not None: gpu_tracker.track()
         model.train()
         dataset = self.get_dataset(train_features)
         sampler = self.get_sampler(dataset)
         data_loader = self.get_data_loader(dataset, sampler)
-
+        if gpu_tracker is not None: gpu_tracker.track()
         for epoch_id in trange(int(num_train_epochs), desc="Epoch"):
+            torch.cuda.empty_cache()
             for step, batch in enumerate(tqdm(data_loader, desc="Train-Batch Progress")):
-                # logging.info('batch={}'.format(batch))
+                # logging.info('step={}'.format(step))
                 if self.n_gpu == 1:
+                    # logging.info('self.n_gpu={}'.format(self.n_gpu))
                     batch = tuple(t.to(self.device) for t in batch)  # multi-gpu does scattering it-self
                 ''' loss '''
                 loss = self.do_forward(batch, model, epoch_id, step)
+                # TODO 是否所有的batch都会hold在gpu里面？？？？强行把batch数据释放
+                del batch
+                torch.cuda.empty_cache()
                 loss = self.process_special_loss(loss)  # for parallel process, split batch and so on
                 loss.backward()
                 ''' optimizer step '''

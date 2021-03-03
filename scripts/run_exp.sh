@@ -7,11 +7,7 @@ echo eg: source scripts/run_exp.sh 0
 gpu_list=$1
 #task=sc
 task=sl
-<<<<<<< HEAD
-epoch=3
-=======
 epoch=1
->>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
 
 # ====== 尝试的各种参数组合 ======
 dataset_lst=(smp)
@@ -59,7 +55,7 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 
 # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
 # data path
-base_data_dir=../FewJoint/SMP_Final_Origin2_3/
+base_data_dir=../SMP_Final_Origin2_10/
 #base_data_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
 
 
@@ -128,7 +124,7 @@ do
                                                 --ple_normalizer ${ple_normalizer} \
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
-                                                --transition learn > ../log/${model_name}.DATA.${file_mark}.log
+                                                --transition learn > ./${model_name}.DATA.${file_mark}.log
                                         done
                                     done
                                 done

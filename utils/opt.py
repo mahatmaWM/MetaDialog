@@ -72,7 +72,7 @@ def train_args(parser):
                        help="Test model found new best model")
 
     group = parser.add_argument_group('SpaceOptimize')  # Optimize space usage
-    group.add_argument('--gradient_accumulation_steps', type=int, default=1,
+    group.add_argument('--gradient_accumulation_steps', type=int, default=100,
                        help="Number of updates steps to accumulate before performing a backward/update pass."
                             "Every time a variable is back propogated through,"
                             "the gradient will be accumulated instead of being replaced.")
