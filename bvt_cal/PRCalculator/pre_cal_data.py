@@ -39,7 +39,7 @@ def context2slots(contexts):
 
 def merge_pt_out(online=None, offline=None):
     merge_data = online.copy()
-    assert len(online) == len(offline)
+    assert len(online) == len(offline), 'online = {}, offline = {}'.format(len(online), len(offline))
     online['pile'] = online['true_slots'].apply(lambda x: list_tuple_2_str(x))
     offline['pile'] = offline['true_slots'].apply(lambda x: list_tuple_2_str(x))
     offline = offline.apply(lambda x: write_off_true_domain(x, find_dict), axis=1)
@@ -140,8 +140,8 @@ def offline_data_2_xlsx(filepath):
 
 
 def main():
-    online_data = select_data('test100.csv')
-    offline_data = offline_data_2_xlsx('off_pred_100.txt')
+    online_data = select_data('bvt_5.csv')
+    offline_data = offline_data_2_xlsx('test_merge_all_eval.txt')
     merge_data = merge_pt_out(online_data, offline_data)
 
 
