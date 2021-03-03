@@ -56,6 +56,8 @@ pretrained_vocab_path=/data/chrism/pre_embeddings/pytorch_bert/bert-base-chinese
 # --saved_model_path ${data_dir}${model_name}.DATA.${file_mark}/model.pl \
 # data path
 base_data_dir=../SMP_Final_Origin2_10/
+# TODO 根据第一步的输出文件夹更改一下？？？
+step1_data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
 #base_data_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
 
 
@@ -85,9 +87,7 @@ do
                                         do
                                             # model names
                                             model_name=${task}.ga_${grad_acc}.ple_${ple_scale_r}.tbs_${train_batch_size}.sim_${similarity}.ems_${emission}_${emission_normalizer}
-                                            # TODO cross_data_id
-                                            # data_dir=${base_data_dir}${dataset}.${cross_data_id}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode}/
-                                            data_dir=${base_data_dir}smp.try.spt_s_3.q_s_4.ep_50.lt_both.ci_0/
+                                            data_dir=${base_data_dir}${step1_data_dir}
                                             file_mark=${dataset}.shots_${support_shots}.cross_id_${cross_data_id}.m_seed_${seed}
                                             train_file_name=train.json
                                             dev_file_name=dev.json
@@ -101,7 +101,7 @@ do
                                                 --train_path ${data_dir}${train_file_name} \
                                                 --dev_path ${data_dir}${dev_file_name} \
                                                 --test_path ${data_dir}${test_file_name} \
-                                                --output_dir ${data_dir}${model_name}.DATA.${file_mark} \
+                                                --output_dir ${data_dir}${model_name}${file_mark} \
                                                 --bert_path ${pretrained_model_path} \
                                                 --bert_vocab ${pretrained_vocab_path} \
                                                 --train_batch_size ${train_batch_size} \
@@ -124,7 +124,7 @@ do
                                                 --ple_normalizer ${ple_normalizer} \
                                                 --ple_scaler ${ple_scaler} \
                                                 --ple_scale_r ${ple_scale_r} \
-                                                --transition learn > ./${model_name}.DATA.${file_mark}.log
+                                                --transition learn > ${data_dir}${model_name}${file_mark}.log
                                         done
                                     done
                                 done

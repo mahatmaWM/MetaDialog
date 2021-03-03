@@ -10,11 +10,11 @@ dataset_lst=(smp)
 support_shots_lst=(3)
 #support_shots_lst=(5)
 query_shot=4
-
 # 控制一个epoch里面有多少个episode
 episode_num=50
-way=-1
 
+
+way=-1
 remove_rate=80
 # ====== general setting =====
 seed_lst=(0)
