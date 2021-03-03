@@ -155,7 +155,7 @@ def model_args(parser):
                        help="method to scale label embedding into 1-0")
     group.add_argument("--ple_scale_r", default=1, type=float, help="Scale label embedding to x times")
     # tap net setting
-    group.add_argument("--tap_random_init", default=False, action='store_true',
+    group.add_argument("--tap_random_init", default=True, action='store_true',
                        help="Set random init for label reps in tap-net")
     group.add_argument("--tap_random_init_r", default=1, type=float,
                        help="Set random init rate for label reps in tap-net")
