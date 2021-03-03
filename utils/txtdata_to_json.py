@@ -26,3 +26,10 @@ def create_json_file(path, filename, jsonfilename):
                 dump_file.append(result)
             json.dump(dump_file, t, ensure_ascii=False, indent=2)
     return result
+
+
+if __name__ == '__main__':
+    path = 'F:\git\MetaDialog\data\\few_slot_learning\data_out\\300test_2_100_50_5\\'
+    filename = '50_support.txt'
+    jsonfilename = 'dev_support'
+    res = create_json_file(path, filename, jsonfilename)

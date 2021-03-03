@@ -77,7 +77,7 @@ class TesterBase:
     def get_data_loader(self, features):
         dataset = TensorDataset([self.unpack_feature(f) for f in features])
         if self.opt.local_rank == -1:
-            sampler = RandomSampler(dataset)
+            sampler = RandomSampler(dataset, num_samples=1500, replacement=True)
         else:
             sampler = DistributedSampler(dataset)
         data_loader = DataLoader(dataset, sampler=sampler, batch_size=self.batch_size)
