@@ -20,8 +20,8 @@ remove_rate=80
 seed_lst=(0)
 
 # TODO 任务切换
-#task=sc
-task=sl
+task=sc
+#task=sl
 
 # ====== train & test setting ======
 split_basis=domain
