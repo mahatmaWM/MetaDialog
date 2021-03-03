@@ -16,21 +16,12 @@ episode_num=50
 way=-1
 
 remove_rate=80
-
-
 # ====== general setting =====
 seed_lst=(0)
 
 # TODO 任务切换
 #task=sc
 task=sl
-
-#dup_query=--dup_query  # dup_query set empty to not allow duplication between query and support
-dup_query=
-
-allow_override=--allow_override
-
-check=--check
 
 # ====== train & test setting ======
 split_basis=domain
@@ -69,7 +60,7 @@ do
         --seed ${seed} \
         --split_basis ${split_basis} \
         --remove_rate ${remove_rate} \
-        --mark ${mark} ${dup_query} ${allow_override} ${check} > ${output_dir}${task}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode_num}.log
+        --mark ${mark} > ${output_dir}${task}.spt_s_${support_shots}.q_s_${query_shot}.ep_${episode_num}.log
     done
   done
 done
