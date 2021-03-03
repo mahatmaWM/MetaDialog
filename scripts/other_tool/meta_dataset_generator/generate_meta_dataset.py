@@ -160,7 +160,7 @@ def main():
     parser.add_argument("--dataset",
                         default='smp',
                         help='dataset name to be processed',
-                        choices=['atis', 'stanford', 'toursg', 'snips', 'smp'])
+                        choices=['smp'])
 
     # data size
     parser.add_argument('--episode_num',
@@ -196,16 +196,20 @@ def main():
                         type=str,
                         default='0',
                         help="A special mark in output file name to distinguish.")
-    parser.add_argument('--dup_query', action='store_true', help='allow duplication between query and support set.')
-    parser.add_argument('--allow_override', action='store_true', help='allow override generated data.')
-    parser.add_argument('--check', action='store_true', help='check data after generation.')
+
+    parser.add_argument('--dup_query', default=True, help='allow duplication between query and support set.')
+    parser.add_argument('--allow_override', default=True, help='allow override generated data.')
+    parser.add_argument('--check', default=True, help='check data after generation.')
+    parser.add_argument('--intent_as_domain',
+                        default=True,
+                        help='For sequence labeling in atis & snips, set true to separate domain using sentence-label.')
+
+                        
     parser.add_argument("--style",
                         default='fs',
                         choices=["fs", "va"],
                         help="output data styles. fs: few-shot episode style, va: directly all data in few-shot format")
-    parser.add_argument('--intent_as_domain',
-                        action='store_true',
-                        help='For sequence labeling in atis & snips, set true to separate domain using sentence-label.')
+
     parser.add_argument('-sd', '--seed', type=int, default=0, help='random seed, do nothing when sd < 0')
 
     # train/dev/test split
@@ -224,7 +228,7 @@ def main():
                         choices=['cat', 'both', 'act', 'attribute'],
                         help="eval config id")
     parser.add_argument("--remove_rate", type=float, default=80, help="the rate for removing duplicate sample")
-    parser.add_argument("--use_fix_support", default=False, action="store_true", help="use fix support in dev data")
+    parser.add_argument("--use_fix_support", default=True, help="use fix support in dev data")
     opt = parser.parse_args()
     logging.info('Parameter:{}\n'.format(json.dumps(vars(opt), indent=2)))
 

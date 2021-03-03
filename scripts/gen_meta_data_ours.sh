@@ -45,13 +45,10 @@ label_type_lst=(attribute)
 
 # ======= default path (for quick distribution) ==========
 #input_dir=../FewJoint/SMP_Final_Origin2_3/data/shiyuanyang/MetaDialog
-<<<<<<< HEAD
-input_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
-output_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
-=======
+#input_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
+#output_dir=/data/shiyuanyang/MetaDialog/lqd_data_100/
 input_dir=../FewJoint/SMP_3_our_test_50/
 output_dir=../FewJoint/SMP_3_our_test_50/
->>>>>>> 333ef88eabf7831d715f91cb4c1cbed180b5c481
 
 #output_dir=../FewJoint/SMP_Final_Origin2_3/
 

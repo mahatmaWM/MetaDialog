@@ -159,9 +159,6 @@ def main():
         type_size = 4
         logging.info('Model {} : params: {:4f}M'.format(training_model._get_name(), para * type_size / 1000 / 1000))
 
-
-
-
         if opt.mask_transition and opt.task == 'sl':
             training_model.label_mask = opt.train_label_mask.to(device)
 
@@ -171,13 +168,14 @@ def main():
                                                                     upper_structures)
         tester = tester_class(opt, device, n_gpu)
         trainer = trainer_class(opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester=tester)
-
+        gpu_tracker.track()
         # 如果需要预热训练
         if opt.warmup_epoch > 0:
             logging.info('========== Warmup training begin! ==========')
             training_model.no_embedder_grad = True
             stage_1_param_to_optimize, stage_1_optimizer, stage_1_scheduler = prepare_optimizer(
                 opt, training_model, len(train_features), upper_structures)
+            gpu_tracker.track()
             stage_1_trainer = trainer_class(opt,
                                             stage_1_optimizer,
                                             stage_1_scheduler,
@@ -185,8 +183,10 @@ def main():
                                             device,
                                             n_gpu,
                                             tester=None)
+            gpu_tracker.track()
             trained_model, best_dev_score, test_score = stage_1_trainer.do_train(training_model, train_features,
-                                                                                 opt.warmup_epoch)
+                                                                                 opt.warmup_epoch, gpu_tracker)
+            gpu_tracker.track()
             training_model = trained_model
             training_model.no_embedder_grad = False
             logging.info('========== Warmup training finished! ==========')

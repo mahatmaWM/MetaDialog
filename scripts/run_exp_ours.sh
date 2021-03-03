@@ -14,7 +14,8 @@ dataset_lst=(smp)
 seed_lst=(0)
 #seed_lst=(6150 6151 6152)
 support_shots_lst=(3)
-train_batch_size_lst=(4)
+train_batch_size_lst=(50)
+grad_acc=50
 #train_batch_size_lst=(4 8)
 decay_lr_lst=(0.5)
 #decay_lr_lst=(-1)
@@ -43,7 +44,6 @@ query_shot=4
 episode=50
 cross_data_id=0  # for smp
 test_batch_size=2
-grad_acc=4
 
 # ======= default path (for quick distribution) ==========
 # bert base path
