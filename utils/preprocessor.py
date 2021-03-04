@@ -520,7 +520,8 @@ def make_dict(opt, examples: List[FewShotExample]) -> (Dict[str, int], Dict[int,
     make label2id dict
     label2id must follow rules:
     For sequence labeling:
-        1. id(PAD)=0 id(O)=1  2. id(B-X)=i  id(I-X)=i+1
+        1. id(PAD)=0 id(O)=1
+        2. id(B-X)=i  id(I-X)=i+1
     For (multi-label) text classification:
         1. id(PAD)=0
     """
@@ -580,7 +581,7 @@ def make_dict(opt, examples: List[FewShotExample]) -> (Dict[str, int], Dict[int,
         for label in label_set:
             label2id[label] = len(label2id)
             # TODO 手工增加一个阈值较低的时候的分类label
-            label2id['other_failed'] = -1
+            # label2id['other_failed'] = -1
     ''' reverse the label2id '''
     id2label = dict([(idx, label) for label, idx in label2id.items()])
     return label2id, id2label

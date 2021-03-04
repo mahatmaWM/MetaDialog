@@ -1,133 +1,30 @@
 [
   {
-    "text": "下周适不适合买卡",
-    "domain": "huangli_5-1362949499880652800",
-    "intent": "search_almanac",
-    "slots": {
-      "datetime": "下周",
-      "suit": "适不适合",
-      "item": "买卡"
-    }
-  },
-  {
-    "text": "明天有什么禁忌",
-    "domain": "huangli_5-1362949499880652800",
-    "intent": "search_almanac",
-    "slots": {
-      "datetime": "明天",
-      "suit": "禁忌"
-    }
-  },
-  {
-    "text": "下周5我准备结婚合适吗",
-    "domain": "huangli_5-1362949499880652800",
-    "intent": "search_almanac",
-    "slots": {
-      "datetime": "下周5",
-      "item": "结婚",
-      "suit": "合适"
-    }
-  },
-  {
-    "text": "下周一适不适合结婚？",
-    "domain": "huangli_5-1362949499880652800",
-    "intent": "search_almanac",
-    "slots": {
-      "datetime": "下周一",
-      "suit": "适不适合",
-      "item": "结婚"
-    }
-  },
-  {
-    "text": "明天适不适合结婚？",
-    "domain": "huangli_5-1362949499880652800",
-    "intent": "search_almanac",
-    "slots": {
-      "datetime": "明天",
-      "suit": "适不适合",
-      "item": "结婚"
-    }
-  },
-  {
-    "text": "小孩发烧手脚冰凉怎么处理",
-    "domain": "jibing_5-1362964556333105152",
-    "intent": "qa_firstaid_treatment",
-    "slots": {
-      "people": "小孩",
-      "disease": "发烧"
-    }
-  },
-  {
-    "text": "宝宝发烧五天了还不好",
-    "domain": "jibing_5-1362964556333105152",
-    "intent": "qa_firstaid_treatment",
-    "slots": {
-      "people": "宝宝",
-      "disease": "发烧"
-    }
-  },
-  {
-    "text": "儿童膝关节疼痛",
-    "domain": "jibing_5-1362964556333105152",
-    "intent": "qa_firstaid_treatment",
-    "slots": {
-      "people": "儿童",
-      "disease": "膝关节疼痛"
-    }
-  },
-  {
-    "text": "面部中风嘴歪怎么治",
-    "domain": "jibing_5-1362964556333105152",
-    "intent": "qa_firstaid_treatment",
-    "slots": {
-      "organ": "面部",
-      "disease": "中风"
-    }
-  },
-  {
-    "text": "发烧如何降温",
-    "domain": "jibing_5-1362964556333105152",
-    "intent": "qa_firstaid_treatment",
-    "slots": {
-      "disease": "发烧"
-    }
-  },
-  {
-    "text": "中国的首都是不是在北京",
+    "text": "荷兰的首都是哪个城市的",
     "domain": "shoudu_5-1363011111425675264",
     "intent": "search_capital",
     "slots": {
-      "country": "中国",
+      "country": "荷兰"
+    }
+  },
+  {
+    "text": "我想知道北京的首都是什么",
+    "domain": "shoudu_5-1363011111425675264",
+    "intent": "search_capital",
+    "slots": {
       "capital": "北京"
     }
   },
   {
-    "text": "北京是中国的首都吗",
+    "text": "北京的首都是什么名字",
     "domain": "shoudu_5-1363011111425675264",
     "intent": "search_capital",
     "slots": {
-      "capital": "北京",
-      "country": "中国"
+      "capital": "北京"
     }
   },
   {
-    "text": "国的美国的首都是哪儿啊",
-    "domain": "shoudu_5-1363011111425675264",
-    "intent": "search_capital",
-    "slots": {
-      "country": "美国"
-    }
-  },
-  {
-    "text": "帮我找下堪培拉是什么国家首都",
-    "domain": "shoudu_5-1363011111425675264",
-    "intent": "search_capital",
-    "slots": {
-      "capital": "堪培拉"
-    }
-  },
-  {
-    "text": "帮我查查澳大利亚是什么地方的首都",
+    "text": "澳大利亚的首都是",
     "domain": "shoudu_5-1363011111425675264",
     "intent": "search_capital",
     "slots": {
@@ -135,87 +32,182 @@
     }
   },
   {
-    "text": "宁波一个星期内的天气预报",
-    "domain": "tianqi_5-1362970384020725760",
-    "intent": "general_search",
+    "text": "查下中国首都叫啥",
+    "domain": "shoudu_5-1363011111425675264",
+    "intent": "search_capital",
     "slots": {
-      "location": "宁波",
-      "datetime": "一个星期内"
+      "country": "中国"
     }
   },
   {
-    "text": "明天靖江天气",
-    "domain": "tianqi_5-1362970384020725760",
-    "intent": "general_search",
+    "text": "今天可以订盟吗？",
+    "domain": "huangli_5-1362949499880652800",
+    "intent": "search_almanac",
     "slots": {
-      "datetime": "明天",
-      "location": "靖江"
+      "datetime": "今天",
+      "suit": "可以",
+      "item": "订盟"
     }
   },
   {
-    "text": "看今天天气预报啊",
-    "domain": "tianqi_5-1362970384020725760",
-    "intent": "general_search",
+    "text": "有哪些事情今天适合去做",
+    "domain": "huangli_5-1362949499880652800",
+    "intent": "search_almanac",
     "slots": {
-      "datetime": "今天"
+      "datetime": "今天",
+      "suit": "适合"
     }
   },
   {
-    "text": "永州市的天气怎么样",
-    "domain": "tianqi_5-1362970384020725760",
-    "intent": "general_search",
+    "text": "今天可以做什么事",
+    "domain": "huangli_5-1362949499880652800",
+    "intent": "search_almanac",
     "slots": {
-      "location": "永州市"
+      "datetime": "今天",
+      "suit": "可以"
     }
   },
   {
-    "text": "诸城今日天气",
-    "domain": "tianqi_5-1362970384020725760",
-    "intent": "general_search",
+    "text": "下个星期能不能结婚",
+    "domain": "huangli_5-1362949499880652800",
+    "intent": "search_almanac",
     "slots": {
-      "location": "诸城",
-      "datetime": "今日"
+      "datetime": "下个星期",
+      "item": "结婚"
     }
   },
   {
-    "text": "我要听今天昨天的头条新闻",
+    "text": "这个月哪个适合搬新家",
+    "domain": "huangli_5-1362949499880652800",
+    "intent": "search_almanac",
+    "slots": {
+      "datetime": "这个月",
+      "suit": "适合",
+      "item": "搬新家"
+    }
+  },
+  {
+    "text": "幼儿扁桃体化脓发高烧",
+    "domain": "jibing_5-1362964556333105152",
+    "intent": "qa_firstaid_treatment",
+    "slots": {
+      "people": "幼儿",
+      "disease": "高烧"
+    }
+  },
+  {
+    "text": "甲沟炎息肉如何消除",
+    "domain": "jibing_5-1362964556333105152",
+    "intent": "qa_firstaid_treatment",
+    "slots": {
+      "disease": "甲沟炎"
+    }
+  },
+  {
+    "text": "轻微食物中毒",
+    "domain": "jibing_5-1362964556333105152",
+    "intent": "qa_firstaid_treatment",
+    "slots": {
+      "disease": "食物中毒"
+    }
+  },
+  {
+    "text": "齐秦拔火罐烧伤",
+    "domain": "jibing_5-1362964556333105152",
+    "intent": "qa_firstaid_treatment",
+    "slots": {
+      "disease": "烧伤"
+    }
+  },
+  {
+    "text": "小儿积食发烧",
+    "domain": "jibing_5-1362964556333105152",
+    "intent": "qa_firstaid_treatment",
+    "slots": {
+      "people": "小儿",
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "蒙城后天天气",
+    "domain": "tianqi_5-1362970384020725760",
+    "intent": "general_search",
+    "slots": {
+      "location": "蒙城",
+      "datetime": "后天"
+    }
+  },
+  {
+    "text": "重庆江津天气",
+    "domain": "tianqi_5-1362970384020725760",
+    "intent": "general_search",
+    "slots": {
+      "location": "重庆江津"
+    }
+  },
+  {
+    "text": "西安一周天气预报",
+    "domain": "tianqi_5-1362970384020725760",
+    "intent": "general_search",
+    "slots": {
+      "location": "西安",
+      "datetime": "一周"
+    }
+  },
+  {
+    "text": "看黎平天气",
+    "domain": "tianqi_5-1362970384020725760",
+    "intent": "general_search",
+    "slots": {
+      "location": "黎平"
+    }
+  },
+  {
+    "text": "那我问你明天什么天气",
+    "domain": "tianqi_5-1362970384020725760",
+    "intent": "general_search",
+    "slots": {
+      "datetime": "明天"
+    }
+  },
+  {
+    "text": "我要看时政新闻",
+    "domain": "xinwen_5-1363008185919516672",
+    "intent": "search_news",
+    "slots": {}
+  },
+  {
+    "text": "给我最新的时事新闻",
     "domain": "xinwen_5-1363008185919516672",
     "intent": "search_news",
     "slots": {
-      "action": "听",
-      "datetime": "昨天"
+      "ranking": "最新",
+      "type": "时事"
     }
   },
   {
-    "text": "我想看看蓄意炒作的娱乐新闻",
+    "text": "一周前的新闻",
     "domain": "xinwen_5-1363008185919516672",
     "intent": "search_news",
     "slots": {
-      "action": "看",
+      "datetime": "一周前"
+    }
+  },
+  {
+    "text": "我想看一条娱乐性的新闻，请帮我播放。",
+    "domain": "xinwen_5-1363008185919516672",
+    "intent": "search_news",
+    "slots": {
+      "action": "播放",
       "type": "娱乐"
     }
   },
   {
-    "text": "我想看有关这几天的动态",
+    "text": "来点国际体育新闻",
     "domain": "xinwen_5-1363008185919516672",
     "intent": "search_news",
     "slots": {
-      "action": "看"
+      "key_words": "国际体育"
     }
-  },
-  {
-    "text": "跟我说个财经新闻",
-    "domain": "xinwen_5-1363008185919516672",
-    "intent": "search_news",
-    "slots": {
-      "action": "说",
-      "type": "财经"
-    }
-  },
-  {
-    "text": "听有关资讯",
-    "domain": "xinwen_5-1363008185919516672",
-    "intent": "search_news",
-    "slots": {}
   }
 ]
