@@ -579,6 +579,8 @@ def make_dict(opt, examples: List[FewShotExample]) -> (Dict[str, int], Dict[int,
     else:  # sc
         for label in label_set:
             label2id[label] = len(label2id)
+            # TODO 手工增加一个阈值较低的时候的分类label
+            label2id['other_failed'] = -1
     ''' reverse the label2id '''
     id2label = dict([(idx, label) for label, idx in label2id.items()])
     return label2id, id2label
