@@ -1,711 +1,654 @@
 [
   {
-    "domain": "virusSearch",
-    "text": "打开新冠病毒地图吧",
-    "intent": "MAP",
+    "domain": "joke",
+    "text": "有没有关于学习的笑话来一个",
+    "intent": "QUERY",
+    "slots": {
+      "category": "学习"
+    },
+    "id": 104
+  },
+  {
+    "domain": "joke",
+    "text": "能讲个笑话吗",
+    "intent": "QUERY",
     "slots": {},
-    "id": 6
+    "id": 105
   },
   {
-    "domain": "virusSearch",
-    "text": "可以打开疫情地图吗",
-    "intent": "MAP",
+    "domain": "joke",
+    "text": "给我讲个笑话吧",
+    "intent": "QUERY",
     "slots": {},
-    "id": 7
+    "id": 106
   },
   {
-    "domain": "virusSearch",
-    "text": "麻烦请打开疫情地图",
-    "intent": "MAP",
+    "domain": "joke",
+    "text": "有什么笑话最搞笑",
+    "intent": "QUERY",
     "slots": {},
-    "id": 9
+    "id": 107
   },
   {
-    "domain": "virusSearch",
-    "text": "麻烦请打开新冠病毒地图",
-    "intent": "MAP",
+    "domain": "joke",
+    "text": "讲个笑话让我们开心一下",
+    "intent": "QUERY",
     "slots": {},
-    "id": 10
+    "id": 110
   },
   {
-    "domain": "virusSearch",
-    "text": "我想要新冠病毒地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 12
-  },
-  {
-    "domain": "virusSearch",
-    "text": "我想要打开疫情地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 13
-  },
-  {
-    "domain": "virusSearch",
-    "text": "我想要打开新冠病毒地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 14
-  },
-  {
-    "domain": "virusSearch",
-    "text": "我要疫情地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 15
-  },
-  {
-    "domain": "virusSearch",
-    "text": "我要新冠病毒地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 16
-  },
-  {
-    "domain": "virusSearch",
-    "text": "把疫情地图打开",
-    "intent": "MAP",
-    "slots": {},
-    "id": 17
-  },
-  {
-    "domain": "virusSearch",
-    "text": "把新冠病毒地图打开",
-    "intent": "MAP",
-    "slots": {},
-    "id": 18
-  },
-  {
-    "domain": "virusSearch",
-    "text": "帮我把疫情地图打开",
-    "intent": "MAP",
-    "slots": {},
-    "id": 19
-  },
-  {
-    "domain": "virusSearch",
-    "text": "能打开新冠病毒地图吗",
-    "intent": "MAP",
-    "slots": {},
-    "id": 20
-  },
-  {
-    "domain": "virusSearch",
-    "text": "可不可以打开疫情地图",
-    "intent": "MAP",
-    "slots": {},
-    "id": 21
-  },
-  {
-    "domain": "virusSearch",
-    "text": "截止二月七号为止有多少的增加疑似",
-    "intent": "NOTCITY_SEARCH",
+    "domain": "joke",
+    "text": "给我讲一个关于某个明星的笑话",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "二月七号",
-      "add": "增加",
-      "type": "疑似"
+      "category": "明星"
     },
-    "id": 28
+    "id": 111
   },
   {
-    "domain": "virusSearch",
-    "text": "直到2月7日为止有多少的增加疑似患者",
-    "intent": "NOTCITY_SEARCH",
+    "domain": "joke",
+    "text": "有关于老虎的笑话有没有",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "2月7日",
-      "add": "增加",
-      "type": "疑似"
-    },
-    "id": 30
-  },
-  {
-    "domain": "virusSearch",
-    "text": "到今天为止有多少的增加治愈的人",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "add": "增加",
-      "type": "治愈"
-    },
-    "id": 31
-  },
-  {
-    "domain": "virusSearch",
-    "text": "直到2月7日为止有多少的增加疑似的病患",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "2月7日",
-      "add": "增加",
-      "type": "疑似"
-    },
-    "id": 32
-  },
-  {
-    "domain": "virusSearch",
-    "text": "查查看本周的死亡人数吧",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "本周",
-      "type": "死亡"
-    },
-    "id": 33
-  },
-  {
-    "domain": "virusSearch",
-    "text": "截止今天新型肺炎感染病例确诊多少例了",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "type": "确诊"
-    },
-    "id": 34
-  },
-  {
-    "domain": "virusSearch",
-    "text": "能看一下当天疫情确诊病例有多少吗",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "当天",
-      "type": "确诊"
-    },
-    "id": 35
-  },
-  {
-    "domain": "virusSearch",
-    "text": "今天确诊冠状新型病毒有多少例了",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "type": "确诊"
-    },
-    "id": 36
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新冠状病毒肺炎现在确诊多少例",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "type": "确诊"
-    },
-    "id": 37
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在有多少例确诊的肺炎",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "type": "确诊"
-    },
-    "id": 38
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新型病毒现在感染的人死亡多少人",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "type": "死亡"
-    },
-    "id": 39
-  },
-  {
-    "domain": "virusSearch",
-    "text": "那现在的新型冠状病毒确诊人数有多少啊",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "type": "确诊"
-    },
-    "id": 40
-  },
-  {
-    "domain": "virusSearch",
-    "text": "今天有多少人重症",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "type": "重症"
-    },
-    "id": 41
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在有多少重症新增人数",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "type": "重症"
-    },
-    "id": 42
-  },
-  {
-    "domain": "virusSearch",
-    "text": "昨天多少轻症",
-    "intent": "NOTCITY_SEARCH",
-    "slots": {
-      "datetime_date": "昨天",
-      "type": "轻症"
-    },
-    "id": 43
-  },
-  {
-    "domain": "virusSearch",
-    "text": "湖北感染新型肺炎死亡人数是多少",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "湖北",
-      "type": "死亡"
-    },
-    "id": 49
-  },
-  {
-    "domain": "virusSearch",
-    "text": "到目前为止东北有多少人治愈",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "东北",
-      "type": "治愈"
-    },
-    "id": 50
-  },
-  {
-    "domain": "virusSearch",
-    "text": "全国疑似人数现在达到多少啦",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "全国",
-      "type": "疑似"
-    },
-    "id": 52
-  },
-  {
-    "domain": "virusSearch",
-    "text": "帮我看一下新疆最新的疑似病例",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "新疆",
-      "add": "最新的",
-      "type": "疑似"
-    },
-    "id": 53
-  },
-  {
-    "domain": "virusSearch",
-    "text": "山东地区冠状病毒一共确诊病例多少人了",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "山东",
-      "add": "一共",
-      "type": "确诊"
-    },
-    "id": 54
-  },
-  {
-    "domain": "virusSearch",
-    "text": "辽宁疫情确诊了多少人",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "辽宁",
-      "type": "确诊"
-    },
-    "id": 55
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在新冠状病毒的人数有多少确诊的",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "type": "确诊"
-    },
-    "id": 56
-  },
-  {
-    "domain": "virusSearch",
-    "text": "这些新型冠状病毒有多少人治愈",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "type": "治愈"
-    },
-    "id": 57
-  },
-  {
-    "domain": "virusSearch",
-    "text": "福建有多少人因为这次疫情死亡",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "福建",
-      "type": "死亡"
-    },
-    "id": 58
-  },
-  {
-    "domain": "virusSearch",
-    "text": "全国多少新增重症人数",
-    "intent": "NOTDATATIME_SEARCH",
-    "slots": {
-      "cityMix": "全国",
-      "add": "新增",
-      "type": "重症"
-    },
-    "id": 59
-  },
-  {
-    "domain": "virusSearch",
-    "text": "今天全国地区有多少数量的新增冠状病人",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "cityMix": "全国",
-      "add": "新增"
-    },
-    "id": 66
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在有多少新增新冠肺炎病例",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "add": "新增"
-    },
-    "id": 68
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在疫情爆发有多少人死亡",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在"
-    },
-    "id": 69
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在感染疫情的人数有多少",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在"
-    },
-    "id": 72
-  },
-  {
-    "domain": "virusSearch",
-    "text": "今天肺炎新增人数",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "add": "新增"
-    },
-    "id": 73
-  },
-  {
-    "domain": "virusSearch",
-    "text": "帮我查一下现在新冠病毒有多少例了",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在"
-    },
-    "id": 74
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在全国病例新冠状病毒一共有多少",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国",
-      "add": "一共"
-    },
-    "id": 75
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在全国冠状病毒感染的病例有多少",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国"
-    },
-    "id": 76
-  },
-  {
-    "domain": "virusSearch",
-    "text": "请给我查一下今天的肺炎新增病例",
-    "intent": "NOTTYPE_SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "add": "新增"
-    },
-    "id": 80
-  },
-  {
-    "domain": "virusSearch",
-    "text": "2020年新型冠状病毒一共有多少人确诊",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "add": "一共",
-      "type": "确诊"
-    },
-    "id": 87
-  },
-  {
-    "domain": "virusSearch",
-    "text": "临床确诊的新型冠状肺炎有多少例",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "确诊"
-    },
-    "id": 90
-  },
-  {
-    "domain": "virusSearch",
-    "text": "有多少人确诊了新冠病毒",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "确诊"
-    },
-    "id": 91
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新型冠状病毒导致死亡的人数现在是多少",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "死亡"
-    },
-    "id": 92
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新型冠状病毒全国死亡人数是多少",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "死亡"
-    },
-    "id": 93
-  },
-  {
-    "domain": "virusSearch",
-    "text": "目前死亡病例是多少",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "死亡"
-    },
-    "id": 94
-  },
-  {
-    "domain": "virusSearch",
-    "text": "疫情最近死亡多少人",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "type": "死亡"
-    },
-    "id": 95
-  },
-  {
-    "domain": "virusSearch",
-    "text": "现在那个新型病毒肺炎感染人数多少了",
-    "intent": "OTHER_SEARCH",
-    "slots": {},
-    "id": 96
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新型冠状病毒感染的人数有多少了",
-    "intent": "OTHER_SEARCH",
-    "slots": {},
-    "id": 97
-  },
-  {
-    "domain": "virusSearch",
-    "text": "最新肺炎人数是多少",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "add": "最新"
-    },
-    "id": 98
-  },
-  {
-    "domain": "virusSearch",
-    "text": "新增疫情人数",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "add": "新增"
-    },
-    "id": 99
-  },
-  {
-    "domain": "virusSearch",
-    "text": "冠状性肺炎一共有多少病例了",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "add": "一共"
-    },
-    "id": 100
-  },
-  {
-    "domain": "virusSearch",
-    "text": "搜一搜新型肺炎病例有多少",
-    "intent": "OTHER_SEARCH",
-    "slots": {},
-    "id": 101
-  },
-  {
-    "domain": "virusSearch",
-    "text": "湖北省新增新型冠状病毒感染的肺炎病例",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "cityMix": "湖北省",
-      "add": "新增"
-    },
-    "id": 102
-  },
-  {
-    "domain": "virusSearch",
-    "text": "广东新冠肺炎情况",
-    "intent": "OTHER_SEARCH",
-    "slots": {
-      "cityMix": "广东"
-    },
-    "id": 103
-  },
-  {
-    "domain": "virusSearch",
-    "text": "到今天为止浙江这块有多少数量的新增确诊的病患",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "cityMix": "浙江",
-      "add": "新增",
-      "type": "确诊"
-    },
-    "id": 109
-  },
-  {
-    "domain": "virusSearch",
-    "text": "2月14日广东治愈多少",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "2月14日",
-      "cityMix": "广东",
-      "type": "治愈"
+      "category": "老虎"
     },
     "id": 112
   },
   {
-    "domain": "virusSearch",
-    "text": "武汉市今天确诊了多少新冠病毒肺炎病例",
-    "intent": "SEARCH",
+    "domain": "joke",
+    "text": "我想听关于理发的笑话",
+    "intent": "QUERY",
     "slots": {
-      "city": "武汉市",
-      "datetime_date": "今天",
-      "type": "确诊"
+      "category": "理发"
     },
     "id": 113
   },
   {
-    "domain": "virusSearch",
-    "text": "武汉肺炎现在确诊多少例",
-    "intent": "SEARCH",
-    "slots": {
-      "city": "武汉",
-      "datetime_date": "现在",
-      "type": "确诊"
-    },
+    "domain": "joke",
+    "text": "女生爱听什么类型的笑话",
+    "intent": "QUERY",
+    "slots": {},
     "id": 114
   },
   {
-    "domain": "virusSearch",
-    "text": "现在全国确诊新型冠状病毒多少例",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国",
-      "type": "确诊"
-    },
+    "domain": "joke",
+    "text": "人们一般喜欢什么类型的笑话",
+    "intent": "QUERY",
+    "slots": {},
     "id": 115
   },
   {
-    "domain": "virusSearch",
-    "text": "现在肺炎全国确诊人数有多少呀",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国",
-      "type": "确诊"
-    },
+    "domain": "joke",
+    "text": "从笑话大全里面随便来一则吧",
+    "intent": "QUERY",
+    "slots": {},
     "id": 117
   },
   {
-    "domain": "virusSearch",
-    "text": "全国新型冠状病毒今天死亡多少人",
-    "intent": "SEARCH",
+    "domain": "joke",
+    "text": "搜一搜笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 118
+  },
+  {
+    "domain": "joke",
+    "text": "给我来一个搞笑的笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 119
+  },
+  {
+    "domain": "joke",
+    "text": "我想听一个和校园生活有关的笑话",
+    "intent": "QUERY",
     "slots": {
-      "country": "全国",
-      "datetime_date": "今天",
-      "type": "死亡"
+      "category": "校园生活"
     },
     "id": 120
   },
   {
-    "domain": "virusSearch",
-    "text": "现在全国病毒死亡人数是多少",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国",
-      "type": "死亡"
-    },
+    "domain": "joke",
+    "text": "有没有什么经典的笑话",
+    "intent": "QUERY",
+    "slots": {},
     "id": 121
   },
   {
-    "domain": "virusSearch",
-    "text": "现在全国有多少新增重症人数",
-    "intent": "SEARCH",
+    "domain": "joke",
+    "text": "我要听关于动物的笑话",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "现在",
-      "cityMix": "全国",
-      "add": "新增",
-      "type": "重症"
+      "category": "动物"
     },
     "id": 122
   },
   {
-    "domain": "virusSearch",
-    "text": "今天全国多少轻症",
-    "intent": "SEARCH",
-    "slots": {
-      "datetime_date": "今天",
-      "cityMix": "全国",
-      "type": "轻症"
-    },
+    "domain": "joke",
+    "text": "最近有什么好玩的笑话",
+    "intent": "QUERY",
+    "slots": {},
     "id": 123
   },
   {
-    "domain": "virusSearch",
-    "text": "全国现在累计疑似的",
-    "intent": "SEARCH",
+    "domain": "joke",
+    "text": "能给我讲个古代的笑话吗",
+    "intent": "QUERY",
     "slots": {
-      "country": "全国",
-      "datetime_date": "现在",
-      "add": "累计",
-      "type": "疑似"
+      "category": "古代"
     },
     "id": 124
   },
   {
-    "domain": "virusSearch",
-    "text": "全国现在现存疑似的",
-    "intent": "SEARCH",
-    "slots": {
-      "country": "全国",
-      "datetime_date": "现在",
-      "add": "现存",
-      "type": "疑似"
-    },
+    "domain": "joke",
+    "text": "来讲一个笑话",
+    "intent": "QUERY",
+    "slots": {},
     "id": 125
+  },
+  {
+    "domain": "joke",
+    "text": "你会讲什么笑话呢",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 126
+  },
+  {
+    "domain": "joke",
+    "text": "关于动漫人物的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "动漫人物"
+    },
+    "id": 127
+  },
+  {
+    "domain": "joke",
+    "text": "你讲的段子好笑吗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 128
+  },
+  {
+    "domain": "joke",
+    "text": "我想听百科笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "百科"
+    },
+    "id": 129
+  },
+  {
+    "domain": "joke",
+    "text": "有其他种类的笑话吗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 130
+  },
+  {
+    "domain": "joke",
+    "text": "有没有段子讲一个吧",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 131
+  },
+  {
+    "domain": "joke",
+    "text": "排行榜比较靠前的笑话有吗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 132
+  },
+  {
+    "domain": "joke",
+    "text": "您可以给我讲一个关于动物的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "动物"
+    },
+    "id": 133
+  },
+  {
+    "domain": "joke",
+    "text": "我不听笑话我要听冷笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "冷笑话"
+    },
+    "id": 134
+  },
+  {
+    "domain": "joke",
+    "text": "给宝宝说个笑话吧",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 135
+  },
+  {
+    "domain": "joke",
+    "text": "你可以讲一个关于小明的笑话吗",
+    "intent": "QUERY",
+    "slots": {
+      "category": "小明"
+    },
+    "id": 136
+  },
+  {
+    "domain": "joke",
+    "text": "给我来一个内涵段子里面的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "内涵段子"
+    },
+    "id": 137
+  },
+  {
+    "domain": "joke",
+    "text": "有没有关于熊大熊二的的段子",
+    "intent": "QUERY",
+    "slots": {
+      "category": "熊大熊二"
+    },
+    "id": 138
+  },
+  {
+    "domain": "joke",
+    "text": "我想听关于程序员的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "程序员"
+    },
+    "id": 139
+  },
+  {
+    "domain": "joke",
+    "text": "我要听有关学生类型的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "学生"
+    },
+    "id": 140
+  },
+  {
+    "domain": "joke",
+    "text": "讲一个黑色幽默的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "黑色幽默"
+    },
+    "id": 141
+  },
+  {
+    "domain": "joke",
+    "text": "有没有什么冷笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "冷笑话"
+    },
+    "id": 142
+  },
+  {
+    "domain": "joke",
+    "text": "随便说一个笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 143
+  },
+  {
+    "domain": "joke",
+    "text": "说一个关于借钱的笑话吧",
+    "intent": "QUERY",
+    "slots": {
+      "category": "借钱"
+    },
+    "id": 144
+  },
+  {
+    "domain": "joke",
+    "text": "讲个笑话让我开心一下",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 145
+  },
+  {
+    "domain": "joke",
+    "text": "再讲一个古代的笑话吧",
+    "intent": "QUERY",
+    "slots": {
+      "category": "古代"
+    },
+    "id": 146
+  },
+  {
+    "domain": "joke",
+    "text": "讲个笑话给我听听",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 147
+  },
+  {
+    "domain": "joke",
+    "text": "请讲一个关于水果的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "水果"
+    },
+    "id": 148
+  },
+  {
+    "domain": "joke",
+    "text": "东北人有什么笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "东北人"
+    },
+    "id": 149
+  },
+  {
+    "domain": "joke",
+    "text": "我今天好累啊你给我说个笑话呗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 151
+  },
+  {
+    "domain": "joke",
+    "text": "跟我讲一个关于动物的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "动物"
+    },
+    "id": 152
+  },
+  {
+    "domain": "joke",
+    "text": "听一首笑话大王",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 153
+  },
+  {
+    "domain": "joke",
+    "text": "你会说笑话吗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 154
+  },
+  {
+    "domain": "joke",
+    "text": "放一个更好听的笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 155
+  },
+  {
+    "domain": "joke",
+    "text": "你再给我讲一个笑话呗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 156
+  },
+  {
+    "domain": "joke",
+    "text": "有关食品食物的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "食品食物"
+    },
+    "id": 157
+  },
+  {
+    "domain": "joke",
+    "text": "来个好笑的笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 158
+  },
+  {
+    "domain": "joke",
+    "text": "来个关于大师的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "大师"
+    },
+    "id": 159
+  },
+  {
+    "domain": "joke",
+    "text": "没有冷笑话吗",
+    "intent": "QUERY",
+    "slots": {
+      "category": "冷笑话"
+    },
+    "id": 161
+  },
+  {
+    "domain": "joke",
+    "text": "讲一个搞笑的段子",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 163
+  },
+  {
+    "domain": "joke",
+    "text": "给我搜索搞笑的段子",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 164
+  },
+  {
+    "domain": "joke",
+    "text": "查一查搞笑的段子",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 165
+  },
+  {
+    "domain": "joke",
+    "text": "给我讲波波有理里面的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "波波有理"
+    },
+    "id": 166
+  },
+  {
+    "domain": "joke",
+    "text": "讲个搞笑的笑话来听听",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 167
+  },
+  {
+    "domain": "joke",
+    "text": "你给我讲讲笑话吧",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 168
+  },
+  {
+    "domain": "joke",
+    "text": "查找搞笑段子",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 170
+  },
+  {
+    "domain": "joke",
+    "text": "说个幽默笑话",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 172
+  },
+  {
+    "domain": "joke",
+    "text": "搞笑的儿童笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "儿童笑话"
+    },
+    "id": 173
+  },
+  {
+    "domain": "joke",
+    "text": "说个笑话来听听看",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 174
+  },
+  {
+    "domain": "joke",
+    "text": "想听笑话了",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 175
+  },
+  {
+    "domain": "joke",
+    "text": "我来选儿童笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "儿童笑话"
+    },
+    "id": 176
+  },
+  {
+    "domain": "joke",
+    "text": "讲个笑话给哥听听",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 177
+  },
+  {
+    "domain": "joke",
+    "text": "班级笑话说一个",
+    "intent": "QUERY",
+    "slots": {
+      "category": "班级笑话"
+    },
+    "id": 178
+  },
+  {
+    "domain": "joke",
+    "text": "伤心了还是听笑话吧",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 179
+  },
+  {
+    "domain": "joke",
+    "text": "再来个校园笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "校园笑话"
+    },
+    "id": 180
+  },
+  {
+    "domain": "joke",
+    "text": "说个职场笑话来听听吧",
+    "intent": "QUERY",
+    "slots": {
+      "category": "职场笑话"
+    },
+    "id": 181
+  },
+  {
+    "domain": "joke",
+    "text": "你说个哲理笑话吧",
+    "intent": "QUERY",
+    "slots": {
+      "category": "哲理笑话"
+    },
+    "id": 182
+  },
+  {
+    "domain": "joke",
+    "text": "你有关于周杰伦的笑话吗",
+    "intent": "QUERY",
+    "slots": {
+      "category": "周杰伦"
+    },
+    "id": 183
+  },
+  {
+    "domain": "joke",
+    "text": "愚人笑话好笑",
+    "intent": "QUERY",
+    "slots": {
+      "category": "愚人笑话"
+    },
+    "id": 184
+  },
+  {
+    "domain": "joke",
+    "text": "关于兔子的笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "兔子"
+    },
+    "id": 185
+  },
+  {
+    "domain": "joke",
+    "text": "搞笑笑话不断",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 192
+  },
+  {
+    "domain": "joke",
+    "text": "儿童笑话来一个乐呵乐呵",
+    "intent": "QUERY",
+    "slots": {
+      "category": "儿童笑话"
+    },
+    "id": 193
+  },
+  {
+    "domain": "joke",
+    "text": "随便说个搞笑的段子来缓解一下尴尬的气氛",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 194
+  },
+  {
+    "domain": "joke",
+    "text": "可不可以说民间笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "民间笑话"
+    },
+    "id": 195
+  },
+  {
+    "domain": "joke",
+    "text": "请说一个民间笑话",
+    "intent": "QUERY",
+    "slots": {
+      "category": "民间笑话"
+    },
+    "id": 196
+  },
+  {
+    "domain": "joke",
+    "text": "逗我一下",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 197
+  },
+  {
+    "domain": "joke",
+    "text": "开心一下",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 198
+  },
+  {
+    "domain": "joke",
+    "text": "切换成上一个",
+    "intent": "PREVIOUS",
+    "slots": {},
+    "id": 221
   }
 ]
