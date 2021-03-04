@@ -1,938 +1,718 @@
 [
   {
-    "domain": "idiomsDict",
-    "text": "我需要一些大自然的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "一些大自然"
-    },
-    "id": 4
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "哪些成语是描写大自然的",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "大自然"
-    },
-    "id": 5
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "形容我非常愤怒用什么成语比较好",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "愤怒"
-    },
-    "id": 6
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "精忠报国的成语有哪些",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "精忠报国"
-    },
-    "id": 10
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "有哪些常见的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "哪些常见"
-    },
-    "id": 11
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "关于爱国有什么成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "爱国有什么"
-    },
-    "id": 12
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "描写人的形态的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "形态"
-    },
-    "id": 13
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "关于颜色的成语有哪些",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "颜色"
-    },
-    "id": 14
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "有没有形容人很高兴的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "人很高兴"
-    },
-    "id": 15
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想查询关于牛的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "牛"
-    },
-    "id": 16
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "有没有关于猪的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "猪"
-    },
-    "id": 17
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想查询人品质好的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "人品质好"
-    },
-    "id": 18
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "能不能查一下关于周瑜的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "周瑜"
-    },
-    "id": 19
+    "domain": "wordFinding",
+    "text": "查找反义词",
+    "intent": "ANTONYM_QUERY",
+    "slots": {},
+    "id": 229
   },
   {
-    "domain": "idiomsDict",
-    "text": "查询有关李白的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "李白"
-    },
-    "id": 20
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想了解出自史记的成语",
-    "intent": "CATEGORY_QUERY",
-    "slots": {
-      "category": "史记"
-    },
-    "id": 21
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我需要以“我”开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "我"
-    },
-    "id": 26
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想知道哪些成语是以“我”开头的",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "我"
-    },
-    "id": 27
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "找一些成语是以“我”开头的",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "我"
-    },
-    "id": 28
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "有哪些以“我”字开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "我"
-    },
-    "id": 31
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "你开头的成语有哪些",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "你"
-    },
-    "id": 33
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "有什么一字开头的成语吗",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "一"
-    },
-    "id": 34
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "能不能查一下无什么的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "无"
-    },
-    "id": 35
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "找一下意开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "意"
-    },
-    "id": 36
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想查询药开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "药"
-    },
-    "id": 37
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "能不能查一下万字开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "万"
-    },
-    "id": 38
-  },
-  {
-    "domain": "idiomsDict",
-    "text": "我想了解跃开头的成语",
-    "intent": "FIRST_WORD",
-    "slots": {
-      "firstword": "跃"
-    },
-    "id": 39
+    "domain": "wordFinding",
+    "text": "反义词查询",
+    "intent": "ANTONYM_QUERY",
+    "slots": {},
+    "id": 232
   },
   {
-    "domain": "idiomsDict",
-    "text": "查询鸟开头的成语",
-    "intent": "FIRST_WORD",
+    "domain": "wordFinding",
+    "text": "好的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "firstword": "鸟"
+      "name": "好"
     },
-    "id": 40
+    "id": 233
   },
   {
-    "domain": "idiomsDict",
-    "text": "能不能找一下锐开头的成语",
-    "intent": "FIRST_WORD",
+    "domain": "wordFinding",
+    "text": "坏的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "firstword": "锐"
+      "name": "坏"
     },
-    "id": 41
+    "id": 235
   },
   {
-    "domain": "idiomsDict",
-    "text": "可不可以查一下人开头的成语",
-    "intent": "FIRST_WORD",
+    "domain": "wordFinding",
+    "text": "远的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "firstword": "人"
+      "name": "远"
     },
-    "id": 42
+    "id": 236
   },
   {
-    "domain": "idiomsDict",
-    "text": "能不能查一下不开头的成语",
-    "intent": "FIRST_WORD",
+    "domain": "wordFinding",
+    "text": "安静的同义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "firstword": "不"
+      "name": "安静"
     },
-    "id": 43
+    "id": 238
   },
   {
-    "domain": "idiomsDict",
-    "text": "心有余悸怎么用",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "奔跑的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "奔跑"
     },
-    "id": 45
+    "id": 240
   },
   {
-    "domain": "idiomsDict",
-    "text": "心有余悸的用法有哪些",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "惆怅的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "惆怅"
     },
-    "id": 49
+    "id": 241
   },
   {
-    "domain": "idiomsDict",
-    "text": "心有余悸用在哪些地方",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "词和安静相反",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "安静"
     },
-    "id": 50
+    "id": 242
   },
   {
-    "domain": "idiomsDict",
-    "text": "哪些地方会使用心有余悸",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "聪明的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "聪明"
     },
-    "id": 51
+    "id": 243
   },
   {
-    "domain": "idiomsDict",
-    "text": "心有余悸常用的场景",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "奇怪的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "奇怪"
     },
-    "id": 52
+    "id": 251
   },
   {
-    "domain": "idiomsDict",
-    "text": "心有余悸这个成语怎么用",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "勤劳的同义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "勤劳"
     },
-    "id": 53
+    "id": 252
   },
   {
-    "domain": "idiomsDict",
-    "text": "查下心有余悸的用法",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "阴天的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "阴天"
     },
-    "id": 54
+    "id": 253
   },
   {
-    "domain": "idiomsDict",
-    "text": "你能告诉我心有余悸怎么用吗",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "忧郁的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "心有余悸"
+      "name": "忧郁"
     },
-    "id": 56
+    "id": 254
   },
   {
-    "domain": "idiomsDict",
-    "text": "成语借花献佛怎么使用",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "整齐的同义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "整齐"
     },
-    "id": 57
+    "id": 255
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮忙查一下成语借花献佛",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "白富美的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "白富美"
     },
-    "id": 59
+    "id": 256
   },
   {
-    "domain": "idiomsDict",
-    "text": "成语修生养性",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "温柔有反义词吗",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "修生养性"
+      "name": "温柔"
     },
-    "id": 61
+    "id": 261
   },
   {
-    "domain": "idiomsDict",
-    "text": "巧舌如簧是褒义词吗",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "查询缓慢的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "巧舌如簧"
+      "name": "缓慢"
     },
-    "id": 62
+    "id": 262
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮我讲一下一物降一物的使用场景",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "成功近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "一物降一物"
+      "name": "成功"
     },
-    "id": 63
+    "id": 263
   },
   {
-    "domain": "idiomsDict",
-    "text": "阴险狡诈应该怎么使用",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "惩罚的近义词是啥",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "阴险狡诈"
+      "name": "惩罚"
     },
-    "id": 64
+    "id": 264
   },
   {
-    "domain": "idiomsDict",
-    "text": "高深莫测用来形容什么",
-    "intent": "HOW_USE",
+    "domain": "wordFinding",
+    "text": "大的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "高深莫测"
+      "name": "大"
     },
-    "id": 65
+    "id": 265
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮我查一下包含“五”的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "高的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "高"
     },
-    "id": 66
+    "id": 266
   },
   {
-    "domain": "idiomsDict",
-    "text": "查找包含“五”的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "高兴有哪些近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "高兴"
     },
-    "id": 67
+    "id": 267
   },
   {
-    "domain": "idiomsDict",
-    "text": "找一下包含“五”的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "孤独的反义词是啥",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "孤独"
     },
-    "id": 68
+    "id": 268
   },
   {
-    "domain": "idiomsDict",
-    "text": "了解一下包含“五”的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "开心有什么近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "开心"
     },
-    "id": 69
+    "id": 269
   },
   {
-    "domain": "idiomsDict",
-    "text": "包含“五”的成语有哪些",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "腼腆有哪些近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "腼腆"
     },
-    "id": 70
+    "id": 270
   },
   {
-    "domain": "idiomsDict",
-    "text": "哪些成语是包含“五”的",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "宁静有哪些近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "宁静"
     },
-    "id": 71
+    "id": 271
   },
   {
-    "domain": "idiomsDict",
-    "text": "可有包含“五”字的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "安静的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "安静"
     },
-    "id": 72
+    "id": 272
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮我找一下哪些成语包含“五”字",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "悲伤的近义词有哪些",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "五"
+      "name": "悲伤"
     },
-    "id": 73
+    "id": 273
   },
   {
-    "domain": "idiomsDict",
-    "text": "可不可以查一下带风的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "差异的近义词有哪些",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "风"
+      "name": "差异"
     },
-    "id": 80
+    "id": 274
   },
   {
-    "domain": "idiomsDict",
-    "text": "能不能查一下带言字的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "吵闹的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "言"
+      "name": "吵闹"
     },
-    "id": 81
+    "id": 275
   },
   {
-    "domain": "idiomsDict",
-    "text": "查询包含鹤的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "高兴的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "word": "鹤"
+      "name": "高兴"
     },
-    "id": 82
+    "id": 277
   },
   {
-    "domain": "idiomsDict",
-    "text": "有没有包含刀的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "孤独的反义词怎么读",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "word": "刀"
+      "name": "孤独"
     },
-    "id": 83
+    "id": 278
   },
   {
-    "domain": "idiomsDict",
-    "text": "找一下带梦的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "很远的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "word": "梦"
+      "name": "很远"
     },
-    "id": 84
+    "id": 279
   },
   {
-    "domain": "idiomsDict",
-    "text": "可不可以找一下带谎字的成语",
-    "intent": "INCLUDE_WORD",
+    "domain": "wordFinding",
+    "text": "活蹦乱跳有反义词吗",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "word": "谎"
+      "name": "活蹦乱跳"
     },
-    "id": 85
+    "id": 280
   },
   {
-    "domain": "idiomsDict",
-    "text": "查一下以“龙”结尾的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "健康的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "健康"
     },
-    "id": 89
+    "id": 281
   },
   {
-    "domain": "idiomsDict",
-    "text": "以“龙”结尾的成语有哪些",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "开放的近义词有哪些",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "开放"
     },
-    "id": 94
+    "id": 282
   },
   {
-    "domain": "idiomsDict",
-    "text": "以“龙”结尾的成语是什么",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "开心的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "开心"
     },
-    "id": 95
+    "id": 283
   },
   {
-    "domain": "idiomsDict",
-    "text": "哪些成语是以“龙”结尾的",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "开心的近义词有哪些",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "开心"
     },
-    "id": 96
+    "id": 284
   },
   {
-    "domain": "idiomsDict",
-    "text": "我要以“龙”结尾的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "念一下漂亮的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "漂亮"
     },
-    "id": 97
+    "id": 285
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮我找一下哪些成语以“龙”结尾",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "漂亮的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "漂亮"
     },
-    "id": 98
+    "id": 286
   },
   {
-    "domain": "idiomsDict",
-    "text": "我想知道哪些成语是以“龙”结尾的",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "平淡的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "平淡"
     },
-    "id": 99
+    "id": 287
   },
   {
-    "domain": "idiomsDict",
-    "text": "龙结尾的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "平淡的反义词有哪些",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "龙"
+      "name": "平淡"
     },
-    "id": 100
+    "id": 288
   },
   {
-    "domain": "idiomsDict",
-    "text": "你结尾的成语有哪些",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "奇怪的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "你"
+      "name": "奇怪"
     },
-    "id": 101
+    "id": 289
   },
   {
-    "domain": "idiomsDict",
-    "text": "好结尾的成语有什么",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "容易的近义词有哪些",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "好"
+      "name": "容易"
     },
-    "id": 102
+    "id": 290
   },
   {
-    "domain": "idiomsDict",
-    "text": "查一下最后一个字是我字的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "善良的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "我"
+      "name": "善良"
     },
-    "id": 103
+    "id": 291
   },
   {
-    "domain": "idiomsDict",
-    "text": "你看下最后一个字是天字的成语有没有",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "生气的同义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "天"
+      "name": "生气"
     },
-    "id": 104
+    "id": 292
   },
   {
-    "domain": "idiomsDict",
-    "text": "有没有以大字结尾的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "安定的近义词是宁静吗",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "lastword": "大"
+      "name": "安定"
     },
-    "id": 105
+    "id": 293
   },
   {
-    "domain": "idiomsDict",
-    "text": "查一下什么明的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "聒噪的反义词是安静吗",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "明"
+      "name": "聒噪"
     },
-    "id": 106
+    "id": 294
   },
   {
-    "domain": "idiomsDict",
-    "text": "可不可以找一下什么楚的成语",
-    "intent": "LAST_WORD",
+    "domain": "wordFinding",
+    "text": "明亮的反义词是昏暗吗",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "lastword": "楚"
+      "name": "明亮"
     },
-    "id": 107
+    "id": 295
   },
   {
-    "domain": "idiomsDict",
-    "text": "怎么解释比翼双飞",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "哪个词是安静的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "比翼双飞"
+      "name": "安静"
     },
-    "id": 115
+    "id": 296
   },
   {
-    "domain": "idiomsDict",
-    "text": "比翼双飞你知道什么意思吗",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "哪些词是安静的同义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "比翼双飞"
+      "name": "安静"
     },
-    "id": 116
+    "id": 298
   },
   {
-    "domain": "idiomsDict",
-    "text": "看一下比翼双飞的解释",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "宁静的反义词帮我查下",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "比翼双飞"
+      "name": "宁静"
     },
-    "id": 117
+    "id": 299
   },
   {
-    "domain": "idiomsDict",
-    "text": "说一下三顾茅庐",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "生气的近义词是愤怒吗",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "三顾茅庐"
+      "name": "生气"
     },
-    "id": 118
+    "id": 300
   },
   {
-    "domain": "idiomsDict",
-    "text": "三顾茅庐说的是什么",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "生气是开心的反义词吗",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "三顾茅庐"
+      "name": "开心"
     },
-    "id": 119
+    "id": 301
   },
   {
-    "domain": "idiomsDict",
-    "text": "借花献佛这个成语有哪些意义",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "我爱你的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "我爱你"
     },
-    "id": 122
+    "id": 302
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮帮我找下借花献佛这个成语的解释",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "我想查询平淡的反义词",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 123
+    "id": 303
   },
   {
-    "domain": "idiomsDict",
-    "text": "给我说说借花献佛的意思吧",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "向往的反义词是哪几个",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "向往"
     },
-    "id": 124
+    "id": 304
   },
   {
-    "domain": "idiomsDict",
-    "text": "给我解释一下借花献佛这个成语",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "查看平淡的反义词有哪些",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 125
+    "id": 305
   },
   {
-    "domain": "idiomsDict",
-    "text": "给我讲讲借花献佛什么意思",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "和安静同义的词都有什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "安静"
     },
-    "id": 126
+    "id": 306
   },
   {
-    "domain": "idiomsDict",
-    "text": "能给我找一下借花献佛这个成语吗",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "缓慢的反义词给我念一下",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "缓慢"
     },
-    "id": 127
+    "id": 307
   },
   {
-    "domain": "idiomsDict",
-    "text": "一蹴而就的解释是什么",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "开心的反义词读给我听听",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "一蹴而就"
+      "name": "开心"
     },
-    "id": 128
+    "id": 308
   },
   {
-    "domain": "idiomsDict",
-    "text": "帮我查一下欣欣向荣的意思",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "开心是不是高兴的近义词",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "欣欣向荣"
+      "name": "高兴"
     },
-    "id": 129
+    "id": 309
   },
   {
-    "domain": "idiomsDict",
-    "text": "羽扇纶巾是什么意思来源于哪里",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "理所应当的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "羽扇纶巾"
+      "name": "应当"
     },
-    "id": 130
+    "id": 310
   },
   {
-    "domain": "idiomsDict",
-    "text": "我想知道高山流水这个成语用在哪里合适",
-    "intent": "QUERY",
+    "domain": "wordFinding",
+    "text": "美人如花的同义词有什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "高山流水"
+      "name": "美人如花"
     },
-    "id": 131
+    "id": 311
   },
   {
-    "domain": "idiomsDict",
-    "text": "见利忘义来源于哪个典故",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "哪个词跟整齐的意思相反",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "见利忘义"
+      "name": "整齐"
     },
-    "id": 137
+    "id": 312
   },
   {
-    "domain": "idiomsDict",
-    "text": "你帮我查下见利忘义的来源",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "搜索平淡的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "见利忘义"
+      "name": "平淡"
     },
-    "id": 138
+    "id": 313
   },
   {
-    "domain": "idiomsDict",
-    "text": "你可以帮我查下见利忘义的出处吗",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "有哪些词跟缓慢意思相近",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "见利忘义"
+      "name": "缓慢"
     },
-    "id": 139
+    "id": 314
   },
   {
-    "domain": "idiomsDict",
-    "text": "见利忘义这个成语来自哪里",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "珍贵的近义词是不是宝贵",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "见利忘义"
+      "name": "珍贵"
     },
-    "id": 140
+    "id": 315
   },
   {
-    "domain": "idiomsDict",
-    "text": "找一下卧薪尝胆来自什么典故",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "查询与平淡意思相反的词语",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "卧薪尝胆"
+      "name": "平淡"
     },
-    "id": 141
+    "id": 316
   },
   {
-    "domain": "idiomsDict",
-    "text": "给我找一下白云苍狗是出自什么地方",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "查一下平淡的反义词有哪些",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "白云苍狗"
+      "name": "平淡"
     },
-    "id": 142
+    "id": 317
   },
   {
-    "domain": "idiomsDict",
-    "text": "我想查查完璧归赵出自哪个经典",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "查一下平淡的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "完璧归赵"
+      "name": "平淡"
     },
-    "id": 143
+    "id": 318
   },
   {
-    "domain": "idiomsDict",
-    "text": "搜索一下草木皆兵出自哪里",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "告诉我懒惰的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "草木皆兵"
+      "name": "懒惰"
     },
-    "id": 144
+    "id": 319
   },
   {
-    "domain": "idiomsDict",
-    "text": "成语借花献佛出自古代哪位人物",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "我想看下平淡的近义词是什么",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 145
+    "id": 320
   },
   {
-    "domain": "idiomsDict",
-    "text": "借花献佛是从什么典故里面来的",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "我想找与平淡意思相近的词语",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 146
+    "id": 321
   },
   {
-    "domain": "idiomsDict",
-    "text": "给我找一下借花献佛是出自什么地方",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "帮我查询与平淡意思相近的词语",
+    "intent": "SYNONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 147
+    "id": 323
   },
   {
-    "domain": "idiomsDict",
-    "text": "我想查查借花献佛出自哪个经典",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "帮我查一下与平淡意思相反的词语",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "借花献佛"
+      "name": "平淡"
     },
-    "id": 148
+    "id": 325
   },
   {
-    "domain": "idiomsDict",
-    "text": "风声鹤唳的出处查询",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "你能告诉我不开心的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "风声鹤唳"
+      "name": "不开心"
     },
-    "id": 149
+    "id": 326
   },
   {
-    "domain": "idiomsDict",
-    "text": "说说见利忘义出自哪儿",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "能不能给我查下平淡的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "见利忘义"
+      "name": "平淡"
     },
-    "id": 150
+    "id": 327
   },
   {
-    "domain": "idiomsDict",
-    "text": "通宵达旦来源是什么",
-    "intent": "SOURCE_QUERY",
+    "domain": "wordFinding",
+    "text": "可不可以帮我看下平淡的反义词是什么",
+    "intent": "ANTONYM_QUERY",
     "slots": {
-      "idiom_name": "通宵达旦"
+      "name": "平淡"
     },
-    "id": 153
+    "id": 328
   }
 ]
