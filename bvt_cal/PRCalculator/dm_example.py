@@ -40,10 +40,7 @@ if __name__ == "__main__":
     # df = pd.read_excel('nlu_example.xlsx')
     df = pd.read_excel('merge_data.xlsx')
     df = df.drop_duplicates(subset=["corpus_id"])
-    print(len(df[df['true_domain_name'] == "huangli_50-1362949324646834176"]))
+    # print(len(df[df['true_domain_name'] == "huangli_50-1362949324646834176"]))
     final_metrics, final_case = example(df=df)
-
-
-
     final_metrics_all = final_metrics[final_metrics['level'] == 'domain']
     print(final_metrics_all)
