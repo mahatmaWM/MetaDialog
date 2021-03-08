@@ -1,7 +1,7 @@
 [
   {
     "text": "荷兰的首都是哪个城市的",
-    "domain": "shoudu_5-1363011111425675264",
+    "domain": "our_test_2",
     "intent": "search_capital",
     "slots": {
       "country": "荷兰"
@@ -9,7 +9,7 @@
   },
   {
     "text": "我想知道北京的首都是什么",
-    "domain": "shoudu_5-1363011111425675264",
+    "domain": "our_test_2",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -17,7 +17,7 @@
   },
   {
     "text": "今天可以订盟吗？",
-    "domain": "huangli_5-1362949499880652800",
+    "domain": "our_test_2",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -27,7 +27,7 @@
   },
   {
     "text": "有哪些事情今天适合去做",
-    "domain": "huangli_5-1362949499880652800",
+    "domain": "our_test_2",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -36,7 +36,7 @@
   },
   {
     "text": "幼儿扁桃体化脓发高烧",
-    "domain": "jibing_5-1362964556333105152",
+    "domain": "our_test_2",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "幼儿",
@@ -45,7 +45,7 @@
   },
   {
     "text": "甲沟炎息肉如何消除",
-    "domain": "jibing_5-1362964556333105152",
+    "domain": "our_test_2",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "甲沟炎"
@@ -53,7 +53,7 @@
   },
   {
     "text": "蒙城后天天气",
-    "domain": "tianqi_5-1362970384020725760",
+    "domain": "our_test_2",
     "intent": "general_search",
     "slots": {
       "location": "蒙城",
@@ -62,7 +62,7 @@
   },
   {
     "text": "重庆江津天气",
-    "domain": "tianqi_5-1362970384020725760",
+    "domain": "our_test_2",
     "intent": "general_search",
     "slots": {
       "location": "重庆江津"
@@ -70,13 +70,13 @@
   },
   {
     "text": "我要看时政新闻",
-    "domain": "xinwen_5-1363008185919516672",
+    "domain": "our_test_2",
     "intent": "search_news",
     "slots": {}
   },
   {
     "text": "给我最新的时事新闻",
-    "domain": "xinwen_5-1363008185919516672",
+    "domain": "our_test_2",
     "intent": "search_news",
     "slots": {
       "ranking": "最新",
