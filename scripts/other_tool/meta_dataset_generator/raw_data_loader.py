@@ -4,6 +4,7 @@ from typing import Dict, List, Tuple
 import os
 import re
 import json
+import codecs
 
 
 class RawDataLoaderBase:
@@ -56,52 +57,133 @@ class SMPDataLoader(RawDataLoaderBase):
                 all_data[domain]['seq_outs'].extend(part_data[domain]['seq_outs'])
                 all_data[domain]['labels'].extend(part_data[domain]['labels'])
 
-        dev_data, support_data = {}, {}
-        if with_dev:
-            dev_support_files = [os.path.join(path, 'dev/support', filename)
-                                 for filename in os.listdir(os.path.join(path, 'dev/support'))
-                                 if filename.endswith('.json')]
-            support_data, support_text_set = self.unpack_support_data(dev_support_files)
+        dev_mid_support, dev_mid_query = self.find_all_datafiles_data(path, 'dev')
+        test_mid_support, test_mid_query = self.find_all_datafiles_data(path, 'test')
+        dev_data = self.merge_support_query(dev_mid_support, dev_mid_query)
+        test_data = self.merge_support_query(test_mid_support, test_mid_query)
 
-            dev_all_files = [os.path.join(path, 'dev/correct', filename)
-                             for filename in os.listdir(os.path.join(path, 'dev/correct'))
+        return {'train': all_data, 'dev': dev_data, 'test': test_data}
+
+    def find_all_datafiles_data(self, path, dev_or_test):
+        dev_support_files = [os.path.join(path + dev_or_test + '/support', filename)
+                             for filename in os.listdir(os.path.join(path, 'dev/support'))
                              if filename.endswith('.json')]
-            for one_file in dev_all_files:
-                part_data = self.unpack_train_data(one_file, support_text_set)
 
-                for domain, data in part_data.items():
-                    if domain not in all_data:
-                        dev_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
-                    dev_data[domain]['seq_ins'].extend(part_data[domain]['seq_ins'])
-                    dev_data[domain]['seq_outs'].extend(part_data[domain]['seq_outs'])
-                    dev_data[domain]['labels'].extend(part_data[domain]['labels'])
+        dev_query_files = [os.path.join(path + dev_or_test + '/correct', filename)
+                           for filename in os.listdir(os.path.join(path, 'dev/correct'))
+                           if filename.endswith('.json')]
 
-        return {'train': all_data, 'dev': dev_data, 'support': support_data}
+        part_support_data = self.find_all_data(dev_support_files)
+        part_query_data = self.find_all_data(dev_query_files)
 
-    def unpack_support_data(self, all_data_path):
-        support_data = {}
-        support_text_set = set()
-        for data_path in all_data_path:
+        return part_support_data, part_query_data
 
-            with open(data_path, 'r', encoding='utf-8') as reader:
+    def find_all_data(self, data_file_path):
+        part_data = {}
+        for one_file in data_file_path:
+            with codecs.open(one_file, 'r', encoding='utf-8') as reader:
                 json_data = json.load(reader)
-
-            print('support data num: {} - {}'.format(len(json_data), data_path))
 
             for item in json_data:
                 domain = item['domain']
-                support_text_set.add(item['text'])
-
-                if domain not in support_data:
-                    support_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
+                if domain not in part_data:
+                    part_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
 
                 seq_in, seq_out, label = self.handle_one_utterance(item)
+                part_data[domain]['seq_ins'].append(seq_in)
+                part_data[domain]['seq_outs'].append(seq_out)
+                part_data[domain]['labels'].append([label])
+        return part_data
 
-                support_data[domain]['seq_ins'].append(seq_in)
-                support_data[domain]['seq_outs'].append(seq_out)
-                support_data[domain]['labels'].append([label])
+    def merge_support_query(self, support_data, query_data):
+        support_domain_set = set()
+        query_domian_set = set()
+        for k in support_data.keys():
+            support_domain_set.add(k)
+        for k in query_data.keys():
+            query_domian_set.add(k)
+        if support_domain_set != query_domian_set:
+            diff_domain_set = support_domain_set - query_domian_set
+            raise KeyError('support and query data not equal, just one have {}'.format(diff_domain_set))
+        res = {}
+        for domain in support_domain_set:
+            if domain not in res:
+                res[domain] = []
+        for k, v in support_data.items():
+            domain_support_data, domain_query_data = {}, {}
+            domain_support_data['support'] = support_data[k]
+            domain_query_data['query'] = query_data[k]
+            res[k].append(domain_support_data)
+            res[k].append(domain_query_data)
+        return res
 
-        return support_data, support_text_set
+
+
+
+
+
+        #     support_data, support_text_set = self.unpack_support_data(dev_support_files)
+        #
+        #     dev_correct_files = [os.path.join(path, 'dev/correct', filename)
+        #                      for filename in os.listdir(os.path.join(path, 'dev/correct'))
+        #                      if filename.endswith('.json')]
+        #     for one_file in dev_correct_files:
+        #         part_data = self.unpack_train_data(one_file, support_text_set)
+        #
+        #         for domain, data in part_data.items():
+        #             if domain not in all_data:
+        #                 dev_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
+        #             dev_data[domain]['seq_ins'].extend(part_data[domain]['seq_ins'])
+        #             dev_data[domain]['seq_outs'].extend(part_data[domain]['seq_outs'])
+        #             dev_data[domain]['labels'].extend(part_data[domain]['labels'])
+        # # TODO 增加test的处理
+        # test_data, support_data = {}, {}
+        # if with_dev:
+        #     dev_support_files = [os.path.join(path, 'dev/support', filename)
+        #                          for filename in os.listdir(os.path.join(path, 'dev/support'))
+        #                          if filename.endswith('.json')]
+        #     support_data, support_text_set = self.unpack_support_data(dev_support_files)
+        #
+        #     dev_all_files = [os.path.join(path, 'dev/correct', filename)
+        #                      for filename in os.listdir(os.path.join(path, 'dev/correct'))
+        #                      if filename.endswith('.json')]
+        #     for one_file in dev_all_files:
+        #         part_data = self.unpack_train_data(one_file, support_text_set)
+        #
+        #         for domain, data in part_data.items():
+        #             if domain not in all_data:
+        #                 dev_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
+        #             dev_data[domain]['seq_ins'].extend(part_data[domain]['seq_ins'])
+        #             dev_data[domain]['seq_outs'].extend(part_data[domain]['seq_outs'])
+        #             dev_data[domain]['labels'].extend(part_data[domain]['labels'])
+
+        # dev_data是
+
+
+    # def unpack_support_data(self, all_data_path):
+    #     support_data = {}
+    #     support_text_set = set()
+    #     for data_path in all_data_path:
+    #
+    #         with open(data_path, 'r', encoding='utf-8') as reader:
+    #             json_data = json.load(reader)
+    #
+    #         print('support data num: {} - {}'.format(len(json_data), data_path))
+    #
+    #         for item in json_data:
+    #             domain = item['domain']
+    #             support_text_set.add(item['text'])
+    #
+    #             if domain not in support_data:
+    #                 support_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
+    #
+    #             seq_in, seq_out, label = self.handle_one_utterance(item)
+    #
+    #             support_data[domain]['seq_ins'].append(seq_in)
+    #             support_data[domain]['seq_outs'].append(seq_out)
+    #             support_data[domain]['labels'].append([label])
+    #
+    #     return support_data, support_text_set
 
     def unpack_train_data(self, data_path: str, remove_set: set = None):
         part_data = {}
@@ -158,11 +240,14 @@ if __name__ == '__main__':
     opt.dataset = 'smp'
     opt.label_type = 'intent'
 
-    smp_path = '/Users/lyk/Work/Dialogue/FewShot/SMP/'
+    # smp_path = '/Users/lyk/Work/Dialogue/FewShot/SMP/'
+    smp_path = r'F:\git\MetaDialog\他的输入输出\FewJoint\SMP_Final_Origin2_1/'
     smp_loader = SMPDataLoader(opt)
 
     smp_data = smp_loader.load_data(path=smp_path)
-    train_data, dev_data, support_data = smp_data['train'], smp_data['dev'], smp_data['support']
+    with codecs.open(smp_path + 'output_mid_file.json', 'w', encoding='utf-8') as f:
+        json.dump(smp_data, f, ensure_ascii=False, indent=2)
+    train_data, dev_data, support_data = smp_data['train'], smp_data['dev'], smp_data['test']
 
     print("train: smp domain number: {}".format(len(train_data)))
     print("train: all smp domain: {}".format(train_data.keys()))
