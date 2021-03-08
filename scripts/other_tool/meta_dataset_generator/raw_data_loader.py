@@ -110,11 +110,8 @@ class SMPDataLoader(RawDataLoaderBase):
             if domain not in res:
                 res[domain] = []
         for k, v in support_data.items():
-            domain_support_data, domain_query_data = {}, {}
-            domain_support_data['support'] = support_data[k]
-            domain_query_data['query'] = query_data[k]
-            res[k].append(domain_support_data)
-            res[k].append(domain_query_data)
+            res[k].append({'support': support_data[k]})
+            res[k].append({'query': query_data[k]})
         return res
 
 
