@@ -9,7 +9,7 @@ dataset_lst=(smp)
 #dataset_lst=(atis stanford toursg)
 
 # ======= size setting ======
-support_shots_lst=(3)
+support_shots_lst=(1)
 #support_shots_lst=(5)
 episode_num=50  # We could over generation and select part of for each epoch
 query_shot=4

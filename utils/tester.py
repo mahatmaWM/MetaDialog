@@ -77,7 +77,8 @@ class TesterBase:
     def get_data_loader(self, features):
         dataset = TensorDataset([self.unpack_feature(f) for f in features])
         if self.opt.local_rank == -1:
-            sampler = RandomSampler(dataset, num_samples=1500, replacement=True)
+            sampler = RandomSampler(dataset)
+            # sampler = RandomSampler(dataset, num_samples=1500, replacement=True)
         else:
             sampler = DistributedSampler(dataset)
         data_loader = DataLoader(dataset, sampler=sampler, batch_size=self.batch_size)
@@ -119,19 +120,6 @@ class FewShotTester(TesterBase):
         data_loader = DataLoader(dataset, sampler=sampler, batch_size=self.batch_size, collate_fn=pad_collate)
         return data_loader
 
-    def merge_all_eval_batchs(self, output_dir, log_mark):
-        all_pred_result_files = [os.path.join(output_dir, log_mark, filename)
-                                 for filename in os.listdir(os.path.join(output_dir, log_mark))
-                                 if filename.startswith('test_pred.')]
-        all_pred_datas = []
-        for filename in all_pred_result_files:
-            with codecs.open(filename, 'r', encoding='utf-8') as f:
-                datas = json.load(f)
-                for data in datas:
-                    all_pred_datas.append(data)
-        with codecs.open(output_dir + log_mark + 'test_merge_all_eval.txt', 'w', encoding='utf-8') as t:
-            json.dump(all_pred_datas, t, ensure_ascii=False, indent=2)
-
     # TODO 这里为什么sl的时候每次计算出来的都是0
     def eval_predictions(self, all_results: List[RawResult], id2label: dict, log_mark: str) -> float:
         """ Our result score is average score of all few-shot batches. """
@@ -140,7 +128,6 @@ class FewShotTester(TesterBase):
         for b_id, fs_batch in all_batches:
             f1 = self.eval_one_few_shot_batch(b_id, fs_batch, id2label, log_mark)
             all_scores.append(f1)
-        # self.merge_all_eval_batchs(self.opt.output_dir, log_mark)
         return sum(all_scores) * 1.0 / len(all_scores)
 
     def eval_one_few_shot_batch(self, b_id, fs_batch: List[RawResult], id2label: dict, log_mark: str) -> float:

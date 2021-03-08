@@ -49,7 +49,6 @@ class SMPDataLoader(RawDataLoaderBase):
 
         for one_file in all_files:
             part_data = self.unpack_train_data(one_file)
-
             for domain, data in part_data.items():
                 if domain not in all_data:
                     all_data[domain] = {"seq_ins": [], "seq_outs": [], "labels": []}
@@ -58,19 +57,24 @@ class SMPDataLoader(RawDataLoaderBase):
                 all_data[domain]['labels'].extend(part_data[domain]['labels'])
 
         dev_mid_support, dev_mid_query = self.find_all_datafiles_data(path, 'dev')
-        test_mid_support, test_mid_query = self.find_all_datafiles_data(path, 'test')
         dev_data = self.merge_support_query(dev_mid_support, dev_mid_query)
+
+        test_mid_support, test_mid_query = self.find_all_datafiles_data(path, 'test')
         test_data = self.merge_support_query(test_mid_support, test_mid_query)
 
         return {'train': all_data, 'dev': dev_data, 'test': test_data}
 
     def find_all_datafiles_data(self, path, dev_or_test):
-        dev_support_files = [os.path.join(path + dev_or_test + '/support', filename)
-                             for filename in os.listdir(os.path.join(path, 'dev/support'))
+        support_dir = path + dev_or_test + '/support/'
+        correct_dir = path + dev_or_test + '/correct/'
+        print(support_dir)
+        print(correct_dir)
+        dev_support_files = [os.path.join(support_dir, filename)
+                             for filename in os.listdir(support_dir)
                              if filename.endswith('.json')]
 
-        dev_query_files = [os.path.join(path + dev_or_test + '/correct', filename)
-                           for filename in os.listdir(os.path.join(path, 'dev/correct'))
+        dev_query_files = [os.path.join(correct_dir, filename)
+                           for filename in os.listdir(correct_dir)
                            if filename.endswith('.json')]
 
         part_support_data = self.find_all_data(dev_support_files)
@@ -97,21 +101,20 @@ class SMPDataLoader(RawDataLoaderBase):
 
     def merge_support_query(self, support_data, query_data):
         support_domain_set = set()
-        query_domian_set = set()
+        query_domain_set = set()
         for k in support_data.keys():
             support_domain_set.add(k)
         for k in query_data.keys():
-            query_domian_set.add(k)
-        if support_domain_set != query_domian_set:
-            diff_domain_set = support_domain_set - query_domian_set
+            query_domain_set.add(k)
+        if support_domain_set != query_domain_set:
+            diff_domain_set = support_domain_set - query_domain_set
             raise KeyError('support and query data not equal, just one have {}'.format(diff_domain_set))
         res = {}
         for domain in support_domain_set:
             if domain not in res:
                 res[domain] = []
         for k, v in support_data.items():
-            res[k].append({'support': support_data[k]})
-            res[k].append({'query': query_data[k]})
+            res[k].append({'support': support_data[k], 'query': query_data[k]})
         return res
 
 
@@ -228,6 +231,14 @@ class SMPDataLoader(RawDataLoaderBase):
 
 
 if __name__ == '__main__':
+
+    # a = "  查 一下英国和法国的首都分别是哪个 abc"
+    # b = a.replace(' ', '')
+    # print(a)
+    # print(b)
+    # exit(0)
+
+
     print('Start unit test.')
     import argparse
     parse = argparse.ArgumentParser()
@@ -254,5 +265,9 @@ if __name__ == '__main__':
     print("support: all smp domain: {}".format(support_data.keys()))
 
     print("support: {}".format(support_data))
+
+
+
+
 
 

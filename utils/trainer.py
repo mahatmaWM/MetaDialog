@@ -19,6 +19,16 @@ from utils.model_helper import make_model, load_model
 from models.few_shot_seq_labeler import FewShotSeqLabeler
 
 
+logging.basicConfig(
+    format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
+    datefmt='%m/%d/%Y %H:%M:%S',
+    level=logging.INFO,
+    # stream=sys.stderr
+    # stream=sys.stdout
+)
+logger = logging.getLogger(__name__)
+
+
 class TrainerBase:
     """
     Build a pytorch trainer, it is design to be:
@@ -39,7 +49,6 @@ class TrainerBase:
         - grad clipping [better result]
         - step learning rate decay [better result]
     """
-
     def __init__(self, opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester=None):
         """
         :param opt: args
@@ -65,16 +74,10 @@ class TrainerBase:
         self.device = device
         self.n_gpu = n_gpu
 
-    def do_train(self,
-                 model,
-                 train_features,
-                 num_train_epochs,
-                 dev_features=None,
-                 dev_id2label=None,
-                 test_features=None,
-                 test_id2label=None,
-                 best_dev_score_now=0,
-                 gpu_tracker=None):
+    def do_train(self, model, train_features, num_train_epochs,
+                 dev_features=None, dev_id2label=None,
+                 test_features=None, test_id2label=None,
+                 best_dev_score_now=0):
         """
         do training and dev model selection
         :param model:
@@ -89,10 +92,10 @@ class TrainerBase:
         num_train_steps = int(
             len(train_features) / self.batch_size / self.gradient_accumulation_steps * num_train_epochs)
 
-        logging.info("***** Running training *****")
-        logging.info("  Num features = %d", len(train_features))
-        logging.info("  Batch size = %d", self.batch_size)
-        logging.info("  Num steps = %d", num_train_steps)
+        logger.info("***** Running training *****")
+        logger.info("  Num features = %d", len(train_features))
+        logger.info("  Batch size = %d", self.batch_size)
+        logger.info("  Num steps = %d", num_train_steps)
         global_step = 0  # used for args.fp16
         total_step = 0
         best_dev_score_now = best_dev_score_now
@@ -103,35 +106,31 @@ class TrainerBase:
         no_new_best_dev_num = 0
         no_loss_decay_steps = 0
         is_convergence = False
-        if gpu_tracker is not None: gpu_tracker.track()
+
         model.train()
         dataset = self.get_dataset(train_features)
         sampler = self.get_sampler(dataset)
         data_loader = self.get_data_loader(dataset, sampler)
-        if gpu_tracker is not None: gpu_tracker.track()
+
         for epoch_id in trange(int(num_train_epochs), desc="Epoch"):
-            torch.cuda.empty_cache()
             for step, batch in enumerate(tqdm(data_loader, desc="Train-Batch Progress")):
-                # logging.info('step={}'.format(step))
                 if self.n_gpu == 1:
-                    # logging.info('self.n_gpu={}'.format(self.n_gpu))
                     batch = tuple(t.to(self.device) for t in batch)  # multi-gpu does scattering it-self
                 ''' loss '''
                 loss = self.do_forward(batch, model, epoch_id, step)
-                # TODO 是否所有的batch都会hold在gpu里面？？？？强行把batch数据释放
-                del batch
-                torch.cuda.empty_cache()
                 loss = self.process_special_loss(loss)  # for parallel process, split batch and so on
                 loss.backward()
+
                 ''' optimizer step '''
                 global_step, model, is_nan, update_model = self.optimizer_step(step, model, global_step)
                 if is_nan:  # FP16 TRAINING: Nan in gradients, reducing loss scaling
                     continue
                 total_step += 1
+
                 ''' model selection '''
                 if self.time_to_make_check_point(total_step, data_loader):
                     if self.tester and self.opt.eval_when_train:  # this is not suit for training big model
-                        logging.info("Start dev eval.")
+                        print("Start dev eval.")
                         dev_score, test_score, copied_best_model = self.model_selection(
                             model, best_dev_score_now, dev_features, dev_id2label, test_features, test_id2label)
 
@@ -143,11 +142,12 @@ class TrainerBase:
                             no_new_best_dev_num += 1
                     else:
                         self.make_check_point_(model=model, step=total_step)
+
                 ''' convergence detection & early stop '''
                 loss_now = loss.item() if update_model else loss.item() + loss_now
                 if self.opt.convergence_window > 0 and update_model:
                     if global_step % 100 == 0 or total_step % len(data_loader) == 0:
-                        logging.info('Current loss={}, global step={}, min loss now={}, no loss decay step={}'.format(
+                        print('Current loss {}, global step {}, min loss now {}, no loss decay step {}'.format(
                             loss_now, global_step, min_loss, no_loss_decay_steps))
                     if loss_now < min_loss:
                         min_loss = loss_now
@@ -155,16 +155,18 @@ class TrainerBase:
                     else:
                         no_loss_decay_steps += 1
                         if no_loss_decay_steps >= self.opt.convergence_window:
-                            logging.info('=== Reach convergence point!!!!!! ====')
+                            logger.info('=== Reach convergence point!!!!!! ====')
+                            print('=== Reach convergence point!!!!!! ====')
                             is_convergence = True
                 if no_new_best_dev_num >= self.opt.convergence_dev_num > 0:
-                    logging.info('=== Reach convergence point!!!!!! ====')
+                    logger.info('=== Reach convergence point!!!!!! ====')
+                    print('=== Reach convergence point!!!!!! ====')
                     is_convergence = True
                 if is_convergence:
                     break
             if is_convergence:
                 break
-            logging.info(" --- The {} epoch Finish --- ".format(epoch_id))
+            print(" --- The {} epoch Finish --- ".format(epoch_id))
 
         return best_model_now, best_dev_score_now, test_score
 
@@ -206,7 +208,7 @@ class TrainerBase:
         is_nan = False
         for (name_opti, param_opti), (name_model, param_model) in zip(param_to_optimize, named_params_model):
             if name_opti != name_model:
-                logging.error("name_opti != name_model: {} {}".format(name_opti, name_model))
+                logger.error("name_opti != name_model: {} {}".format(name_opti, name_model))
                 raise ValueError
             if param_model.grad is not None:
                 if test_nan and torch.isnan(param_model.grad).sum() > 0:
@@ -224,47 +226,49 @@ class TrainerBase:
         """
         for (name_opti, param_opti), (name_model, param_model) in zip(named_params_optimizer, named_params_model):
             if name_opti != name_model:
-                logging.error("name_opti != name_model: {} {}".format(name_opti, name_model))
+                logger.error("name_opti != name_model: {} {}".format(name_opti, name_model))
                 raise ValueError
             param_model.data.copy_(param_opti.data)
 
     def make_check_point(self, model, step):
-        logging.info("Save model check point to file:%s",
-                     os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
-        torch.save(self.check_point_content(model), os.path.join(self.opt.output_dir,
-                                                                 'model.step{}.cpt.pl'.format(step)))
+        logger.info("Save model check point to file:%s", os.path.join(
+            self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
+        torch.save(
+            self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
 
     def make_check_point_(self, model, step):
         """ deal with IO error version """
         try:
-            logging.info("Save model check point to file:%s",
-                         os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
-            torch.save(self.check_point_content(model),
-                       os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
+            logger.info("Save model check point to file:%s", os.path.join(
+                self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
+            torch.save(
+                self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.step{}.cpt.pl'.format(step)))
         except IOError:
-            logging.info("Failed to make cpt, sleeping ...")
+            logger.info("Failed to make cpt, sleeping ...")
             time.sleep(300)
             self.make_check_point_(model, step)
 
     def model_selection(self, model, best_score, dev_features, dev_id2label, test_features=None, test_id2label=None):
         """ do model selection during training"""
-        logging.info("Start dev model selection.")
+        print("Start dev model selection.")
         # do dev eval at every dev_interval point and every end of epoch
         dev_model = self.tester.clone_model(model, dev_id2label)  # copy reusable params, for a different domain
         if self.opt.mask_transition and self.opt.task == 'sl':
             dev_model.label_mask = self.opt.dev_label_mask.to(self.device)
 
         dev_score = self.tester.do_test(dev_model, dev_features, dev_id2label, log_mark='dev_pred')
-        logging.info("  dev score(F1) = {}".format(dev_score))
+        logger.info("  dev score(F1) = {}".format(dev_score))
+        print("  dev score(F1) = {}".format(dev_score))
         best_model = None
         test_score = None
         if dev_score > best_score:
-            logging.info(" === Found new best!! === ")
+            logger.info(" === Found new best!! === ")
             ''' store new best model  '''
             best_model = self.clone_model(model)  # copy model to avoid writen by latter training
             ''' save model file '''
-            logging.info("Save model to file:%s", os.path.join(self.opt.output_dir, 'model.pl'))
+            logger.info("Save model to file:%s", os.path.join(self.opt.output_dir, 'model.pl'))
             torch.save(self.check_point_content(model), os.path.join(self.opt.output_dir, 'model.pl'))
+
             ''' get current best model's test score '''
             if test_features:
                 test_model = self.tester.clone_model(model, test_id2label)  # copy reusable params for different domain
@@ -272,7 +276,8 @@ class TrainerBase:
                     test_model.label_mask = self.opt.test_label_mask.to(self.device)
 
                 test_score = self.tester.do_test(test_model, test_features, test_id2label, log_mark='test_pred')
-                logging.info("  test score(F1) = {}".format(test_score))
+                logger.info("  test score(F1) = {}".format(test_score))
+                print("  test score(F1) = {}".format(test_score))
         # reset the model status
         model.train()
         return dev_score, test_score, best_model
@@ -282,24 +287,18 @@ class TrainerBase:
         model = model
         return model.state_dict()
 
-    def select_model_from_check_point(self,
-                                      train_id2label,
-                                      dev_features,
-                                      dev_id2label,
-                                      test_features=None,
-                                      test_id2label=None,
-                                      rm_cpt=True):
+    def select_model_from_check_point(
+            self, train_id2label, dev_features, dev_id2label, test_features=None, test_id2label=None, rm_cpt=True):
         all_cpt_file = list(filter(lambda x: '.cpt.pl' in x, os.listdir(self.opt.output_dir)))
-        logging.info('select_model_from_check_point:{}'.format(all_cpt_file))
         best_score = 0
         test_score_then = 0
         best_model = None
         all_cpt_file = sorted(all_cpt_file, key=lambda x: int(x.replace('model.step', '').replace('.cpt.pl', '')))
         for cpt_file in all_cpt_file:
-            logging.info('testing check point: {}'.format(cpt_file))
+            logger.info('testing check point: {}'.format(cpt_file))
             model = load_model(os.path.join(self.opt.output_dir, cpt_file))
-            dev_score, test_score, copied_model = self.model_selection(model, best_score, dev_features, dev_id2label,
-                                                                       test_features, test_id2label)
+            dev_score, test_score, copied_model = self.model_selection(
+                model, best_score, dev_features, dev_id2label, test_features, test_id2label)
             if dev_score > best_score:
                 best_score = dev_score
                 test_score_then = test_score
@@ -334,7 +333,7 @@ class TrainerBase:
                             param.grad.data = param.grad.data / self.opt.loss_scale
                 is_nan = self.set_optimizer_params_grad(self.param_to_optimize, model.named_parameters(), test_nan=True)
                 if is_nan:
-                    logging.info("FP16 TRAINING: Nan in gradients, reducing loss scaling")
+                    logger.info("FP16 TRAINING: Nan in gradients, reducing loss scaling")
                     self.opt.loss_scale = self.opt.loss_scale / 2
                     model.zero_grad()
                     return global_step, model, is_nan
@@ -362,7 +361,6 @@ class FewShotTrainer(TrainerBase):
         - early stop [save time]
         - padding when forward [better result & save space]
     """
-
     def __init__(self, opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester=None):
         super(FewShotTrainer, self).__init__(opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester)
 
@@ -455,6 +453,13 @@ class FewShotTrainer(TrainerBase):
         }
         return ret
 
+    def get_value_from_order_dict(self, order_dict, key):
+        """"""
+        for k, v in order_dict.items():
+            if key in k:
+                return v
+        return []
+
     def clone_model(self, model):
         # deal with data parallel model
         best_model: FewShotSeqLabeler
@@ -474,7 +479,6 @@ class FewShotTrainer(TrainerBase):
 
 
 class SchemaFewShotTrainer(FewShotTrainer):
-
     def __init__(self, opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester=None):
         super(SchemaFewShotTrainer, self).__init__(opt, optimizer, scheduler, param_to_optimize, device, n_gpu, tester)
 
@@ -570,48 +574,38 @@ def prepare_optimizer(opt, model, num_train_features, upper_structures=None):
     :param upper_structures: list of param name that use different learning rate. These names should be unique sub-str.
     :return:
     """
-    num_train_steps = int(num_train_features / opt.train_batch_size / opt.gradient_accumulation_steps *
-                          opt.num_train_epochs)
+    num_train_steps = int(
+        num_train_features / opt.train_batch_size / opt.gradient_accumulation_steps * opt.num_train_epochs)
+
     ''' special process for space saving '''
     if opt.fp16:
-        param_to_optimize = [
-            (n, param.clone().detach().to('cpu').float().requires_grad_()) for n, param in model.named_parameters()
-        ]
+        param_to_optimize = [(n, param.clone().detach().to('cpu').float().requires_grad_())
+                           for n, param in model.named_parameters()]
     elif opt.optimize_on_cpu:
-        param_to_optimize = [
-            (n, param.clone().detach().to('cpu').requires_grad_()) for n, param in model.named_parameters()
-        ]
+        param_to_optimize = [(n, param.clone().detach().to('cpu').requires_grad_())
+                           for n, param in model.named_parameters()]
     else:
         param_to_optimize = list(model.named_parameters())  # all parameter name and parameter
+
     ''' construct optimizer '''
     if upper_structures and opt.upper_lr > 0:  # use different learning rate for upper structure parameter
         optimizer_grouped_parameters = [
-            {
-                'params': [p for n, p in param_to_optimize if not any(nd in n for nd in upper_structures)],
-                'weight_decay': 0.01,
-                'lr': opt.learning_rate
-            },
-            {
-                'params': [p for n, p in param_to_optimize if any(nd in n for nd in upper_structures)],
-                'weight_decay': 0.1,
-                'lr': opt.upper_lr
-            },
+            {'params': [p for n, p in param_to_optimize if not any(nd in n for nd in upper_structures)],
+             'weight_decay': 0.01, 'lr': opt.learning_rate},
+            {'params': [p for n, p in param_to_optimize if any(nd in n for nd in upper_structures)],
+             'weight_decay': 0.1, 'lr': opt.upper_lr},
         ]
     else:
         optimizer_grouped_parameters = [
-            {
-                'params': [p for n, p in param_to_optimize],
-                'weight_decay': 0.01,
-                'lr': opt.learning_rate
-            },
+            {'params': [p for n, p in param_to_optimize], 'weight_decay': 0.01, 'lr': opt.learning_rate},
         ]
     optimizer = AdamW(optimizer_grouped_parameters, lr=opt.learning_rate, correct_bias=False)
+
     ''' construct scheduler '''
     num_warmup_steps = int(opt.warmup_proportion * num_train_steps)
     if opt.scheduler == 'linear_warmup':
-        scheduler = get_linear_schedule_with_warmup(optimizer,
-                                                    num_warmup_steps=num_warmup_steps,
-                                                    num_training_steps=num_train_steps)  # PyTorch scheduler
+        scheduler = get_linear_schedule_with_warmup(
+            optimizer, num_warmup_steps=num_warmup_steps, num_training_steps=num_train_steps)  # PyTorch scheduler
     elif opt.scheduler == 'linear_decay':
         if 0 < opt.decay_lr < 1:
             scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=opt.decay_epoch_size, gamma=opt.decay_lr)
