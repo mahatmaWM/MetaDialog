@@ -30,9 +30,7 @@ class SingleLabelTextClassifier(torch.nn.Module):
         for logit in logits:
             tmp = []
             for pred in logit:
-                # TODO 这里增加一个阈值判断
                 tmp.append(int(torch.argmax(pred)))
-                # tmp.append(int(torch.argmax(pred) if torch.max(pred) > 0.4 else -1))
             ret.append(tmp)
         return ret
 

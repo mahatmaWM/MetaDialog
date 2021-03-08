@@ -4,13 +4,6 @@ import os
 import sys
 
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                    datefmt='%m/%d/%Y %H:%M:%S',
-                    level=logging.INFO,
-                    stream=sys.stdout)
-logger = logging.getLogger(__name__)
-
-
 """  Default path setting """
 DEFAULT_RAW_DIR = '/users4/ythou/Projects/TaskOrientedDialogue/data/FewShotNLU/RawData/'
 DEFAULT_DATA_DIR = '/users4/ythou/Projects/TaskOrientedDialogue/data/FewShotNLU/Data/'
@@ -234,7 +227,7 @@ def option_check(opt):
 
     if not(opt.local_rank == -1 or opt.no_cuda):
         if opt.fp16:
-            logger.info("16-bits training currently not supported in distributed training")
+            logging.info("16-bits training currently not supported in distributed training")
             opt.fp16 = False  # (see https://github.com/pytorch/pytorch/pull/13496)
 
     if not opt.do_train and not opt.do_predict:

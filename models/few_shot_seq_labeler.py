@@ -9,16 +9,14 @@ from models.modules.conditional_random_field import ConditionalRandomField
 
 
 class FewShotSeqLabeler(torch.nn.Module):
-
-    def __init__(
-            self,
-            opt,
-            context_embedder: ContextEmbedderBase,
-            emission_scorer: EmissionScorerBase,
-            decoder: torch.nn.Module,
-            transition_scorer: TransitionScorerBase = None,
-            config: dict = None,  # store necessary setting or none-torch params
-            emb_log: str = None):
+    def __init__(self,
+                 opt,
+                 context_embedder: ContextEmbedderBase,
+                 emission_scorer: EmissionScorerBase,
+                 decoder: torch.nn.Module,
+                 transition_scorer: TransitionScorerBase = None,
+                 config: dict = None,  # store necessary setting or none-torch params
+                 emb_log: str = None):
         super(FewShotSeqLabeler, self).__init__()
         self.opt = opt
         self.context_embedder = context_embedder
@@ -63,9 +61,10 @@ class FewShotSeqLabeler(torch.nn.Module):
         :return:
         """
         # reps for tokens: (batch_size, support_size, nwp_sent_len, emb_len)
-        test_reps, support_reps = self.get_context_reps(test_token_ids, test_segment_ids, test_nwp_index,
-                                                        test_input_mask, support_token_ids, support_segment_ids,
-                                                        support_nwp_index, support_input_mask)
+        test_reps, support_reps = self.get_context_reps(
+            test_token_ids, test_segment_ids, test_nwp_index, test_input_mask, support_token_ids, support_segment_ids,
+            support_nwp_index, support_input_mask
+        )
 
         # calculate emission: shape(batch_size, test_len, no_pad_num_tag)
         emission = self.emission_scorer(test_reps, support_reps, test_output_mask, support_output_mask, support_target)
@@ -85,12 +84,13 @@ class FewShotSeqLabeler(torch.nn.Module):
             self.decoder: ConditionalRandomField
             if self.training:
                 # the CRF staff
-                llh = self.decoder.forward(inputs=logits,
-                                           transitions=transitions,
-                                           start_transitions=start_transitions,
-                                           end_transitions=end_transitions,
-                                           tags=test_target,
-                                           mask=test_output_mask)
+                llh = self.decoder.forward(
+                    inputs=logits,
+                    transitions=transitions,
+                    start_transitions=start_transitions,
+                    end_transitions=end_transitions,
+                    tags=test_target,
+                    mask=test_output_mask)
                 loss = -1 * llh
             else:
                 best_paths = self.decoder.viterbi_tags(logits=logits,
@@ -105,7 +105,9 @@ class FewShotSeqLabeler(torch.nn.Module):
         else:
             self.decoder: SequenceLabeler
             if self.training:
-                loss = self.decoder.forward(logits=logits, tags=test_target, mask=test_output_mask)
+                loss = self.decoder.forward(logits=logits,
+                                            tags=test_target,
+                                            mask=test_output_mask)
             else:
                 prediction = self.decoder.decode(logits=logits, masks=test_output_mask)
                 # we block pad label(id=0) before by - 1, here, we add 1 back
@@ -116,7 +118,7 @@ class FewShotSeqLabeler(torch.nn.Module):
             return prediction
 
     def get_context_reps(
-            self,
+        self,
             test_token_ids: torch.Tensor,
             test_segment_ids: torch.Tensor,
             test_nwp_index: torch.Tensor,
@@ -132,9 +134,10 @@ class FewShotSeqLabeler(torch.nn.Module):
         else:
             self.context_embedder.train()  # to avoid the dropout effect of reps model
             self.context_embedder.requires_grad = True
-        test_reps, support_reps, _, _ = self.context_embedder(test_token_ids, test_segment_ids, test_nwp_index,
-                                                              test_input_mask, support_token_ids, support_segment_ids,
-                                                              support_nwp_index, support_input_mask)
+        test_reps, support_reps, _, _ = self.context_embedder(
+            test_token_ids, test_segment_ids, test_nwp_index, test_input_mask, support_token_ids, support_segment_ids,
+            support_nwp_index, support_input_mask
+        )
         if self.no_embedder_grad:
             test_reps = test_reps.detach()  # detach the reps part from graph
             support_reps = support_reps.detach()  # detach the reps part from graph
@@ -153,7 +156,6 @@ class FewShotSeqLabeler(torch.nn.Module):
 
 
 class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
-
     def __init__(
             self,
             opt,
@@ -162,9 +164,10 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
             decoder: torch.nn.Module,
             transition_scorer: TransitionScorerBase = None,
             config: dict = None,  # store necessary setting or none-torch params
-            emb_log: str = None):
-        super(SchemaFewShotSeqLabeler, self).__init__(opt, context_embedder, emission_scorer, decoder,
-                                                      transition_scorer, config, emb_log)
+            emb_log: str = None
+    ):
+        super(SchemaFewShotSeqLabeler, self).__init__(
+            opt, context_embedder, emission_scorer, decoder, transition_scorer, config, emb_log)
 
     def forward(
             self,
@@ -213,15 +216,13 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
         :param label_output_mask: same to label token ids
         :return:
         """
-        test_reps, support_reps = self.get_context_reps(test_token_ids, test_segment_ids, test_nwp_index,
-                                                        test_input_mask, support_token_ids, support_segment_ids,
-                                                        support_nwp_index, support_input_mask)
+        test_reps, support_reps = self.get_context_reps(
+            test_token_ids, test_segment_ids, test_nwp_index, test_input_mask,
+            support_token_ids, support_segment_ids, support_nwp_index, support_input_mask
+        )
         # get label reps, shape (batch_size, max_label_num, emb_dim)
         label_reps = self.get_label_reps(
-            label_token_ids,
-            label_segment_ids,
-            label_nwp_index,
-            label_input_mask,
+            label_token_ids, label_segment_ids, label_nwp_index, label_input_mask,
         )
 
         # calculate emission: shape(batch_size, test_len, no_pad_num_tag)
@@ -229,9 +230,8 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
         emission = self.emission_scorer(test_reps, support_reps, test_output_mask, support_output_mask, support_target,
                                         label_reps)
         if not self.training and self.emb_log:
-            self.emb_log.write(
-                '\n'.join(['test_target\t' + '\t'.join(map(str, one_target)) for one_target in test_target.tolist()]) +
-                '\n')
+            self.emb_log.write('\n'.join(['test_target\t' + '\t'.join(map(str, one_target))
+                                          for one_target in test_target.tolist()]) + '\n')
 
         logits = emission
 
@@ -241,8 +241,7 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
         loss, prediction = torch.FloatTensor([0]).to(test_target.device), None
         # todo: Design new transition here
         if self.transition_scorer:
-            transitions, start_transitions, end_transitions = self.transition_scorer(
-                test_reps, support_target, label_reps[0])
+            transitions, start_transitions, end_transitions = self.transition_scorer(test_reps, support_target, label_reps[0])
 
             if self.label_mask is not None:
                 transitions = self.mask_transition(transitions, self.label_mask)
@@ -250,12 +249,13 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
             self.decoder: ConditionalRandomField
             if self.training:
                 # the CRF staff
-                llh = self.decoder.forward(inputs=logits,
-                                           transitions=transitions,
-                                           start_transitions=start_transitions,
-                                           end_transitions=end_transitions,
-                                           tags=test_target,
-                                           mask=test_output_mask)
+                llh = self.decoder.forward(
+                    inputs=logits,
+                    transitions=transitions,
+                    start_transitions=start_transitions,
+                    end_transitions=end_transitions,
+                    tags=test_target,
+                    mask=test_output_mask)
                 loss = -1 * llh
             else:
                 best_paths = self.decoder.viterbi_tags(logits=logits,
@@ -270,7 +270,9 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
         else:
             self.decoder: SequenceLabeler
             if self.training:
-                loss = self.decoder.forward(logits=logits, tags=test_target, mask=test_output_mask)
+                loss = self.decoder.forward(logits=logits,
+                                            tags=test_target,
+                                            mask=test_output_mask)
             else:
                 prediction = self.decoder.decode(logits=logits, masks=test_output_mask)
                 # we block pad label(id=0) before by - 1, here, we add 1 back
@@ -294,11 +296,8 @@ class SchemaFewShotSeqLabeler(FewShotSeqLabeler):
         :param label_input_mask:
         :return:  shape (batch_size, label_num, label_des_len)
         """
-        return self.context_embedder(label_token_ids,
-                                     label_segment_ids,
-                                     label_nwp_index,
-                                     label_input_mask,
-                                     reps_type='label')
+        return self.context_embedder(
+            label_token_ids, label_segment_ids, label_nwp_index, label_input_mask,  reps_type='label')
 
 
 def main():
