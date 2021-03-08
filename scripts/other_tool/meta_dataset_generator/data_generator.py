@@ -230,6 +230,8 @@ class MiniIncludeGenerator(DataGeneratorBase):
 
         if self.opt.check:
             # check support shot
+            selected_labels = list(itertools.chain.from_iterable(selected_data['labels']))
+            # TODO 是否区分？？？
             if self.opt.task == 'sc':
                 selected_labels = list(itertools.chain.from_iterable(selected_data['labels']))
             elif self.opt.task == 'sl':
@@ -264,8 +266,8 @@ class MiniIncludeGenerator(DataGeneratorBase):
         while len(query_set['labels']) < self.opt.query_shot and len(query_set['labels']) < total_data:
             d_id = idxes[i]
             s_in, s_out, lb = data_part['seq_ins'][d_id], data_part['seq_outs'][d_id], data_part['labels'][d_id]
-            if self.opt.task == 'sl':
-                lb = s_out
+            # TODO 是否增加？？？
+            if self.opt.task == 'sl': lb = s_out
 
             if set(lb) & set(label_set):  # select data contain current label set
                 if self.opt.way > 0:  # remove non-label_set labels

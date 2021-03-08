@@ -1,1070 +1,815 @@
 [
   {
-    "domain": "constellation",
-    "text": "具体和我说说每个星座的性格特点",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "point": "特点"
-    },
-    "id": 0
-  },
-  {
-    "domain": "constellation",
-    "text": "天蝎座和双子座的匹配系数是多少",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "天蝎座",
-        "双子座"
-      ]
-    },
-    "id": 1
-  },
-  {
-    "domain": "constellation",
-    "text": "天蝎座和白羊座能相处得来吗",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "天蝎座",
-        "白羊座"
-      ]
-    },
-    "id": 2
-  },
-  {
-    "domain": "constellation",
-    "text": "天蝎座的特点",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "天蝎座",
-      "point": "特点"
-    },
-    "id": 3
-  },
-  {
-    "domain": "constellation",
-    "text": "天蝎座是哪些出生日期之间的",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 4
-  },
-  {
-    "domain": "constellation",
-    "text": "出生在哪个时间段的是属于天蝎座",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 5
-  },
-  {
-    "domain": "constellation",
-    "text": "搜索天蝎座的配对星座",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 6
-  },
-  {
-    "domain": "constellation",
-    "text": "我想知道几月份出生的是天蝎座",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 7
-  },
-  {
-    "domain": "constellation",
-    "text": "看一下天蝎座是什么月份的",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 8
-  },
-  {
-    "domain": "constellation",
-    "text": "天蝎座配什么星座",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 9
-  },
-  {
-    "domain": "constellation",
-    "text": "查看天蝎座是几月份的",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "天蝎座"
-    },
-    "id": 10
-  },
-  {
-    "domain": "constellation",
-    "text": "双鱼座的特征",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "双鱼座",
-      "point": "特征"
-    },
-    "id": 11
-  },
-  {
-    "domain": "constellation",
-    "text": "替我查下双子座是几月",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "双子座"
-    },
-    "id": 12
-  },
-  {
-    "domain": "constellation",
-    "text": "双鱼座",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "双鱼座"
-    },
-    "id": 13
-  },
-  {
-    "domain": "constellation",
-    "text": "水瓶座和双子座的人能做朋友吗",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "水瓶座",
-        "双子座"
-      ]
-    },
-    "id": 14
-  },
-  {
-    "domain": "constellation",
-    "text": "水瓶座是指出生时间在几月份呀",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "水瓶座"
-    },
-    "id": 15
-  },
-  {
-    "domain": "constellation",
-    "text": "可不可以告诉我双子座的性格特点",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "双子座",
-      "point": "特点"
-    },
-    "id": 16
-  },
-  {
-    "domain": "constellation",
-    "text": "查一下双子座和什么星座最配",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "双子座"
-    },
-    "id": 17
-  },
-  {
-    "domain": "constellation",
-    "text": "与双子座比较搭的星座是什么",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "双子座"
-    },
-    "id": 18
-  },
-  {
-    "domain": "constellation",
-    "text": "我还可以问双子座是多少号的",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "双子座"
-    },
-    "id": 19
-  },
-  {
-    "domain": "constellation",
-    "text": "请帮我推荐与双子座匹配的星座",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "双子座"
-    },
-    "id": 20
-  },
-  {
-    "domain": "constellation",
-    "text": "帮我看看双鱼座和处女座的配对指数",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "双鱼座",
-        "处女座"
-      ]
-    },
-    "id": 21
-  },
-  {
-    "domain": "constellation",
-    "text": "帮我算算双鱼星座和处女星座的爱情指数吧",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "双鱼星座",
-        "处女星座"
-      ]
-    },
-    "id": 22
+    "domain": "holiday",
+    "text": "法定假期安排",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 329
   },
   {
-    "domain": "constellation",
-    "text": "双鱼和白羊配吗",
-    "intent": "COUPLE_QUERY",
+    "domain": "holiday",
+    "text": "国庆节从几号开始放假",
+    "intent": "QUERY",
     "slots": {
-      "name": [
-        "双鱼",
-        "白羊"
-      ]
+      "name": "国庆节"
     },
-    "id": 23
+    "id": 330
   },
   {
-    "domain": "constellation",
-    "text": "你帮我查一查狮子座的性格吧！",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "春节放假到几号开始上班",
+    "intent": "QUERY",
     "slots": {
-      "name": "狮子座",
-      "point": "性格"
+      "name": "春节"
     },
-    "id": 24
+    "id": 332
   },
   {
-    "domain": "constellation",
-    "text": "狮子座的人有什么样的特点",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "劳动节如何调休",
+    "intent": "QUERY",
     "slots": {
-      "name": "狮子座",
-      "point": "特点"
+      "name": "劳动节"
     },
-    "id": 25
+    "id": 333
   },
   {
-    "domain": "constellation",
-    "text": "我想听狮子座的特点。",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "我想知道春节怎么放假",
+    "intent": "QUERY",
     "slots": {
-      "name": "狮子座",
-      "point": "特点"
+      "name": "春节"
     },
-    "id": 26
+    "id": 334
   },
   {
-    "domain": "constellation",
-    "text": "狮子座的日期",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "狮子座"
-    },
-    "id": 27
-  },
-  {
-    "domain": "constellation",
-    "text": "狮子座的开始时间",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "狮子座"
-    },
-    "id": 28
-  },
-  {
-    "domain": "constellation",
-    "text": "射手座的和狮子座的般配吗",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "射手座",
-        "狮子座"
-      ]
-    },
-    "id": 29
-  },
-  {
-    "domain": "constellation",
-    "text": "射手座有什么性格特点",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "射手座",
-      "point": "特点"
-    },
-    "id": 30
-  },
-  {
-    "domain": "constellation",
-    "text": "说下射手座的性格特点可以吗",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "射手座",
-      "point": "特点"
-    },
-    "id": 31
-  },
-  {
-    "domain": "constellation",
-    "text": "我想查下射手座的性格特点怎么样",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "射手座",
-      "point": "特点"
-    },
-    "id": 32
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座和天秤座的配对指数是多少",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "摩羯座",
-        "天秤座"
-      ]
-    },
-    "id": 33
-  },
-  {
-    "domain": "constellation",
-    "text": "魔蝎座和双子座在一起配不配啊",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "魔蝎座",
-        "双子座"
-      ]
-    },
-    "id": 34
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座有什么性格？",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "摩羯座",
-      "point": "性格"
-    },
-    "id": 35
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座是几月份",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "摩羯座"
-    },
-    "id": 36
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座的最佳配偶",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "摩羯座"
-    },
-    "id": 37
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座是几月几号到几月几号",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "摩羯座"
-    },
-    "id": 38
-  },
-  {
-    "domain": "constellation",
-    "text": "摩羯座的开始和结束日期",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "摩羯座"
-    },
-    "id": 39
-  },
-  {
-    "domain": "constellation",
-    "text": "和摩羯座最配的星座是什么样的星座？",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "摩羯座"
-    },
-    "id": 40
-  },
-  {
-    "domain": "constellation",
-    "text": "金牛座和摩羯座的配对系数",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": [
-        "金牛座",
-        "摩羯座"
-      ]
-    },
-    "id": 41
-  },
-  {
-    "domain": "constellation",
-    "text": "金牛座的配对系数",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "金牛座"
-    },
-    "id": 42
-  },
-  {
-    "domain": "constellation",
-    "text": "匹配金牛座的星座",
-    "intent": "COUPLE_QUERY",
-    "slots": {
-      "name": "金牛座"
-    },
-    "id": 43
-  },
-  {
-    "domain": "constellation",
-    "text": "具体分析一下处女座的性格特点",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "name": "处女座",
-      "point": "特点"
-    },
-    "id": 44
-  },
-  {
-    "domain": "constellation",
-    "text": "处女座是几月出生的",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "处女座"
-    },
-    "id": 45
-  },
-  {
-    "domain": "constellation",
-    "text": "处女座是什么时候",
-    "intent": "DATE_QUERY",
-    "slots": {
-      "name": "处女座"
-    },
-    "id": 46
+    "domain": "holiday",
+    "text": "哪个节日放假时间最长",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 336
   },
   {
-    "domain": "constellation",
-    "text": "哪个月是处女座的",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "国庆节工作安排是什么",
+    "intent": "QUERY",
     "slots": {
-      "name": "处女座"
+      "name": "国庆节"
     },
-    "id": 47
+    "id": 337
   },
   {
-    "domain": "constellation",
-    "text": "我想了解处女座",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "给我说一下国庆几号开始上班",
+    "intent": "QUERY",
     "slots": {
-      "name": "处女座"
+      "name": "国庆"
     },
-    "id": 48
+    "id": 338
   },
   {
-    "domain": "constellation",
-    "text": "处女座跟哪个星座的人谈恋爱最好",
-    "intent": "COUPLE_QUERY",
+    "domain": "holiday",
+    "text": "我想了解一下端午节放假时间",
+    "intent": "QUERY",
     "slots": {
-      "name": "处女座"
+      "name": "端午节"
     },
-    "id": 49
+    "id": 339
   },
   {
-    "domain": "constellation",
-    "text": "几月份出生的是处女座",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "和我具体说一下劳动节调休安排",
+    "intent": "QUERY",
     "slots": {
-      "name": "处女座"
+      "name": "劳动节"
     },
-    "id": 50
+    "id": 341
   },
   {
-    "domain": "constellation",
-    "text": "白羊座有什么特点",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "今年的节假日分别在几月几号",
+    "intent": "QUERY",
     "slots": {
-      "name": "白羊座",
-      "point": "特点"
+      "datetime_date": "今年"
     },
-    "id": 51
+    "id": 342
   },
   {
-    "domain": "constellation",
-    "text": "可不可以和我说下白羊座在几月",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "我想知道今年放假的节假日有哪些",
+    "intent": "QUERY",
     "slots": {
-      "name": "白羊座"
+      "datetime_date": "今年"
     },
-    "id": 52
+    "id": 343
   },
   {
-    "domain": "constellation",
-    "text": "搜索白羊座",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "给我说下今年五一放几天",
+    "intent": "QUERY",
     "slots": {
-      "name": "白羊座"
+      "datetime_date": "今年",
+      "name": "五一"
     },
-    "id": 53
+    "id": 344
   },
   {
-    "domain": "constellation",
-    "text": "查一下白羊座。",
-    "intent": "DATE_QUERY",
+    "domain": "holiday",
+    "text": "今年上半年有哪些假期",
+    "intent": "QUERY",
     "slots": {
-      "name": "白羊座"
+      "datetime_date": "今年上半年"
     },
-    "id": 54
+    "id": 345
   },
   {
-    "domain": "constellation",
-    "text": "水瓶座男性性格分析。",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "male": "水瓶座",
-      "point": "性格"
-    },
-    "id": 55
-  },
-  {
-    "domain": "constellation",
-    "text": "水瓶座的男生是什么性格啊？",
-    "intent": "FEATURES_QUERY",
-    "slots": {
-      "male": "水瓶座",
-      "point": "性格"
-    },
-    "id": 56
+    "domain": "holiday",
+    "text": "过完年最先放假的是什么节",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 347
   },
   {
-    "domain": "constellation",
-    "text": "狮子座的男生喜欢什么类型的女生",
-    "intent": "COUPLE_QUERY",
+    "domain": "holiday",
+    "text": "查下今年国庆的放假安排",
+    "intent": "QUERY",
     "slots": {
-      "male": "狮子座"
+      "datetime_date": "今年",
+      "name": "国庆"
     },
-    "id": 57
+    "id": 348
   },
   {
-    "domain": "constellation",
-    "text": "天蝎座的运势好不好",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "春节放假正月初几上班",
+    "intent": "QUERY",
     "slots": {
-      "fortune": "运势",
-      "name": "天蝎座"
+      "name": "春节"
     },
-    "id": 58
+    "id": 349
   },
   {
-    "domain": "constellation",
-    "text": "水瓶座的运势",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "建军节是只有军人放假吗",
+    "intent": "QUERY",
     "slots": {
-      "fortune": "运势",
-      "name": "水瓶座"
+      "name": "建军节"
     },
-    "id": 59
+    "id": 350
   },
   {
-    "domain": "constellation",
-    "text": "我想了解狮子座的运势怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "你能告诉我国庆节怎么放假吗",
+    "intent": "QUERY",
     "slots": {
-      "fortune": "运势",
-      "name": "狮子座"
+      "name": "国庆节"
     },
-    "id": 60
+    "id": 351
   },
   {
-    "domain": "constellation",
-    "text": "和我具体说下射手座的整体运势",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "帮我搜索下五一的放假安排",
+    "intent": "QUERY",
     "slots": {
-      "fortune": "运势",
-      "name": "射手座"
+      "name": "五一"
     },
-    "id": 61
+    "id": 352
   },
   {
-    "domain": "constellation",
-    "text": "处女座的运势",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "8月29号要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "fortune": "运势",
-      "name": "处女座"
+      "datetime_date": "8月29号"
     },
-    "id": 62
+    "id": 353
   },
   {
-    "domain": "constellation",
-    "text": "天蝎座的感情是怎样的呢？",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "10月2号要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "fortune": "感情",
-      "name": "天蝎座"
+      "datetime_date": "10月2号"
     },
-    "id": 63
+    "id": 354
   },
   {
-    "domain": "constellation",
-    "text": "双鱼座的感情",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "哪一年的清明节开始放假了",
+    "intent": "QUERY",
     "slots": {
-      "fortune": "感情",
-      "name": "双鱼座"
+      "name": "清明节"
     },
-    "id": 64
+    "id": 355
   },
   {
-    "domain": "constellation",
-    "text": "狮子座女生的性格",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "11月份有多少天工作日",
+    "intent": "QUERY",
     "slots": {
-      "female": "狮子座",
-      "point": "性格"
+      "datetime_date": "11月份"
     },
-    "id": 65
+    "id": 356
   },
   {
-    "domain": "constellation",
-    "text": "狮子座女生的特点",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "24号用不用上班",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "female": "狮子座",
-      "point": "特点"
+      "datetime_date": "24号"
     },
-    "id": 66
+    "id": 357
   },
   {
-    "domain": "constellation",
-    "text": "狮子座男生和狮子座女生的在一起会怎样",
-    "intent": "COUPLE_QUERY",
+    "domain": "holiday",
+    "text": "1月1号需要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "female": "狮子座",
-      "male": "狮子座"
+      "datetime_date": "1月1号"
     },
-    "id": 67
+    "id": 358
   },
   {
-    "domain": "constellation",
-    "text": "处女座的女生有什么性格特征呢？",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "2019年的国家法定节假日",
+    "intent": "QUERY",
     "slots": {
-      "female": "处女座",
-      "point": "特征"
+      "datetime_date": "2019年"
     },
-    "id": 68
+    "id": 359
   },
   {
-    "domain": "constellation",
-    "text": "能告诉我处女座今天的运势吗",
-    "intent": "FATE_QUERY",
-    "slots": {
-      "datetime_date": "今天",
-      "fortune": "运势",
-      "name": "处女座"
-    },
-    "id": 69
+    "domain": "holiday",
+    "text": "有没有放假的安排",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 361
   },
   {
-    "domain": "constellation",
-    "text": "我想查下射手座今天的运气怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "和我讲讲中秋节怎么放假",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "今天",
-      "fortune": "运气",
-      "name": "射手座"
+      "name": "中秋节"
     },
-    "id": 70
+    "id": 362
   },
   {
-    "domain": "constellation",
-    "text": "查下双子座今日运势",
-    "intent": "FATE_QUERY",
-    "slots": {
-      "datetime_date": "今日",
-      "fortune": "运势",
-      "name": "双子座"
-    },
-    "id": 71
+    "domain": "holiday",
+    "text": "能告诉我国家法定放假的节日是哪些吗",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 363
   },
   {
-    "domain": "constellation",
-    "text": "金牛座本月运势",
-    "intent": "FATE_QUERY",
-    "slots": {
-      "datetime_date": "本月",
-      "fortune": "运势",
-      "name": "金牛座"
-    },
-    "id": 72
+    "domain": "holiday",
+    "text": "假期都怎么放假",
+    "intent": "QUERY",
+    "slots": {},
+    "id": 365
   },
   {
-    "domain": "constellation",
-    "text": "双子座的男生最近的运气怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "端午节放假时间",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "最近",
-      "fortune": "运气",
-      "male": "双子座"
+      "name": "端午节"
     },
-    "id": 73
+    "id": 366
   },
   {
-    "domain": "constellation",
-    "text": "正月初二是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "4月14日放假吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "正月初二"
+      "datetime_date": "4月14日"
     },
-    "id": 74
+    "id": 367
   },
   {
-    "domain": "constellation",
-    "text": "天蝎座下周运势如何",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "5月20日要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "下周",
-      "fortune": "运势",
-      "name": "天蝎座"
+      "datetime_date": "5月20日"
     },
-    "id": 75
+    "id": 368
   },
   {
-    "domain": "constellation",
-    "text": "十月八号的星座运势怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "青年节什么样的人可以放假呢",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "十月八号",
-      "fortune": "运势"
+      "name": "青年节"
     },
-    "id": 76
+    "id": 369
   },
   {
-    "domain": "constellation",
-    "text": "十一月初八是啥星座。",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "七夕放几天假",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "十一月初八"
+      "name": "七夕"
     },
-    "id": 77
+    "id": 370
   },
   {
-    "domain": "constellation",
-    "text": "十二月份是什么星座",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "替我查询端午节假期是从什么时候开始",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "十二月份"
+      "name": "端午节"
     },
-    "id": 78
+    "id": 371
   },
   {
-    "domain": "constellation",
-    "text": "金牛座明年的运势怎样？",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "我想搜下明年端午节放假什么时间结束",
+    "intent": "QUERY",
     "slots": {
       "datetime_date": "明年",
-      "fortune": "运势",
-      "name": "金牛座"
+      "name": "端午节"
     },
-    "id": 79
+    "id": 372
   },
   {
-    "domain": "constellation",
-    "text": "六月初五是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "正常学校在五一劳动节放假几天",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "六月初五"
+      "name": "劳动节"
     },
-    "id": 80
+    "id": 373
   },
   {
-    "domain": "constellation",
-    "text": "今天射手座的运气如何",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "2013国庆放假安排",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "今天",
-      "fortune": "运气",
-      "name": "射手座"
+      "datetime_date": "2013",
+      "name": "国庆"
     },
-    "id": 81
+    "id": 374
   },
   {
-    "domain": "constellation",
-    "text": "说下双子座今年的运势怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "9月9日重阳节放几天假",
+    "intent": "QUERY",
+    "slots": {
+      "name": "重阳节"
+    },
+    "id": 375
+  },
+  {
+    "domain": "holiday",
+    "text": "帮我查询端午节的放假安排",
+    "intent": "QUERY",
+    "slots": {
+      "name": "端午节"
+    },
+    "id": 376
+  },
+  {
+    "domain": "holiday",
+    "text": "国家劳动法国庆节放多少天",
+    "intent": "QUERY",
+    "slots": {
+      "name": "国庆节"
+    },
+    "id": 377
+  },
+  {
+    "domain": "holiday",
+    "text": "过年怎么安排",
+    "intent": "QUERY",
+    "slots": {
+      "name": "过年"
+    },
+    "id": 378
+  },
+  {
+    "domain": "holiday",
+    "text": "周六要上班吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "周六"
+    },
+    "id": 379
+  },
+  {
+    "domain": "holiday",
+    "text": "今年国庆放多少天假",
+    "intent": "QUERY",
     "slots": {
       "datetime_date": "今年",
-      "fortune": "运势",
-      "name": "双子座"
+      "name": "国庆"
     },
-    "id": 82
+    "id": 380
   },
   {
-    "domain": "constellation",
-    "text": "金牛座今年的运势怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "今年国庆节放假怎么安排",
+    "intent": "QUERY",
     "slots": {
       "datetime_date": "今年",
-      "fortune": "运势",
-      "name": "金牛座"
+      "name": "国庆节"
     },
-    "id": 83
+    "id": 381
   },
   {
-    "domain": "constellation",
-    "text": "白羊座今年的运势",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "可不可以帮我查询端午节如何放假",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "今年",
-      "fortune": "运势",
-      "name": "白羊座"
+      "name": "端午节"
     },
-    "id": 84
+    "id": 382
   },
   {
-    "domain": "constellation",
-    "text": "8月6号是狮子座的性格怎么样？",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "可以查询下端午节结束放假是什么时候吗",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "8月6号",
-      "name": "狮子座",
-      "point": "性格"
+      "name": "端午节"
     },
-    "id": 85
+    "id": 383
   },
   {
-    "domain": "constellation",
-    "text": "8月26是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "劳动节假期安排",
+    "intent": "QUERY",
     "slots": {
-      "datetime_date": "8月26"
+      "name": "劳动节"
     },
-    "id": 86
+    "id": 384
   },
   {
-    "domain": "constellation",
-    "text": "8月12号的星座特点是什么",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "周一上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "8月12号",
-      "point": "特点"
+      "datetime_date": "周一"
     },
-    "id": 87
+    "id": 385
   },
   {
-    "domain": "constellation",
-    "text": "8月12号的对应的星座有什么特点",
-    "intent": "FEATURES_QUERY",
+    "domain": "holiday",
+    "text": "周二上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "8月12号",
-      "point": "特点"
+      "datetime_date": "周二"
     },
-    "id": 88
+    "id": 386
   },
   {
-    "domain": "constellation",
-    "text": "8月12号的星座运势如何",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "周三上班不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "8月12号",
-      "fortune": "运势"
+      "datetime_date": "周三"
     },
-    "id": 89
+    "id": 387
   },
   {
-    "domain": "constellation",
-    "text": "搜索一下8月12号的星座名称",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周一要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "8月12号"
+      "datetime_date": "周一"
     },
-    "id": 90
+    "id": 388
   },
   {
-    "domain": "constellation",
-    "text": "我问一下88年正月初五出生的是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周二要上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "88年正月初五"
+      "datetime_date": "周二"
     },
-    "id": 91
+    "id": 389
   },
   {
-    "domain": "constellation",
-    "text": "我想问一下5月27是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周三要上班么",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "5月27"
+      "datetime_date": "周三"
     },
-    "id": 92
+    "id": 390
   },
   {
-    "domain": "constellation",
-    "text": "4月7号是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "这个周一要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "4月7号"
+      "datetime_date": "周一"
     },
-    "id": 93
+    "id": 391
   },
   {
-    "domain": "constellation",
-    "text": "4月22出生的是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "这个周二要上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "4月22"
+      "datetime_date": "周二"
     },
-    "id": 94
+    "id": 392
   },
   {
-    "domain": "constellation",
-    "text": "那你告诉我4月19号是什么星座",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "这个周三要上班不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "4月19号"
+      "datetime_date": "周三"
     },
-    "id": 95
+    "id": 393
   },
   {
-    "domain": "constellation",
-    "text": "3月6号是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下周一上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "3月6号"
+      "datetime_date": "下周一"
     },
-    "id": 96
+    "id": 394
   },
   {
-    "domain": "constellation",
-    "text": "帮我查一下双子座2018年整体运势",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "下周二上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "2018年",
-      "fortune": "运势",
-      "name": "双子座"
+      "datetime_date": "下周二"
     },
-    "id": 97
+    "id": 395
   },
   {
-    "domain": "constellation",
-    "text": "1993年2月20日是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下周三上班不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1993年2月20日"
+      "datetime_date": "下周三"
     },
-    "id": 98
+    "id": 396
   },
   {
-    "domain": "constellation",
-    "text": "公元1991年11月9日是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下个周一要上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1991年11月9日"
+      "datetime_date": "下个周一"
     },
-    "id": 99
+    "id": 397
   },
   {
-    "domain": "constellation",
-    "text": "1990年12月30号出生是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下个周二要上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1990年12月30号"
+      "datetime_date": "下个周二"
     },
-    "id": 100
+    "id": 398
   },
   {
-    "domain": "constellation",
-    "text": "1987年6月15号出生的是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下个周一上班吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1987年6月15号"
+      "datetime_date": "下个周一"
     },
-    "id": 101
+    "id": 400
   },
   {
-    "domain": "constellation",
-    "text": "1984年12月14日是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下个周二上班嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1984年12月14日"
+      "datetime_date": "下个周二"
     },
-    "id": 102
+    "id": 401
   },
   {
-    "domain": "constellation",
-    "text": "1983年8月初二出生的是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "下个周三上班不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1983年8月初二"
+      "datetime_date": "下个周三"
     },
-    "id": 103
+    "id": 402
   },
   {
-    "domain": "constellation",
-    "text": "1983年1月13号是什么星座啊？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周一是工作日吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "1983年1月13号"
+      "datetime_date": "周一"
     },
-    "id": 104
+    "id": 403
   },
   {
-    "domain": "constellation",
-    "text": "11月23日出生的人是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周二是工作日嘛",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "11月23日"
+      "datetime_date": "周二"
     },
-    "id": 105
+    "id": 404
   },
   {
-    "domain": "constellation",
-    "text": "11月23号什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "周三是工作日不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "11月23号"
+      "datetime_date": "周三"
     },
-    "id": 106
+    "id": 405
   },
   {
-    "domain": "constellation",
-    "text": "双子座10月份的爱情怎么样",
-    "intent": "FATE_QUERY",
+    "domain": "holiday",
+    "text": "这个周一是工作日吗",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "10月份",
-      "fortune": "爱情",
-      "name": "双子座"
+      "datetime_date": "周一"
     },
-    "id": 107
+    "id": 406
   },
   {
-    "domain": "constellation",
-    "text": "10月25出生的是什么星座？",
-    "intent": "NAME_QUERY",
+    "domain": "holiday",
+    "text": "这个周三是工作日不",
+    "intent": "DAYTYPE_QUERY",
     "slots": {
-      "datetime_date": "10月25"
+      "datetime_date": "周三"
     },
-    "id": 108
+    "id": 408
+  },
+  {
+    "domain": "holiday",
+    "text": "下周一是工作日吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周一"
+    },
+    "id": 409
+  },
+  {
+    "domain": "holiday",
+    "text": "下周二是工作日嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周二"
+    },
+    "id": 410
+  },
+  {
+    "domain": "holiday",
+    "text": "下周三是工作日不",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周三"
+    },
+    "id": 411
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周一是工作日吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周一"
+    },
+    "id": 412
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周二是工作日嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周二"
+    },
+    "id": 413
+  },
+  {
+    "domain": "holiday",
+    "text": "这周一休息吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "周一"
+    },
+    "id": 414
+  },
+  {
+    "domain": "holiday",
+    "text": "这周三休息不",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "周三"
+    },
+    "id": 416
+  },
+  {
+    "domain": "holiday",
+    "text": "这个周一休息吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "周一"
+    },
+    "id": 417
+  },
+  {
+    "domain": "holiday",
+    "text": "这个周二休息嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "周二"
+    },
+    "id": 418
+  },
+  {
+    "domain": "holiday",
+    "text": "下周一休息吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周一"
+    },
+    "id": 419
+  },
+  {
+    "domain": "holiday",
+    "text": "下周二休息嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周二"
+    },
+    "id": 420
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周一休息吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周一"
+    },
+    "id": 421
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周二休息嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周二"
+    },
+    "id": 422
+  },
+  {
+    "domain": "holiday",
+    "text": "下周一是休息日吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周一"
+    },
+    "id": 423
+  },
+  {
+    "domain": "holiday",
+    "text": "下周二是休息日嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下周二"
+    },
+    "id": 424
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周一是休息日吗",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周一"
+    },
+    "id": 425
+  },
+  {
+    "domain": "holiday",
+    "text": "下个周二是休息日嘛",
+    "intent": "DAYTYPE_QUERY",
+    "slots": {
+      "datetime_date": "下个周二"
+    },
+    "id": 426
+  },
+  {
+    "domain": "holiday",
+    "text": "这个月有多少工作日",
+    "intent": "QUERY",
+    "slots": {
+      "datetime_date": "这个月"
+    },
+    "id": 427
+  },
+  {
+    "domain": "holiday",
+    "text": "10月有多少工作日",
+    "intent": "QUERY",
+    "slots": {
+      "datetime_date": "10月"
+    },
+    "id": 428
   }
 ]

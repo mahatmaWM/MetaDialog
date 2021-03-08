@@ -74,7 +74,13 @@ def dump_data(opt, data):
 
 
 def build_data_loader(opt) -> RawDataLoaderBase:
-    if opt.dataset == 'smp':
+    if opt.dataset in ['atis', 'snips']:
+        data_loader = SLUDataLoader(opt)
+    elif opt.dataset == 'stanford':
+        data_loader = StanfordDataLoader(opt)
+    elif opt.dataset == 'toursg':
+        data_loader = TourSGDataLoader(opt)
+    elif opt.dataset == 'smp':
         data_loader = SMPDataLoader(opt)
     else:
         raise NotImplementedError
@@ -158,77 +164,47 @@ def main():
     parser.add_argument("--input_path", type=str, default='', help="path to the raw data dir")
     parser.add_argument("--output_dir", type=str, default='', help="path to the result data dir")
     parser.add_argument("--dataset",
-                        default='smp',
+                        default='stanford',
                         help='dataset name to be processed',
-                        choices=['smp'])
+                        choices=['atis', 'stanford', 'toursg', 'snips', 'smp'])
 
     # data size
-    parser.add_argument('--episode_num',
-                        type=int,
-                        default=200,
+    parser.add_argument('--episode_num', type=int, default=200,
                         help='num of few-shot episodes, each contain a support and a query set')
-    parser.add_argument('--support_shots',
-                        type=int,
-                        default=5,
+    parser.add_argument('--support_shots', type=int, default=5,
                         help='num of learning shots of each class for K-shot setting')
     parser.add_argument('--query_shot', type=int, default=32, help='sample in a episode for few shot learning style')
-    parser.add_argument('--way',
-                        type=int,
-                        default=-1,
+    parser.add_argument('--way', type=int, default=-1,
                         help='number of classes in N-way-K-shot setting, set <=0 to use all labels (default)')
 
     # bad case filtering
-    parser.add_argument('--min_domain_size',
-                        type=int,
-                        default=50,
+    parser.add_argument('--min_domain_size', type=int, default=50,
                         help='Abandon domains that have data amount less than this value')
-    parser.add_argument('--min_label_appear',
-                        type=int,
-                        default=2,
+    parser.add_argument('--min_label_appear', type=int, default=2,
                         help='Abandon labels with appear-times less than this value, to avoid useless support sample')
 
     # general setting
-    parser.add_argument("--task",
-                        default='sc',
-                        choices=['sl', 'sc'],
+    parser.add_argument("--task", default='sc', choices=['sl', 'sc'],
                         help="Task: sl:sequence labeling, sc:single label sent classify")
-    parser.add_argument("--mark",
-                        type=str,
-                        default='0',
-                        help="A special mark in output file name to distinguish.")
-
-    parser.add_argument('--dup_query', default=True, help='allow duplication between query and support set.')
-    parser.add_argument('--allow_override', default=True, help='allow override generated data.')
-    parser.add_argument('--check', default=True, help='check data after generation.')
-    parser.add_argument('--intent_as_domain',
-                        default=True,
-                        help='For sequence labeling in atis & snips, set true to separate domain using sentence-label.')
-
-                        
-    parser.add_argument("--style",
-                        default='fs',
-                        choices=["fs", "va"],
+    parser.add_argument("--mark", type=str, default='0', help="A special mark in output file name to distinguish.")
+    parser.add_argument('--dup_query', action='store_true', help='allow duplication between query and support set.')
+    parser.add_argument('--allow_override', action='store_true', help='allow override generated data.')
+    parser.add_argument('--check', action='store_true', help='check data after generation.')
+    parser.add_argument("--style", default='fs',  choices=["fs", "va"],
                         help="output data styles. fs: few-shot episode style, va: directly all data in few-shot format")
-
+    parser.add_argument('--intent_as_domain', action='store_true',
+                        help='For sequence labeling in atis & snips, set true to separate domain using sentence-label.')
     parser.add_argument('-sd', '--seed', type=int, default=0, help='random seed, do nothing when sd < 0')
 
     # train/dev/test split
-    parser.add_argument("--split_basis",
-                        default='domain',
-                        help='basis to split the data into sub-partitions',
+    parser.add_argument("--split_basis", default='domain', help='basis to split the data into sub-partitions',
                         choices=['domain', 'sent_label'])
-    parser.add_argument("--eval_config",
-                        type=str,
-                        default='',
+    parser.add_argument("--eval_config", type=str, default='',
                         help="path json file that specify test/dev/ignore domains/labels.")
     parser.add_argument("--eval_config_id", type=int, default=0, help="eval config id")
-    parser.add_argument("--label_type",
-                        type=str,
-                        default='both',
-                        choices=['cat', 'both', 'act', 'attribute'],
-                        help="eval config id")
+    parser.add_argument("--label_type", type=str, default='both', choices=['cat', 'both', 'act', 'attribute'], help="eval config id")
     parser.add_argument("--remove_rate", type=float, default=80, help="the rate for removing duplicate sample")
-    parser.add_argument("--use_fix_support", default=True, help="use fix support in dev data")
+    parser.add_argument("--use_fix_support", default=False, action="store_true", help="use fix support in dev data")
     opt = parser.parse_args()
     logging.info('Parameter:{}\n'.format(json.dumps(vars(opt), indent=2)))
 
@@ -260,17 +236,21 @@ def main():
             logging.info('Train: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, train_meta_data)
             """dev & test"""
-            if opt.use_fix_support:
-                domains = raw_data['support'].keys()
-                dev_meta_data = {}
-                for domain in domains:
-                    dev_meta_data[domain] = [{'support': raw_data['support'][domain], 'query': raw_data['dev'][domain]}]
-            else:
-                dev_meta_data = generator.gen_data(raw_data['dev'])
+            # if opt.use_fix_support:
+            #     domains = raw_data['support'].keys()
+            #     dev_meta_data = {}
+            #     for domain in domains:
+            #         dev_meta_data[domain] = [{'support': raw_data['support'][domain], 'query': raw_data['dev'][domain]}]
+            # else:
+            #     dev_meta_data = generator.gen_data(raw_data['dev'])
 
+            dev_meta_data = generator.gen_data(raw_data['dev'])
+            test_meta_data = generator.gen_data(raw_data['test'])
             logging.info('Dev: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, dev_meta_data)
-            meta_data = {'train': train_meta_data, 'dev': dev_meta_data, 'test': dev_meta_data}
+            logging.info('Test: Few_shot_data gathered and start to dump data')
+            few_shot_data_statistic(opt, test_meta_data)
+            meta_data = {'train': train_meta_data, 'dev': dev_meta_data, 'test': test_meta_data}
         else:
             meta_data = generator.gen_data(raw_data)
             logging.info('Few_shot_data gathered and start to dump data')
