@@ -244,8 +244,8 @@ def main():
             # else:
             #     dev_meta_data = generator.gen_data(raw_data['dev'])
 
-            dev_meta_data = generator.gen_data(raw_data['dev'])
-            test_meta_data = generator.gen_data(raw_data['test'])
+            dev_meta_data = raw_data['dev']
+            test_meta_data = raw_data['test']
             logging.info('Dev: Few_shot_data gathered and start to dump data')
             few_shot_data_statistic(opt, dev_meta_data)
             logging.info('Test: Few_shot_data gathered and start to dump data')
