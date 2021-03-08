@@ -241,7 +241,7 @@ if __name__ == '__main__':
     opt.label_type = 'intent'
 
     # smp_path = '/Users/lyk/Work/Dialogue/FewShot/SMP/'
-    smp_path = r'F:\git\MetaDialog\他的输入输出\FewJoint\SMP_Final_Origin2_1/'
+    smp_path = '../../../SMP_Final_Origin2_1/'
     smp_loader = SMPDataLoader(opt)
 
     smp_data = smp_loader.load_data(path=smp_path)
