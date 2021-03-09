@@ -1,7 +1,7 @@
 [
   {
     "text": "荷兰的首都是哪个城市的",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "荷兰"
@@ -9,7 +9,7 @@
   },
   {
     "text": "我想知道北京的首都是什么",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -17,7 +17,7 @@
   },
   {
     "text": "北京的首都是什么名字",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -25,7 +25,7 @@
   },
   {
     "text": "澳大利亚的首都是",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "澳大利亚"
@@ -33,7 +33,7 @@
   },
   {
     "text": "查下中国首都叫啥",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -41,7 +41,7 @@
   },
   {
     "text": "帮我查查澳大利亚是哪个国家的首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "澳大利亚"
@@ -49,7 +49,7 @@
   },
   {
     "text": "帮我找一找北京首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -57,7 +57,7 @@
   },
   {
     "text": "查一下中国的首都在啥地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -65,7 +65,7 @@
   },
   {
     "text": "找一下中国的首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -73,7 +73,7 @@
   },
   {
     "text": "找一下中国的首都是哪儿",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -81,7 +81,7 @@
   },
   {
     "text": "帮我查一下中国的首都是否叫做北京",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国",
@@ -90,7 +90,7 @@
   },
   {
     "text": "帮我查查中国的首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -98,7 +98,7 @@
   },
   {
     "text": "查一下中国首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -106,7 +106,7 @@
   },
   {
     "text": "查一下中国的首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -114,7 +114,7 @@
   },
   {
     "text": "帮我找下中国首都在什么地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -122,7 +122,7 @@
   },
   {
     "text": "帮我找一下北京的首都在哪儿",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -130,7 +130,7 @@
   },
   {
     "text": "查一下堪培拉是哪里的首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -138,7 +138,7 @@
   },
   {
     "text": "查下中国的首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -146,7 +146,7 @@
   },
   {
     "text": "查查北京是不是中国的首都呢",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京",
@@ -155,7 +155,7 @@
   },
   {
     "text": "查查中国的首都是什么地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -163,7 +163,7 @@
   },
   {
     "text": "找找中国首都在哪个地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -171,7 +171,7 @@
   },
   {
     "text": "帮我查下堪培拉是啥地方首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -179,7 +179,7 @@
   },
   {
     "text": "我想知道中国的首都是什么",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -187,7 +187,7 @@
   },
   {
     "text": "帮我找下北京的首都是哪个地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -195,7 +195,7 @@
   },
   {
     "text": "帮我找下北京的首都叫什么名字",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -203,7 +203,7 @@
   },
   {
     "text": "帮我找一找北京首都在什么地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -211,7 +211,7 @@
   },
   {
     "text": "找下中国的首都是哪儿",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -219,7 +219,7 @@
   },
   {
     "text": "日本的首都名字",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "日本"
@@ -227,7 +227,7 @@
   },
   {
     "text": "找一下中国的首都在啥地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -235,7 +235,7 @@
   },
   {
     "text": "找一下中国首都是什么名字",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -243,7 +243,7 @@
   },
   {
     "text": "查一下堪培拉是什么国家的首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -251,7 +251,7 @@
   },
   {
     "text": "帮我查一下中国的首都是不是叫北京",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国",
@@ -260,7 +260,7 @@
   },
   {
     "text": "帮我找一找北京首都叫什么",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -268,7 +268,7 @@
   },
   {
     "text": "找下中国首都是哪儿",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -276,7 +276,7 @@
   },
   {
     "text": "帮我找一下北京的首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -284,7 +284,7 @@
   },
   {
     "text": "找找中国的首都是什么名字",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -292,7 +292,7 @@
   },
   {
     "text": "帮我找一找北京首都是哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -300,7 +300,7 @@
   },
   {
     "text": "帮我查下中国的首都是否在北京",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国",
@@ -309,7 +309,7 @@
   },
   {
     "text": "查查中国首都在哪里",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -317,7 +317,7 @@
   },
   {
     "text": "堪培拉是什么地方首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -325,7 +325,7 @@
   },
   {
     "text": "北京的首都是哪个地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -333,7 +333,7 @@
   },
   {
     "text": "中国的首都是叫北京吗",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国",
@@ -342,7 +342,7 @@
   },
   {
     "text": "帮我找下堪培拉是什么国家首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -350,7 +350,7 @@
   },
   {
     "text": "帮我找找中国的首都在啥地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -358,7 +358,7 @@
   },
   {
     "text": "找找堪培拉是什么国家的首都",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "堪培拉"
@@ -366,7 +366,7 @@
   },
   {
     "text": "帮我查查中国首都是什么地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -374,7 +374,7 @@
   },
   {
     "text": "帮我找下北京首都是啥地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "capital": "北京"
@@ -382,7 +382,7 @@
   },
   {
     "text": "帮我找一找中国首都在什么地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -390,7 +390,7 @@
   },
   {
     "text": "查查中国的首都是哪个地方",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -398,7 +398,7 @@
   },
   {
     "text": "查一下中国的首都是哪儿",
-    "domain": "shoudu_50-1363010714585796608",
+    "domain": "our_test_50",
     "intent": "search_capital",
     "slots": {
       "country": "中国"
@@ -406,7 +406,7 @@
   },
   {
     "text": "今天可以订盟吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -416,7 +416,7 @@
   },
   {
     "text": "有哪些事情今天适合去做",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -425,7 +425,7 @@
   },
   {
     "text": "今天可以做什么事",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -434,7 +434,7 @@
   },
   {
     "text": "下个星期能不能结婚",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下个星期",
@@ -443,7 +443,7 @@
   },
   {
     "text": "这个月哪个适合搬新家",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这个月",
@@ -453,7 +453,7 @@
   },
   {
     "text": "明天做什么好",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -462,7 +462,7 @@
   },
   {
     "text": "查一下今天适合搬家吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -472,7 +472,7 @@
   },
   {
     "text": "不知道三月八日适合外出远行么？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "三月八日",
@@ -482,7 +482,7 @@
   },
   {
     "text": "今天忌安床吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -492,7 +492,7 @@
   },
   {
     "text": "今天是吉日么",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -501,7 +501,7 @@
   },
   {
     "text": "明天不适合干什么",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -510,7 +510,7 @@
   },
   {
     "text": "明天适合安排结婚吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -520,7 +520,7 @@
   },
   {
     "text": "今天适不适合理发",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -530,7 +530,7 @@
   },
   {
     "text": "明天我出门适合吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -540,7 +540,7 @@
   },
   {
     "text": "本周五是否适合出行",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "本周五",
@@ -550,7 +550,7 @@
   },
   {
     "text": "这个开工的好日子",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "item": "开工"
@@ -558,7 +558,7 @@
   },
   {
     "text": "这两天的黄历怎么样？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这两天"
@@ -566,7 +566,7 @@
   },
   {
     "text": "下个星期可不可以出游",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下个星期",
@@ -576,7 +576,7 @@
   },
   {
     "text": "今天是出行的好日子吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -585,7 +585,7 @@
   },
   {
     "text": "今天是否有什么事情不能做？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -594,7 +594,7 @@
   },
   {
     "text": "查一下下个月祈福是宜是忌",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下个月",
@@ -604,7 +604,7 @@
   },
   {
     "text": "查一下下周五适不适合安排结婚",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下周五",
@@ -614,7 +614,7 @@
   },
   {
     "text": "下月三号适合结婚么？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下月三号",
@@ -624,7 +624,7 @@
   },
   {
     "text": "今天的各时辰的宜忌事项",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天的各时辰",
@@ -633,7 +633,7 @@
   },
   {
     "text": "星期日适不适合出嫁",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "星期日",
@@ -643,7 +643,7 @@
   },
   {
     "text": "今天出行适合吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -653,7 +653,7 @@
   },
   {
     "text": "这几天可以开市吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "suit": "可以",
@@ -662,7 +662,7 @@
   },
   {
     "text": "这个月适合旅行吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这个月",
@@ -672,7 +672,7 @@
   },
   {
     "text": "后天适不适合安门？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "后天",
@@ -682,7 +682,7 @@
   },
   {
     "text": "今天适合上坟嘛？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -692,7 +692,7 @@
   },
   {
     "text": "今天不适合做什么事",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -701,7 +701,7 @@
   },
   {
     "text": "今天可以伐木吗？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -711,7 +711,7 @@
   },
   {
     "text": "下周五能不能开车",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下周五",
@@ -721,7 +721,7 @@
   },
   {
     "text": "这个月又几天适合动土",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这个月",
@@ -731,7 +731,7 @@
   },
   {
     "text": "今天适合上山还是下海",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -741,7 +741,7 @@
   },
   {
     "text": "下周5我准备结婚合适吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下周5",
@@ -751,7 +751,7 @@
   },
   {
     "text": "帮我查一下今天黄历",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天"
@@ -759,7 +759,7 @@
   },
   {
     "text": "明天结婚怎么样？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -768,7 +768,7 @@
   },
   {
     "text": "明天宜嫁娶嘛",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -778,7 +778,7 @@
   },
   {
     "text": "今年哪几天适合结婚办喜事？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今年哪几天",
@@ -788,7 +788,7 @@
   },
   {
     "text": "明天适不适合工作",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -798,7 +798,7 @@
   },
   {
     "text": "今天适宜结婚不？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今天",
@@ -808,7 +808,7 @@
   },
   {
     "text": "下周五适不适合安排动土？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下周五",
@@ -818,7 +818,7 @@
   },
   {
     "text": "三天后适宜入殓么？",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "三天后",
@@ -828,7 +828,7 @@
   },
   {
     "text": "这三天是否适宜装修",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这三天",
@@ -838,7 +838,7 @@
   },
   {
     "text": "这个月适合出行吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "这个月",
@@ -848,7 +848,7 @@
   },
   {
     "text": "属狗的今天有啥宜忌",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "zodiac": "狗",
@@ -857,7 +857,7 @@
   },
   {
     "text": "查一下下个月铸造吉日",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "下个月",
@@ -867,7 +867,7 @@
   },
   {
     "text": "明天是黄道吉日吗",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "明天",
@@ -876,7 +876,7 @@
   },
   {
     "text": "今年的端午节是否适宜旅游",
-    "domain": "huangli_50-1362949324646834176",
+    "domain": "our_test_50",
     "intent": "search_almanac",
     "slots": {
       "datetime": "今年的端午节",
@@ -886,7 +886,7 @@
   },
   {
     "text": "幼儿扁桃体化脓发高烧",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "幼儿",
@@ -895,7 +895,7 @@
   },
   {
     "text": "甲沟炎息肉如何消除",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "甲沟炎"
@@ -903,7 +903,7 @@
   },
   {
     "text": "轻微食物中毒",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "食物中毒"
@@ -911,7 +911,7 @@
   },
   {
     "text": "齐秦拔火罐烧伤",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "烧伤"
@@ -919,7 +919,7 @@
   },
   {
     "text": "小儿积食发烧",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小儿",
@@ -928,7 +928,7 @@
   },
   {
     "text": "宝宝发烧尿不湿降温法",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -937,7 +937,7 @@
   },
   {
     "text": "小孩积食发烧怎么推拿",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小孩",
@@ -946,7 +946,7 @@
   },
   {
     "text": "发烧浑身关节疼怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "发烧"
@@ -954,7 +954,7 @@
   },
   {
     "text": "宝宝发烧40度怎么处理",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -963,7 +963,7 @@
   },
   {
     "text": "癫痫小发作一天犯好几次怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "癫痫"
@@ -971,7 +971,7 @@
   },
   {
     "text": "小孩肚脐周围疼还发烧",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小孩",
@@ -980,7 +980,7 @@
   },
   {
     "text": "怀孕腿抽筋怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "怀孕",
@@ -989,7 +989,7 @@
   },
   {
     "text": "肌肉拉伤有什么急救方法吗？",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "肌肉拉伤"
@@ -997,7 +997,7 @@
   },
   {
     "text": "烫头发药水烧伤皮肤怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "烧伤",
@@ -1006,7 +1006,7 @@
   },
   {
     "text": "大人发高烧怎么退烧快",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "大人",
@@ -1015,7 +1015,7 @@
   },
   {
     "text": "高烧物理降温",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "高烧"
@@ -1023,7 +1023,7 @@
   },
   {
     "text": "右胸下方呼吸就像岔气的疼",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "organ": "右胸",
@@ -1032,7 +1032,7 @@
   },
   {
     "text": "6个月宝宝一到半夜高烧不退怎么了",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -1041,7 +1041,7 @@
   },
   {
     "text": "三岁宝宝反复发烧咳嗽，脸上起红点",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -1050,7 +1050,7 @@
   },
   {
     "text": "宝宝发烧发汗正确方法",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -1059,7 +1059,7 @@
   },
   {
     "text": "一岁宝宝发烧38度怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -1068,7 +1068,7 @@
   },
   {
     "text": "体温上午正常下午发烧",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "发烧"
@@ -1076,7 +1076,7 @@
   },
   {
     "text": "股骨粗隆间骨折治疗",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "骨折"
@@ -1084,7 +1084,7 @@
   },
   {
     "text": "发烧如何降温",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "发烧"
@@ -1092,7 +1092,7 @@
   },
   {
     "text": "小孩咳嗽高烧不退怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小孩",
@@ -1101,7 +1101,7 @@
   },
   {
     "text": "便血怎么办呢",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "便血"
@@ -1109,7 +1109,7 @@
   },
   {
     "text": "治哮喘华云汉",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "哮喘"
@@ -1117,7 +1117,7 @@
   },
   {
     "text": "酒精中毒大小便失禁",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "酒精中毒"
@@ -1125,7 +1125,7 @@
   },
   {
     "text": "小孩发烧用冷毛巾还是热毛巾",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小孩",
@@ -1134,7 +1134,7 @@
   },
   {
     "text": "哺乳期妈妈发烧怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "哺乳期妈妈",
@@ -1143,7 +1143,7 @@
   },
   {
     "text": "手指骨折怎样康复训练",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "organ": "手指",
@@ -1152,7 +1152,7 @@
   },
   {
     "text": "六个月宝宝发烧怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "宝宝",
@@ -1161,7 +1161,7 @@
   },
   {
     "text": "小腹痛想拉屎拉不出来",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "腹痛"
@@ -1169,7 +1169,7 @@
   },
   {
     "text": "痛风病怎么医治",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "痛风"
@@ -1177,7 +1177,7 @@
   },
   {
     "text": "耻骨联合上下支骨折怎么办",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "骨折"
@@ -1185,7 +1185,7 @@
   },
   {
     "text": "被狗咬伤后有什么急救措施呢？",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "狗咬伤"
@@ -1193,7 +1193,7 @@
   },
   {
     "text": "成年人发烧怎么快速降温",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "成年人",
@@ -1202,7 +1202,7 @@
   },
   {
     "text": "经常半边头痛",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "头痛"
@@ -1210,7 +1210,7 @@
   },
   {
     "text": "戒烟初期胸痛",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "胸痛"
@@ -1218,7 +1218,7 @@
   },
   {
     "text": "发高烧用热毛巾还是冷毛巾",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "高烧"
@@ -1226,7 +1226,7 @@
   },
   {
     "text": "大人发烧头不热身上热",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "大人",
@@ -1235,7 +1235,7 @@
   },
   {
     "text": "脑出血5天今天有点头痛头晕",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "头晕"
@@ -1243,7 +1243,7 @@
   },
   {
     "text": "足底筋膜炎的症状及治疗",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "足底筋膜炎"
@@ -1251,7 +1251,7 @@
   },
   {
     "text": "一来月经就头痛",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "头痛"
@@ -1259,7 +1259,7 @@
   },
   {
     "text": "痛风犯了怎么缓解疼痛",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "痛风"
@@ -1267,7 +1267,7 @@
   },
   {
     "text": "小儿哮喘的自然疗法",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "小儿",
@@ -1276,7 +1276,7 @@
   },
   {
     "text": "孩子发烧用艾灸灸哪里",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "people": "孩子",
@@ -1285,7 +1285,7 @@
   },
   {
     "text": "脚踝扭伤了怎么恢复最快",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "脚踝扭伤"
@@ -1293,7 +1293,7 @@
   },
   {
     "text": "大腿后侧肌肉拉伤",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "disease": "肌肉拉伤"
@@ -1301,7 +1301,7 @@
   },
   {
     "text": "肩膀中风疼有什么办法",
-    "domain": "jibing_50-1362964399281672192",
+    "domain": "our_test_50",
     "intent": "qa_firstaid_treatment",
     "slots": {
       "organ": "肩膀",
@@ -1310,7 +1310,7 @@
   },
   {
     "text": "蒙城后天天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "蒙城",
@@ -1319,7 +1319,7 @@
   },
   {
     "text": "重庆江津天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "重庆江津"
@@ -1327,7 +1327,7 @@
   },
   {
     "text": "西安一周天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "西安",
@@ -1336,7 +1336,7 @@
   },
   {
     "text": "看黎平天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "黎平"
@@ -1344,7 +1344,7 @@
   },
   {
     "text": "那我问你明天什么天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天"
@@ -1352,7 +1352,7 @@
   },
   {
     "text": "你位子被调了长崎县天气预报啊",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "长崎县"
@@ -1360,7 +1360,7 @@
   },
   {
     "text": "博白的天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "博白"
@@ -1368,7 +1368,7 @@
   },
   {
     "text": "北京后天天气如何",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "北京",
@@ -1377,7 +1377,7 @@
   },
   {
     "text": "帮我查一下运城天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "运城"
@@ -1385,7 +1385,7 @@
   },
   {
     "text": "帮我查一下明天天津的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天",
@@ -1394,7 +1394,7 @@
   },
   {
     "text": "邯郸市天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "邯郸市"
@@ -1402,7 +1402,7 @@
   },
   {
     "text": "上海未来七天天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "上海",
@@ -1411,7 +1411,7 @@
   },
   {
     "text": "北海后天的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "北海",
@@ -1420,7 +1420,7 @@
   },
   {
     "text": "青县明天什么天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "青县",
@@ -1429,7 +1429,7 @@
   },
   {
     "text": "乐至天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "乐至"
@@ -1437,7 +1437,7 @@
   },
   {
     "text": "洛阳明天天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "洛阳",
@@ -1446,7 +1446,7 @@
   },
   {
     "text": "白银市靖远县天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "白银市靖远县"
@@ -1454,7 +1454,7 @@
   },
   {
     "text": "达州天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "达州"
@@ -1462,7 +1462,7 @@
   },
   {
     "text": "山东淄博明天天气如何",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "山东淄博",
@@ -1471,7 +1471,7 @@
   },
   {
     "text": "明天晋中市天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天",
@@ -1480,7 +1480,7 @@
   },
   {
     "text": "嗯现在深圳天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "现在",
@@ -1489,7 +1489,7 @@
   },
   {
     "text": "今天滁州定远的天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "今天",
@@ -1498,7 +1498,7 @@
   },
   {
     "text": "这三天内有好天气吗",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "这三天内"
@@ -1506,7 +1506,7 @@
   },
   {
     "text": "明天白天天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天白天"
@@ -1514,7 +1514,7 @@
   },
   {
     "text": "赶明儿的天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "赶明儿"
@@ -1522,7 +1522,7 @@
   },
   {
     "text": "深圳福田区的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "深圳福田区"
@@ -1530,7 +1530,7 @@
   },
   {
     "text": "綦江天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "綦江"
@@ -1538,7 +1538,7 @@
   },
   {
     "text": "天气预报查一下后天",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "后天"
@@ -1546,7 +1546,7 @@
   },
   {
     "text": "明天广州天气怎样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天",
@@ -1555,13 +1555,13 @@
   },
   {
     "text": "的最近天气怎样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {}
   },
   {
     "text": "当阳明天的天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "当阳",
@@ -1570,7 +1570,7 @@
   },
   {
     "text": "汉东明天的天气吧",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "汉东",
@@ -1579,7 +1579,7 @@
   },
   {
     "text": "泸州天气预报了",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "泸州"
@@ -1587,7 +1587,7 @@
   },
   {
     "text": "锦州市天气预报十天的",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "锦州市",
@@ -1596,7 +1596,7 @@
   },
   {
     "text": "河北省天气预报啊",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "河北省"
@@ -1604,7 +1604,7 @@
   },
   {
     "text": "福州市贵啊明天天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "福州市",
@@ -1613,7 +1613,7 @@
   },
   {
     "text": "滨州的天气啊",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "滨州"
@@ -1621,7 +1621,7 @@
   },
   {
     "text": "卓资县明天的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "卓资县",
@@ -1630,13 +1630,13 @@
   },
   {
     "text": "帮我查一下天气呗",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {}
   },
   {
     "text": "理县天气怎么样",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "理县"
@@ -1644,13 +1644,13 @@
   },
   {
     "text": "查看看天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {}
   },
   {
     "text": "明天北海的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天",
@@ -1659,7 +1659,7 @@
   },
   {
     "text": "焦作市明天天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "焦作市",
@@ -1668,7 +1668,7 @@
   },
   {
     "text": "会昌县天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "会昌县"
@@ -1676,7 +1676,7 @@
   },
   {
     "text": "呵呵，后天的天气怎么样啊",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "后天"
@@ -1684,7 +1684,7 @@
   },
   {
     "text": "我是明天的天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "明天"
@@ -1692,7 +1692,7 @@
   },
   {
     "text": "我想看看今天的天气好不好",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "datetime": "今天"
@@ -1700,7 +1700,7 @@
   },
   {
     "text": "安徽省淮南市长丰县天气",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "安徽省淮南市长丰县"
@@ -1708,7 +1708,7 @@
   },
   {
     "text": "赤峰市最新天气预报",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "赤峰市",
@@ -1717,7 +1717,7 @@
   },
   {
     "text": "查看武汉市武昌区天气详情",
-    "domain": "tianqi_50-1362968915859169280",
+    "domain": "our_test_50",
     "intent": "general_search",
     "slots": {
       "location": "武汉市武昌区"
@@ -1725,13 +1725,13 @@
   },
   {
     "text": "我要看时政新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {}
   },
   {
     "text": "给我最新的时事新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "最新",
@@ -1740,7 +1740,7 @@
   },
   {
     "text": "一周前的新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "datetime": "一周前"
@@ -1748,7 +1748,7 @@
   },
   {
     "text": "我想看一条娱乐性的新闻，请帮我播放。",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "播放",
@@ -1757,7 +1757,7 @@
   },
   {
     "text": "来点国际体育新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "国际体育"
@@ -1765,7 +1765,7 @@
   },
   {
     "text": "热点新闻俄罗斯新型蜈蚣",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -1774,7 +1774,7 @@
   },
   {
     "text": "我要观看财经新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "看",
@@ -1783,7 +1783,7 @@
   },
   {
     "text": "丰县新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "丰县"
@@ -1791,7 +1791,7 @@
   },
   {
     "text": "把那个午间新闻播报给我",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "datetime": "午间",
@@ -1800,7 +1800,7 @@
   },
   {
     "text": "百度搜索呃兰州新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "兰州"
@@ -1808,7 +1808,7 @@
   },
   {
     "text": "热点新闻日本猫咪当信使",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -1817,7 +1817,7 @@
   },
   {
     "text": "给我看点近来的热点",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "看",
@@ -1826,7 +1826,7 @@
   },
   {
     "text": "播一下新闻吧",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "播"
@@ -1834,7 +1834,7 @@
   },
   {
     "text": "今天有什么奇怪的新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "datetime": "今天",
@@ -1843,7 +1843,7 @@
   },
   {
     "text": "我要看国外最新动态！",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "看",
@@ -1853,7 +1853,7 @@
   },
   {
     "text": "收集寒假期间发生的十件国际重大新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "国际"
@@ -1861,7 +1861,7 @@
   },
   {
     "text": "今日股市最新消息",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "datetime": "今日",
@@ -1871,7 +1871,7 @@
   },
   {
     "text": "如果最近发生了什么热点，就自动播放给我听",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -1880,7 +1880,7 @@
   },
   {
     "text": "我要听最近的热点",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "听",
@@ -1889,7 +1889,7 @@
   },
   {
     "text": "搜索青岛糖球会的新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "青岛糖球会"
@@ -1897,13 +1897,13 @@
   },
   {
     "text": "听有关资讯",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {}
   },
   {
     "text": "想听一下两会新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "两会"
@@ -1911,7 +1911,7 @@
   },
   {
     "text": "热点新闻中新项目落户重庆",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -1920,7 +1920,7 @@
   },
   {
     "text": "我想了解一下最新科技。",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "最新",
@@ -1929,7 +1929,7 @@
   },
   {
     "text": "我要看亚洲新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "亚洲"
@@ -1937,7 +1937,7 @@
   },
   {
     "text": "中央新闻直播",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "中央"
@@ -1945,7 +1945,7 @@
   },
   {
     "text": "我想听有关这两天的资讯",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "听"
@@ -1953,7 +1953,7 @@
   },
   {
     "text": "想听有关美食的新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "听",
@@ -1962,7 +1962,7 @@
   },
   {
     "text": "今日头条放假勒",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "今日头条放假"
@@ -1970,7 +1970,7 @@
   },
   {
     "text": "搜狐新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "搜狐"
@@ -1978,7 +1978,7 @@
   },
   {
     "text": "怕广东也是正在直播路快线我要看一下",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "看一下"
@@ -1986,7 +1986,7 @@
   },
   {
     "text": "听一下关于这两天的头条",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "听"
@@ -1994,7 +1994,7 @@
   },
   {
     "text": "油价今再次上调",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "油价今再次上调"
@@ -2002,7 +2002,7 @@
   },
   {
     "text": "帮我关注一下实时新闻热点",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点"
@@ -2010,7 +2010,7 @@
   },
   {
     "text": "电梯事故报道",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "电梯事故"
@@ -2018,7 +2018,7 @@
   },
   {
     "text": "你看军事新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "军事"
@@ -2026,7 +2026,7 @@
   },
   {
     "text": "给我播放近来的热点",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "播放",
@@ -2035,7 +2035,7 @@
   },
   {
     "text": "双色球开奖新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "双色球开奖"
@@ -2043,7 +2043,7 @@
   },
   {
     "text": "热点新闻郭德纲儿徒首登台",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -2052,7 +2052,7 @@
   },
   {
     "text": "杜尔平新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "杜尔平"
@@ -2060,7 +2060,7 @@
   },
   {
     "text": "热点新闻韩雪怒斥流量清零",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -2069,7 +2069,7 @@
   },
   {
     "text": "王宝强最近有什么新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "王宝强"
@@ -2077,7 +2077,7 @@
   },
   {
     "text": "我想看一下关于近来的热点",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "看一下",
@@ -2086,7 +2086,7 @@
   },
   {
     "text": "我想听一下本地新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "action": "听",
@@ -2095,7 +2095,7 @@
   },
   {
     "text": "可以让我了解一下国内军事资讯吗",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "军事"
@@ -2103,7 +2103,7 @@
   },
   {
     "text": "热点新闻田亮儿子首曝光",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "ranking": "热点",
@@ -2112,7 +2112,7 @@
   },
   {
     "text": "没有什么军事报道新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "军事"
@@ -2120,7 +2120,7 @@
   },
   {
     "text": "看铜陵新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "key_words": "铜陵"
@@ -2128,7 +2128,7 @@
   },
   {
     "text": "我要看数码新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "数码"
@@ -2136,7 +2136,7 @@
   },
   {
     "text": "省属时事新闻",
-    "domain": "xinwen_50-1362971796507201536",
+    "domain": "our_test_50",
     "intent": "search_news",
     "slots": {
       "type": "省属时事"
