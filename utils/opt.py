@@ -27,7 +27,8 @@ def basic_args(parser):
     group.add_argument("--bert_path", type=str, default=BERT_BASE_UNCASED, help="path to pretrained BERT")
     group.add_argument("--bert_vocab", type=str, default=BERT_BASE_UNCASED_VOCAB, help="path to BERT vocab file")
     group.add_argument('--output_dir', help='The dir to the output file, and to save model,eg: ./')
-    group.add_argument("--saved_model_path", default='', help="path to the pre-trained model file")
+    #group.add_argument("--saved_model_path", default='../smp_train_our_test_2/smp.try.spt_s_2.q_s_4.ep_50.lt_both.ci_0/sc.ga_4.ple_0.5.tbs_4.sim_dot.ems_proto_with_label_norm.DATA.smp.shots_2.cross_id_0.m_seed_0', help="path to the pre-trained model file")
+    group.add_argument("--saved_model_path", default='', help="")
     group.add_argument("--embedding_cache", type=str, default='/users4/ythou/Projects/Homework/ComputationalSemantic/.word_vectors_cache',
                        help="path to embedding cache dir. if use pytorch nlp, use this path to avoid downloading")
 
@@ -164,7 +165,7 @@ def model_args(parser):
                        help="method to scale label embedding into 1-0")
     group.add_argument("--ple_scale_r", default=1, type=float, help="Scale label embedding to x times")
     # tap net setting
-    group.add_argument("--tap_random_init", default=False, action='store_true',
+    group.add_argument("--tap_random_init", default=True, action='store_true',
                        help="Set random init for label reps in tap-net")
     group.add_argument("--tap_random_init_r", default=1, type=float,
                        help="Set random init rate for label reps in tap-net")
@@ -233,8 +234,8 @@ def option_check(opt):
     if not opt.do_train and not opt.do_predict:
         raise ValueError("At least one of 'do_train' or 'do_predict' must be True.")
 
-    if os.path.exists(opt.output_dir) and os.listdir(opt.output_dir) and not opt.allow_override:
-        raise ValueError("Output directory () already exists and is not empty.")
+    #if os.path.exists(opt.output_dir) and os.listdir(opt.output_dir) and not opt.allow_override:
+    #    raise ValueError("Output directory () already exists and is not empty.")
 
     if opt.do_train and not (opt.train_path and opt.dev_path):
         raise ValueError("If `do_train` is True, then `train_file` and dev file must be specified.")
