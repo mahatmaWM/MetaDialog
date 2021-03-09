@@ -1,0 +1,110 @@
+[
+  {
+    "text": "荷兰的首都是哪个城市的",
+    "domain": "test_support_mode_2",
+    "intent": "shoudu_5-1363011111425675264.search_capital",
+    "slots": {
+      "country": "荷兰"
+    }
+  },
+  {
+    "text": "我想知道北京的首都是什么",
+    "domain": "test_support_mode_2",
+    "intent": "shoudu_5-1363011111425675264.search_capital",
+    "slots": {
+      "capital": "北京"
+    }
+  },
+  {
+    "text": "今天可以订盟吗？",
+    "domain": "test_support_mode_2",
+    "intent": "huangli_5-1362949499880652800.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "可以",
+      "item": "订盟"
+    }
+  },
+  {
+    "text": "有哪些事情今天适合去做",
+    "domain": "test_support_mode_2",
+    "intent": "huangli_5-1362949499880652800.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "适合"
+    }
+  },
+  {
+    "text": "幼儿扁桃体化脓发高烧",
+    "domain": "test_support_mode_2",
+    "intent": "jibing_5-1362964556333105152.qa_firstaid_treatment",
+    "slots": {
+      "people": "幼儿",
+      "disease": "高烧"
+    }
+  },
+  {
+    "text": "甲沟炎息肉如何消除",
+    "domain": "test_support_mode_2",
+    "intent": "jibing_5-1362964556333105152.qa_firstaid_treatment",
+    "slots": {
+      "disease": "甲沟炎"
+    }
+  },
+  {
+    "text": "蒙城后天天气",
+    "domain": "test_support_mode_2",
+    "intent": "tianqi_5-1362970384020725760.general_search",
+    "slots": {
+      "location": "蒙城",
+      "datetime": "后天"
+    }
+  },
+  {
+    "text": "重庆江津天气",
+    "domain": "test_support_mode_2",
+    "intent": "tianqi_5-1362970384020725760.general_search",
+    "slots": {
+      "location": "重庆江津"
+    }
+  },
+  {
+    "text": "我要看时政新闻",
+    "domain": "test_support_mode_2",
+    "intent": "xinwen_5-1363008185919516672.search_news",
+    "slots": {}
+  },
+  {
+    "text": "给我最新的时事新闻",
+    "domain": "test_support_mode_2",
+    "intent": "xinwen_5-1363008185919516672.search_news",
+    "slots": {
+      "ranking": "最新",
+      "type": "时事"
+    }
+  },
+  {
+    "text": "找下人工客服",
+    "domain": "test_support_mode_2",
+    "intent": "kefu_rengong_5-1369111738115383296.rengong",
+    "slots": {}
+  },
+  {
+    "text": "现在还有没有人工客服在线",
+    "domain": "test_support_mode_2",
+    "intent": "kefu_rengong_5-1369111738115383296.rengong",
+    "slots": {}
+  },
+  {
+    "text": "迅速取款失败怎么回事",
+    "domain": "test_support_mode_2",
+    "intent": "kefu_quqian_5-1369111467322683392.quqian",
+    "slots": {}
+  },
+  {
+    "text": "怎么取出理财金",
+    "domain": "test_support_mode_2",
+    "intent": "kefu_quqian_5-1369111467322683392.quqian",
+    "slots": {}
+  }
+]
