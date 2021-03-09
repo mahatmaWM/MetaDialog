@@ -2,9 +2,6 @@ import codecs
 import json
 import re
 
-filenames = 'total.txt'
-# nums = ['100', '50', '5']
-
 rename_domains_100_dict = {
     'almanac': 'huangli_100-1362948838480896000',
     'disease': 'jibing_100-1362963779678068736',
@@ -28,10 +25,11 @@ rename_domains_5_dict = {
 }
 
 
-def Name2lqd(path, filenames, output1, output2, rename_domain_dict):
+def Name2lqd(path, filenames, output1, output2, rename_domain_dict, sup_que_for_pingtai=True, support_mode=100):
     out_data_txt = codecs.open(path + output1, 'w', encoding='utf-8')
     out_data_json = codecs.open(path + output2, 'w', encoding='utf-8')
     dump_file = []
+    re_datas = []
     with codecs.open(path + filenames, 'r', encoding='utf-8') as f:
         for data in f.readlines():
             context, domain, intent, con_slots = data.strip().split('\t')
@@ -39,8 +37,8 @@ def Name2lqd(path, filenames, output1, output2, rename_domain_dict):
 
             result = {}
             result['text'] = context
-            result['domain'] = new_domain
-            result['intent'] = intent
+            result['domain'] = 'test_support_mode_' + str(support_mode)
+            result['intent'] = new_domain + '.' + intent
             result['slots'] = {}
             pattern = r'<(.+?)>(.+?)<'
             res = re.findall(pattern, con_slots)
@@ -49,10 +47,26 @@ def Name2lqd(path, filenames, output1, output2, rename_domain_dict):
             dump_file.append(result)
 
             re_data = context + '\t' + new_domain + '\t' + intent + '\t' + con_slots + '\n'
-            out_data_txt.write(re_data)
+            re_datas.append(re_data)
         json.dump(dump_file, out_data_json, ensure_ascii=False, indent=2)
+    for re_data in re_datas:
+        out_data_txt.write(re_data)
     out_data_txt.close()
     out_data_json.close()
+
+    if sup_que_for_pingtai:
+        for k, v in rename_domain_dict.items():
+            with codecs.open(path + 'support_pingtai/' + v + '_support_2_pingtai.txt', 'w', encoding='utf-8') as open_file_1:
+                for re_data in re_datas:
+                    context, domain, intent, con_slots = re_data.strip().split('\t')
+                    if domain == v:
+                        open_file_1.write(con_slots + '\n')
+        if output1.split('_')[0] == 'correct':
+            with codecs.open(path + 'support_pingtai/' + output1.replace('.txt', '_test_set.txt'), 'w', encoding='utf-8') as open_file_2:
+                for re_data in re_datas:
+                    context, domain, intent, con_slots = re_data.strip().split('\t')
+                    test_set = domain + '|' + intent + '|||' + con_slots + '\n'
+                    open_file_2.write(test_set)
 
 
 if __name__ == '__main__':
@@ -60,34 +74,40 @@ if __name__ == '__main__':
              filenames='correct_300.txt',
              output1='correct_100_for_pingtai.txt',
              output2='correct_100.json',
-             rename_domain_dict=rename_domains_100_dict)
+             rename_domain_dict=rename_domains_100_dict,
+             support_mode=100)
     Name2lqd('./our_db_test_data/',
              filenames='correct_300.txt',
              output1='correct_50_for_pingtai.txt',
              output2='correct_50.json',
-             rename_domain_dict=rename_domains_50_dict)
+             rename_domain_dict=rename_domains_50_dict,
+             support_mode=50)
     Name2lqd('./our_db_test_data/',
              filenames='correct_300.txt',
              output1='correct_5_for_pingtai.txt',
              output2='correct_5.json',
-             rename_domain_dict=rename_domains_5_dict)
+             rename_domain_dict=rename_domains_5_dict,
+             support_mode=5)
 
     Name2lqd('./our_db_test_data/',
              filenames='support_100.txt',
              output1='support_100_for_pingtai.txt',
              output2='support_100.json',
-             rename_domain_dict=rename_domains_100_dict)
+             rename_domain_dict=rename_domains_100_dict,
+             support_mode=100)
 
     Name2lqd('./our_db_test_data/',
              filenames='support_50.txt',
              output1='support_50_for_pingtai.txt',
              output2='support_50.json',
-             rename_domain_dict=rename_domains_50_dict)
+             rename_domain_dict=rename_domains_50_dict,
+             support_mode=50)
 
     Name2lqd('./our_db_test_data/',
              filenames='support_5.txt',
              output1='support_5_for_pingtai.txt',
              output2='support_5.json',
-             rename_domain_dict=rename_domains_5_dict)
+             rename_domain_dict=rename_domains_5_dict,
+             support_mode=5)
 
 
