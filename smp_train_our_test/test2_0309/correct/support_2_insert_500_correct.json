@@ -14982,5 +14982,3902 @@
     "domain": "test_support_mode_2",
     "intent": "kefu_rengong_5-1369111738115383296.rengong",
     "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "中国人是谁唱的了",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "中国人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "唱过北京欢迎你的歌手都有谁？",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "北京欢迎你"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "单车恋人是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "单车恋人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "淬火成钢主题曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "淬火成钢",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "恋曲1990谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "恋曲1990"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "凋零的玫瑰是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "凋零的玫瑰"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "有哪些狮子座的歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "狮子座"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "哪个女生翻唱歌曲好听",
+    "intent": "music.search_singer",
+    "slots": {
+      "sex": "女生",
+      "theme": "翻唱",
+      "language": "好听"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "唱感动天感动地的人是那个歌手?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "感动天感动地"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "血族流行歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "language": "血族",
+      "toplist": "流行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "陈德容版一帘幽梦费云帆唱的诗意插曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "一帘幽梦",
+      "episode": "插曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "有没有17岁的网络歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "age": "17岁",
+      "toplist": "网络"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "什么歌手唱过惊鸿一面这首歌",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "惊鸿一面"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "赶紧帮我搜搜看哪个歌手是博士毕业的好不?",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "博士毕业"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我一首歌的时间是哪个歌手唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "给我一首歌的时间"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "搜索凤凰传奇",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer": "凤凰传奇"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "把唱江南的歌手找出来告诉我。",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "江南"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "找个唱原生态的歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "style": "原生态"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "可不可以搜下跟龙飘飘合唱歌的男歌手是谁啊",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer": "龙飘飘",
+      "theme": "合唱",
+      "sex": "男"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "曼曼是哪位歌唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "曼曼"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "名扬花鼓主题曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "名扬花鼓",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "哪个歌手毕业于清华大学",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "毕业于清华大学"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "好好爱^0^谁唱的``?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "好好爱"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你就赶紧帮我搜一下梅坞寻茶是谁唱的吧",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "爱上别人的人是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "爱上别人的人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我们就到这是谁演唱的?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "我们就到这"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你现在的任务是搜一下梅坞寻茶是由谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你是我的眼主题曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "你是我的眼",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我是歌手都有哪些歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "theme": "我是歌手"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从你的全世界路过片尾曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "从你的全世界路过",
+      "episode": "片尾曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "海阔天空是那个歌手唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "海阔天空"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "私人生活是谁唱的?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "私人生活"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "死了都要爱谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "死了都要爱"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "可以了是那个歌手的歌",
+    "intent": "music.search_singer",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小半是谁的成名曲？",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "小半",
+      "theme": "成名曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "美人私房菜主题曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "美人私房菜",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "若你喜欢怪人,其实我很美这句歌词是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "lyrics": "若你喜欢怪人,其实我很美"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "《千里之外》到底是谁唱的啊?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "千里之外"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我是歌手谁来踢馆鞠婧祎",
+    "intent": "music.search_singer",
+    "slots": {
+      "theme": "我是歌手"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "警犬巴打插曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "警犬巴打",
+      "episode": "插曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "网络女歌手名字大全",
+    "intent": "music.search_singer",
+    "slots": {
+      "toplist": "网络",
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想搜索下唱经典老歌回到拉萨的歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "theme": "经典老歌",
+      "song": "回到拉萨"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "唱七月上的歌手是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "七月上"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "哪个歌手出车祸去世的",
+    "intent": "music.search_singer",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "歌曲无处安放作者是谁i",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "无处安放",
+      "singer_property": "作者"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "谁唱过龙卷风",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "龙卷风"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "香港歌手恰恰演唱者",
+    "intent": "music.search_singer",
+    "slots": {
+      "language": "香港",
+      "song": "恰恰"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "不如吃茶去谁的专辑",
+    "intent": "music.search_singer",
+    "slots": {
+      "album": "不如吃茶去"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "搭错车主题曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "搭错车",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "立马告诉我梅坞寻茶是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "两只蝴蝶是谁唱的?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "两只蝴蝶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "北京人在纽约的主题曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "北京人在纽约",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "五号特工组片尾曲天亮之前是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "五号特工组",
+      "episode": "片尾曲",
+      "song": "天亮之前"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "几分之几是谁唱的啊?是有这歌吗?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "几分之几"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "好听的电音歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "toplist": "好听",
+      "style": "电音"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来一个唱情歌好听的女歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "theme": "情歌",
+      "toplist": "好听",
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "solo歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "solo"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "伤心的时候可以听情歌谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "伤心的时候可以听情歌"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "善于唱中国风的组合",
+    "intent": "music.search_singer",
+    "slots": {
+      "theme": "中国风",
+      "sex": "组合"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "淬火成钢片尾曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "淬火成钢",
+      "episode": "片尾曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小苹果是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "小苹果"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "憨八龟主题曲谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "憨八龟",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "九十年代流行的爵士男歌手有谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "age": "九十年代",
+      "toplist": "流行",
+      "style": "爵士",
+      "sex": "男"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "素颜的演唱者是哪个？",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "素颜"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "锦绣未央歌曲演唱者",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "锦绣未央"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "苹果七发布会歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "苹果七发布会"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "著名的摇滚歌手有哪些？",
+    "intent": "music.search_singer",
+    "slots": {
+      "toplist": "著名",
+      "style": "摇滚"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "摇滚女歌手有谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "style": "摇滚",
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "姓徐得女歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "歌手里最胖的是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "最胖"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "请你告诉我梅坞寻茶是谁唱的吧,好吗",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "画心是谁唱的?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "画心"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "微微一笑很倾城是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "微微一笑很倾城"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "洋葱这首歌是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "洋葱"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "跟龙飘飘合唱歌曲的那个男歌手叫什么名字啊",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer": "龙飘飘",
+      "theme": "合唱",
+      "sex": "男"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "哪个歌手唱的歌红呢",
+    "intent": "music.search_singer",
+    "slots": {
+      "toplist": "红"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "仙剑奇侠传的插曲一直很安静是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "仙剑奇侠传",
+      "episode": "插曲",
+      "song": "一直很安静"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "是谁唱的童话这首歌",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "童话"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "爱情里没有谁对谁错是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "爱情里没有谁对谁错"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "傻笑是周杰伦和谁合唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "傻笑",
+      "singer": "周杰伦",
+      "style": "合唱"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "有哪些歌手唱过王子公主？",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "王子公主"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "九十年代自杀的歌手是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "age": "九十年代",
+      "singer_property": "自杀"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "春晚的站起来是谁唱的?",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "站起来"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "故梦是谁的歌",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "故梦"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "90后的演员和歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "age": "90后"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "都有谁唱过痒",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "痒"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "获2018亚洲新歌榜港台最受欢迎女歌手的是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "age": "2018",
+      "toplist": "亚洲新歌榜港台",
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "可以立马跟我搜搜这句其实你不懂我的心的歌词是谁唱的吗?",
+    "intent": "music.search_singer",
+    "slots": {
+      "lyrics": "其实你不懂我的心"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "美丽的秘密电视剧里歌曲是谁演唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "美丽的秘密"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "残疾歌手是谁",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "残疾"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "请问你可以给我搜一搜梅坞寻茶是谁唱的吗",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "唱凤囚凰主题曲是哪个歌手?",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "凤囚凰",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "后会无期是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "后会无期"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我找个唱秦腔的歌手",
+    "intent": "music.search_singer",
+    "slots": {
+      "opera": "秦腔"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "和张杰一起唱《爱的奇迹》的那个女的是谁?",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer": "张杰",
+      "song": "爱的奇迹",
+      "sex": "女"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "老鼠爱大米是谁的成名作",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "老鼠爱大米",
+      "theme": "成名作"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "有哪些水瓶座的歌手？",
+    "intent": "music.search_singer",
+    "slots": {
+      "singer_property": "水瓶座"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "成都是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "成都"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我搜索一下梅坞寻茶是谁唱的吧",
+    "intent": "music.search_singer",
+    "slots": {
+      "song": "梅坞寻茶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "斗破苍穹的主题曲是谁唱的",
+    "intent": "music.search_singer",
+    "slots": {
+      "tvfilm": "斗破苍穹",
+      "episode": "主题曲"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话短的",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我播放一个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "图个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来一个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话讲个小笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放一个笑话你",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你说一个笑话给我听吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我来个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "快讲个笑话哈",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话太强了",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你说个笑话听一听了",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "将将温将讲个笑话呗",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我讲个黄段子",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "黄"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话哄我睡觉",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "听笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "还不给我讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "那讲个最好笑的笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "好笑"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "尽给我讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放小笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你也给我讲个笑话呀",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你好讲个笑话听听",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话儿为什么在群里面讲一个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "继续加一个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我讲个笑话二",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "笑话，哈哈哈",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "他妈妈给我讲个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你这个笑话啊",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "笨蛋讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想听笑话你",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我讲个笑话啊",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你说个好笑的笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "好笑"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话沙田镇中心",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "要的是傻气过哈哈哈讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来个笑话呀",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话来个笑话把自己面子",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我不想听笑话了取消笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个黄色笑话儿吧",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "黄色"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来一首歌曲毛阿敏的歌曲才怪来个笑话一个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话非",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "笑话可笑的",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话跟",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲一个黄色笑话来听一下",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "啥鸡巴意思啊叫你讲笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲就讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "不是要说笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1月是讲个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你能跟我讲个笑话吗",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "啊说个笑话来听一听啊",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我给你讲个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲一个黄色笑话快点",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "是否有笑话节目",
+    "intent": "joke.tell",
+    "slots": {
+      "content_type": "节目"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话了额",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "喝采吧你笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一方讲个笑话吗",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "这个笑话好听ps",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "这两个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "夫妻间的笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "夫妻"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我讲个笑话给我讲笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你能不能讲个笑话给我听我要讲的不要看",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话啊还聊着你会不会真的胖了脸和他聊了什么",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲大笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给讲个笑话儿",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给了一个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话播",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "懂吗讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "帮个笑话听听",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话保定北国商城",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "后听笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话给我讲个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑哈话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "呵呵嗯给我讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "听笑话笑得这么累呢",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲几个笑话来听一下",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "不才十个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "能找到职业型笑话吗",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "职业型"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "开个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "说个笑话呗",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "聊天可以讲个笑话儿",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个长一点笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "content_type": "长一点"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "跟我给个给我讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一下讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来个黄色的动态图",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "黄色",
+      "content_type": "动态图"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "跟我说个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲个笑话给你看",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给爷来个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "被笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲一个冷笑话啊",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "冷"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "借给我讲个笑话呗",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我们讲50个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "能给我讲个笑话吗？",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "请你对我说个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "好的你给我讲个笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "嬴政压力来一个笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "说个长一点的笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "content_type": "长一点的"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "个人笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一直讲笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "讲点黄色笑话",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "黄色"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "条笑话",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来个成人笑话听一下",
+    "intent": "joke.tell",
+    "slots": {
+      "type": "成人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我讲解笑话吧",
+    "intent": "joke.tell",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "三台到成都怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "三台",
+      "destination": "成都"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从新市到汨罗怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "新市",
+      "destination": "汨罗"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "天津咸水沽中国银行在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "天津咸水沽中国银行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去云南省政府的路线",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "云南省政府"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "株洲火车站坐几路到红旗广场",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "株洲火车站",
+      "destination": "红旗广场"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "东华里小区在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "东华里小区"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到招商银行怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "招商银行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "长白山在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "长白山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "宁波北仑到宁波纺织城坐几路公交车",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "宁波北仑",
+      "destination": "宁波纺织城",
+      "navigation_type": "公交车"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要去高新区永兴镇的房子怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "高新区永兴镇"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "工商银行怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "工商银行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "板桥村在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "板桥村"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "太平桥在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "太平桥"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "导航到天安门",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "天安门"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到广州一德路",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "广州一德路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "云台山在那里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "云台山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么去上海交通大学",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "上海交通大学"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去德州的路线",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "德州"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "义乌九三医院怎么坐车",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "义乌九三医院"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "钟楼怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "钟楼"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "启东在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "启东"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "淳化县怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "淳化县"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从我这里怎么到星沙去了",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "星沙"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到紫竹桥坐什么车了",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "紫竹桥"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "台州学院地址",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "台州学院"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到南京路怎么走呢",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "南京路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到惠州步行街怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "惠州步行街"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "乖呗到南通的汽车几点呢",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "南通",
+      "navigation_type": "汽车"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到炎帝广场怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "炎帝广场"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "遵义到绥阳多少公里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "遵义",
+      "destination": "绥阳"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "上海宾馆在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "上海宾馆"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去天津",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "天津"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "郑州市龙湖大厦地址",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "郑州市龙湖大厦"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "成都到湖北的地方",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "成都",
+      "destination": "湖北"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "导航去福州",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "福州"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "德胜门到玄武门",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "德胜门",
+      "destination": "玄武门"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎样去花都",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "花都"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "导航到外滩小区",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "外滩小区"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "民高路口在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "民高路口"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "萧山开发区邮局在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "萧山开发区邮局"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去中国银行怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "中国银行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "陆芳村怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "陆芳村"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去宁都怎样走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "宁都"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "保定到唐山的距离",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "保定",
+      "destination": "唐山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "内黄到民权的线路",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "内黄",
+      "destination": "民权"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从海南州到河南省有多远",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "海南州",
+      "destination": "河南省"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到漯河怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "漯河"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "宝山在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "宝山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "牡丹江市西安区新安吏江城美地小区地址",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "牡丹江市西安区新安吏江城美地小区"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "承德到宽城路线",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "承德",
+      "destination": "宽城"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么坐车到天河客运站",
+    "intent": "native_app.navigation",
+    "slots": {
+      "navigation_type": "坐车",
+      "destination": "天河客运站"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要去长沙",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "长沙"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "黄果树瀑布在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "黄果树瀑布"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去新塘",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "新塘"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "光谷广场在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "光谷广场"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "火车北站怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "火车北站"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去北票怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "北票"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从我的位置到西海怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "西海"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "枣庄一村怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "枣庄一村"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要去贵州怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "贵州"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到火车站导航",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "火车站"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到深圳怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "深圳"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "江西塑料厂的地址",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "江西塑料厂"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "长春建设街到长春医大一院怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "长春建设街",
+      "destination": "长春医大一院"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要去武汉纺织大学阳光校区",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "武汉纺织大学阳光校区"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去松山湖",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "松山湖"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "华中科技大学在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "华中科技大学"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "无锡到宿迁几公里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "无锡",
+      "destination": "宿迁"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "江苏火车站在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "江苏火车站"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么去赵冲村",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "赵冲村"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "石家庄到武汉有多少公里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "石家庄",
+      "destination": "武汉"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去东兴怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "东兴"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "厦门火车站去仙岳路",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "厦门火车站",
+      "destination": "仙岳路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "啊，我要去茭菱路口",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "茭菱路口"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "湖北潜江怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "湖北潜江"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "郑州西站到汽配城怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "郑州西站",
+      "destination": "汽配城"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "石家庄到廊坊有多少里地",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "石家庄",
+      "destination": "廊坊"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "从丰台北路去公主坟的路线",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "丰台北路",
+      "destination": "公主坟"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去莆田市市政府",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "莆田市市政府"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去屯溪路了",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "屯溪路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "太原市万达酒店地点",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "太原市万达酒店"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要去紫金山",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "紫金山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "登高路怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "登高路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "同平在哪儿",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "同平"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "萝岗会议中心怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "萝岗会议中心"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去九七医院怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "九七医院"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么去广州",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "广州"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "安庆市人民政府的位置在什么地方",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "安庆市人民政府"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "启东到常熟有多远",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "启东",
+      "destination": "常熟"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "河北沧州批发市场在哪",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "河北沧州批发市场"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去苏州大学怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "苏州大学"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "这里到西安怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "西安"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "云龙山在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "云龙山"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "龙潭半岛大酒店在哪儿",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "龙潭半岛大酒店"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "神农架在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "神农架"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "沭阳在哪里",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "沭阳"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我在南马路准备去沙堆的路线怎么走哦",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "南马路",
+      "destination": "沙堆"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么到贵阳路",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "贵阳路"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "到湛江的距离",
+    "intent": "native_app.navigation",
+    "slots": {
+      "destination": "湛江"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "东莞到长沙怎么走",
+    "intent": "native_app.navigation",
+    "slots": {
+      "origin": "东莞",
+      "destination": "长沙"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "呵呵100除2",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "100除2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "48加6等于几啊",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "48加6"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "七加五等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "七加五"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "二百八十九加五百六",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "二百八十九加五百六"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "七乘七乘六等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "七乘七乘六"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "9.42除以3.14",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "9.42除以3.14"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "18乘以2等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "18乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "362加623加7加8乘以2除以3等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "362加623加7加8乘以2除以3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "18减128等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "18减128"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "宝贝二十减四十五",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "二十减四十五"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "24-19等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "24-19"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "3.5乘以36等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "3.5乘以36"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加1加1加1加1加1加1加1加3加4加5加6等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加1加1加1加1加1加1加1加3加4加5加6"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "10000乘以1等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "10000乘以1"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "10减17等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "10减17"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "56除以3等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "56除以3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "3.14乘以14乘以2",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "3.14乘以14乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "99*99",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "99*99"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "加八百零三乘以一千等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "加八百零三乘以一千"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "225×225",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "225×225"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "160加160",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "160加160"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "二百六十七除以三约等于等",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "二百六十七除以三"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "60加60得多",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "60加60"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "50乘以2等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "50乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1111111111+222222222222",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1111111111+222222222222"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "2900加2020等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "2900加2020"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "58乘以120",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "58乘以120"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "67加9等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "67加9"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "65536乘2等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "65536乘2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "来2×8×9×10÷2÷4÷8等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "2×8×9×10÷2÷4÷8"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "十除以五",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "十除以五"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1000乘500",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1000乘500"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "8除以6",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "8除以6"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "3926减6326等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "3926减6326"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一乘以一等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "一乘以一"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "12433乘以12433等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "12433乘以12433"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "8加80",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "8加80"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1乘2等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1乘2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "996加1等多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "996加1"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "35乘以0.6",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "35乘以0.6"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加1乘2等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加1乘2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1+1+1+11+1+1+1+11+1+1",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1+1+1+11+1+1+1+11+1+1"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "六十八乘六十三等于",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "六十八乘六十三"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "500除以12",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "500除以12"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "32768*450",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "32768*450"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1520加572等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1520加572"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "就是9乘以5等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "9乘以5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "2加3",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "2加3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "四百加两百等于",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "四百加两百"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "0.56884+56",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "0.56884+56"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加1等",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加1等"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "120乘以300",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "120乘以300"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "900+800等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "900+800"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加1加3加5",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加1加3加5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "99乘以99加10等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "99乘以99加10"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "13乘以2",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "13乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "9475.30*6.136",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "9475.30*6.136"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "36乘以2等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "36乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "5加5等于几呢",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "5加5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "250+25=",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "250+25"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "五十八除以二",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "五十八除以二"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1除以7等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1除以7"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "38加5等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "38加5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "85减84.5等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "85减84.5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "18.5除以126等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "18.5除以126"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "0.175除以0.25等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "0.175除以0.25"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "二十八乘二十八乘三十八乘四十八",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "二十八乘二十八乘三十八乘四十八"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "25减5加6加7减1等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "25减5加6加7减1"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "24131加2等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "24131加2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "七十八乘以九十九加七十八用脱式计算算",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "七十八乘以九十九加七十八"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "900除以5等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "900除以5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "300乘300等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "300乘300"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "89+80+66+100+97+90+96+80+97+74+78=",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "89+80+66+100+97+90+96+80+97+74+78"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一加一再加一再加一再减一再加二等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "一加一再加一再加一再减一再加二"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "3170除以3等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "3170除以3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "19855+65434＝",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "19855+65434"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加2加3加4加5除以1加2加3加4加5",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加2加3加4加5除以1加2加3加4加5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加3等于几呀",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "93÷8等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "93÷8"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "0.4乘0.2减0.2减0.2等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "0.4乘0.2减0.2减0.2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一加二加三加四加五加六等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "一加二加三加四加五加六"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "35乘以96等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "35乘以96"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "七十八除以六约等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "七十八除以六"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "3+3等于几呀",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "3+3"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "39乘以39等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "39乘以39"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "100+1300+1900等于好多",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "100+1300+1900"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "5.8加5",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "5.8加5"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "4800乘以7等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "4800乘以7"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "24乘以2",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "24乘以2"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "99乘以99",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "99乘以99"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "五加九等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "五加九"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "而是一加一等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "一加一"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "390加100吧",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "390加100"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "一加一等于几错了打的",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "一加一"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "18乘以47",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "18乘以47"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加1加1加1加1加4等于几",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加1加1加1加1加4"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "250乘250等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "250乘250"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "690*69",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "690*69"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "四除以三",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "四除以三"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "1加2加3加4加5加6加7等于多少",
+    "intent": "science.calculator",
+    "slots": {
+      "expression": "1加2加3加4加5加6加7"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看可乐姐姐学画画",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "可乐姐姐学画画"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放广场舞对不起现在我才爱上你",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "广场舞",
+      "short_video_tag": "对不起现在我才爱上你"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看关于如何做美食的小视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "美食"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "有小视频可以看吗",
+    "intent": "video.search_short_video",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "胖孑游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "胖孑游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看小熙解说第五",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "小熙解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小熙解说玩游戏",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "玩游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "看美久广场舞",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "美久广场舞"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看一壶老酒",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "一壶老酒"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "饥荒游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "鲤鱼鲤鱼解说恐怖奶奶",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "恐怖奶奶"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放迷你世界游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "大海解说游戏大全",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "大海解说",
+      "short_video_type": "游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "怎么不给我放点娱乐的小视频啊？",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "娱乐"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播出正在放新闻三十分这个台",
+    "intent": "video.search_short_video",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看和平精英体验服",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "和平精英体验服"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看这就是爱",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "这就是爱"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看模特大赛",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "模特大赛"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "网络安全大赛视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "网络安全大赛"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看健美操",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "健美操"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看阿阳解说第五人格",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "第五人格"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "去哥哥解说迷你世界",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "迷你世界"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "使命召唤游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "解谜游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "汤姆猫跑酷解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "游戏解说疯狂城市",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "疯狂城市"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "健达奇趣蛋的视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "健达奇趣蛋"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "你不来我不老广场舞视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "你不来我不老",
+      "short_video_type": "广场舞"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看小小机器人",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "小小机器人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看果子哥哥",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "果子哥哥"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "大白解说游戏",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "大白解说",
+      "short_video_type": "游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放一段广场舞站着等你三千年",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "广场舞",
+      "short_video_tag": "站着等你三千年"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看泳装模特大赛",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "泳装模特大赛"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小格解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "小格解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看关于猴子的小视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "猴子"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看魔方玩具",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "魔方玩具"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看粗心超人",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "粗心超人"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "钓鱼游戏视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "钓鱼游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "大海解说我的世界视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "我的世界"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "糖豆广场舞的视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "糖豆广场舞"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "大山解说视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "大山解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "清水迷你世界解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "迷你世界"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "请播新闻",
+    "intent": "video.search_short_video",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "虎牙三哥解说迷你世界",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "迷你世界"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看学习雷锋好榜样",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "学习雷锋好榜样"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "吃鸡的游戏视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "吃鸡",
+      "short_video_type": "游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放搞笑小视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "搞笑"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看建国70周年大阅兵",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "建国70周年大阅兵"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看新闻联播",
+    "intent": "video.search_short_video",
+    "slots": {}
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "长虹小白我要看第五人格",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "第五人格"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看健达奇趣蛋",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "健达奇趣蛋"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "课间操我是一颗跳跳糖",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "我是一颗跳跳糖"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看王华买爹",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "王华买爹"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看站在草原望北京",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "站在草原望北京"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看迷你世界乐高",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "迷你世界乐高"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看大山解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "大山解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看绝地求生世纪战场",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "绝地求生世纪战场"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "广场舞姑娘我等你",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "广场舞",
+      "short_video_tag": "姑娘我等你"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "恐怖奶奶游戏视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "恐怖奶奶",
+      "short_video_type": "游戏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "看炮芯解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "炮芯解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看今世有缘等着我",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "今世有缘等着我"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "百度搜索红烧排骨视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "红烧排骨"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看qq飞车",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "qq飞车"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "呆呆游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "呆呆游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "糖豆广场舞老妹你真美",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "老妹你真美"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "追风游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "追风游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小格解说火星挖矿",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "火星挖矿"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放幼儿舞蹈抖一抖",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "幼儿舞蹈",
+      "short_video_tag": "抖一抖"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "放个第五人格",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "第五人格"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "广场舞红红火火大中华",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "广场舞",
+      "short_video_tag": "红红火火大中华"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "看游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "三月解说和平精英",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "和平精英"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "植物大战僵尸之小茶解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "小茶解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小议游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "小议游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "围城大作战",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "围城大作战"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小白我想看鼓励鼓励",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "鼓励鼓励"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放李明月的视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "李明月"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "搜索和平精英解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小本解说我的世界",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "我的世界"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看和平精英主播",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "和平精英主播"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "大海解说创建我的王国",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "创建我的王国"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看饺子游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "饺子游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看坦克世界动画",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "坦克世界",
+      "short_video_type": "动画"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "麦克解说和平精英",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "和平精英"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放气球的视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "气球"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看美女主播",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "美女主播"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看迷你世界搞笑",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "迷你世界搞笑"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看百里守约",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "百里守约"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "极乐净土舞蹈视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "极乐净土",
+      "short_video_type": "舞蹈"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "想看15晚会的直播",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "15晚会"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "陆小黄飞二人转",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "二人转"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放世界第一桥",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "世界第一桥"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "请播放男生女生向前冲第11季游戏解说",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "男生女生向前冲第11季游戏解说"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "播放播放婷婷唱古文第一季",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "婷婷唱古文第一季"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "舞蹈丽人行",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "舞蹈",
+      "short_video_tag": "丽人行"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "放岳云鹏的视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "岳云鹏"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我要看娱乐小视频",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_type": "娱乐"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "我想看跨界歌王明星跨界音乐精彩片段",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "跨界歌王明星跨界音乐精彩片段"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "小飞象解说死亡跑酷",
+    "intent": "video.search_short_video",
+    "slots": {
+      "short_video_tag": "死亡跑酷"
+    }
+  },
+  {
+    "domain": "test_support_mode_2",
+    "text": "给我把新闻联播放一下",
+    "intent": "video.search_short_video",
+    "slots": {}
   }
 ]
