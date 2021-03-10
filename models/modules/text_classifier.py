@@ -31,7 +31,7 @@ class SingleLabelTextClassifier(torch.nn.Module):
         for logit in logits:
             tmp = []
             for pred in logit:
-                logging.info('pred={}'.format(pred))
+                #logging.info('pred={}'.format(pred))
                 tmp.append(int(torch.argmax(pred)) if torch.max(pred) > 0.5 else -1)
                 #tmp.append(int(torch.argmax(pred)))
             ret.append(tmp)
