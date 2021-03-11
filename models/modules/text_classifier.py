@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from typing import Tuple, Union, List, Dict
 import torch
+import logging
 from torch import nn
 
 
@@ -30,7 +31,9 @@ class SingleLabelTextClassifier(torch.nn.Module):
         for logit in logits:
             tmp = []
             for pred in logit:
-                tmp.append(int(torch.argmax(pred)))
+                #logging.info('pred={}'.format(pred))
+                tmp.append(int(torch.argmax(pred)) if torch.max(pred) > 0.5 else -1)
+                #tmp.append(int(torch.argmax(pred)))
             ret.append(tmp)
         return ret
 
