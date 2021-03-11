@@ -1,0 +1,549 @@
+[
+  {
+    "text": "荷兰的首都是哪个城市的",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "荷兰"
+    }
+  },
+  {
+    "text": "我想知道北京的首都是什么",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "capital": "北京"
+    }
+  },
+  {
+    "text": "北京的首都是什么名字",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "capital": "北京"
+    }
+  },
+  {
+    "text": "澳大利亚的首都是",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "澳大利亚"
+    }
+  },
+  {
+    "text": "查下中国首都叫啥",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "中国"
+    }
+  },
+  {
+    "text": "帮我查查澳大利亚是哪个国家的首都",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "澳大利亚"
+    }
+  },
+  {
+    "text": "帮我找一找北京首都",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "capital": "北京"
+    }
+  },
+  {
+    "text": "查一下中国的首都在啥地方",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "中国"
+    }
+  },
+  {
+    "text": "找一下中国的首都在哪里",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "中国"
+    }
+  },
+  {
+    "text": "找一下中国的首都是哪儿",
+    "domain": "test_support_mode_10",
+    "intent": "shoudu_100-1363009765788008448.search_capital",
+    "slots": {
+      "country": "中国"
+    }
+  },
+  {
+    "text": "今天可以订盟吗？",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "可以",
+      "item": "订盟"
+    }
+  },
+  {
+    "text": "有哪些事情今天适合去做",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "适合"
+    }
+  },
+  {
+    "text": "今天可以做什么事",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "可以"
+    }
+  },
+  {
+    "text": "下个星期能不能结婚",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "下个星期",
+      "item": "结婚"
+    }
+  },
+  {
+    "text": "这个月哪个适合搬新家",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "这个月",
+      "suit": "适合",
+      "item": "搬新家"
+    }
+  },
+  {
+    "text": "明天做什么好",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "明天",
+      "suit": "好"
+    }
+  },
+  {
+    "text": "查一下今天适合搬家吗",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "适合",
+      "item": "搬家"
+    }
+  },
+  {
+    "text": "不知道三月八日适合外出远行么？",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "三月八日",
+      "suit": "适合",
+      "item": "外出远行"
+    }
+  },
+  {
+    "text": "今天忌安床吗",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "忌",
+      "item": "安床"
+    }
+  },
+  {
+    "text": "今天是吉日么",
+    "domain": "test_support_mode_10",
+    "intent": "huangli_100-1362948838480896000.search_almanac",
+    "slots": {
+      "datetime": "今天",
+      "suit": "吉"
+    }
+  },
+  {
+    "text": "幼儿扁桃体化脓发高烧",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "people": "幼儿",
+      "disease": "高烧"
+    }
+  },
+  {
+    "text": "甲沟炎息肉如何消除",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "disease": "甲沟炎"
+    }
+  },
+  {
+    "text": "轻微食物中毒",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "disease": "食物中毒"
+    }
+  },
+  {
+    "text": "齐秦拔火罐烧伤",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "disease": "烧伤"
+    }
+  },
+  {
+    "text": "小儿积食发烧",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "people": "小儿",
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "宝宝发烧尿不湿降温法",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "people": "宝宝",
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "小孩积食发烧怎么推拿",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "people": "小孩",
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "发烧浑身关节疼怎么办",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "宝宝发烧40度怎么处理",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "people": "宝宝",
+      "disease": "发烧"
+    }
+  },
+  {
+    "text": "癫痫小发作一天犯好几次怎么办",
+    "domain": "test_support_mode_10",
+    "intent": "jibing_100-1362963779678068736.qa_firstaid_treatment",
+    "slots": {
+      "disease": "癫痫"
+    }
+  },
+  {
+    "text": "蒙城后天天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "蒙城",
+      "datetime": "后天"
+    }
+  },
+  {
+    "text": "重庆江津天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "重庆江津"
+    }
+  },
+  {
+    "text": "西安一周天气预报",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "西安",
+      "datetime": "一周"
+    }
+  },
+  {
+    "text": "看黎平天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "黎平"
+    }
+  },
+  {
+    "text": "那我问你明天什么天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "datetime": "明天"
+    }
+  },
+  {
+    "text": "你位子被调了长崎县天气预报啊",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "长崎县"
+    }
+  },
+  {
+    "text": "博白的天气怎么样",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "博白"
+    }
+  },
+  {
+    "text": "北京后天天气如何",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "北京",
+      "datetime": "后天"
+    }
+  },
+  {
+    "text": "帮我查一下运城天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "location": "运城"
+    }
+  },
+  {
+    "text": "帮我查一下明天天津的天气",
+    "domain": "test_support_mode_10",
+    "intent": "tianqi_100-1362964723065118720.general_search",
+    "slots": {
+      "datetime": "明天",
+      "location": "天津"
+    }
+  },
+  {
+    "text": "我要看时政新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {}
+  },
+  {
+    "text": "给我最新的时事新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "ranking": "最新",
+      "type": "时事"
+    }
+  },
+  {
+    "text": "一周前的新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "datetime": "一周前"
+    }
+  },
+  {
+    "text": "我想看一条娱乐性的新闻，请帮我播放。",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "action": "播放",
+      "type": "娱乐"
+    }
+  },
+  {
+    "text": "来点国际体育新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "key_words": "国际体育"
+    }
+  },
+  {
+    "text": "热点新闻俄罗斯新型蜈蚣",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "ranking": "热点",
+      "key_words": "俄罗斯新型蜈蚣"
+    }
+  },
+  {
+    "text": "我要观看财经新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "action": "看",
+      "type": "财经"
+    }
+  },
+  {
+    "text": "丰县新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "type": "丰县"
+    }
+  },
+  {
+    "text": "把那个午间新闻播报给我",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "datetime": "午间",
+      "action": "播报"
+    }
+  },
+  {
+    "text": "百度搜索呃兰州新闻",
+    "domain": "test_support_mode_10",
+    "intent": "xinwen_100-1362971025342423040.search_news",
+    "slots": {
+      "type": "兰州"
+    }
+  },
+  {
+    "text": "找下人工客服",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "现在还有没有人工客服在线",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "来人啊",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "现在就接人工",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "你马上给我转接人工",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "询问机器客服到现在也没有反应，请帮我转接人工客服",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "请问有真人在吗？不想要机器人客服了",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "想要转接人工",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "呼叫一下人工客服帮我解决问题",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "有好多问题，人工客服可以给我解决吗",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_rengong_100-1369902540072595456.rengong",
+    "slots": {}
+  },
+  {
+    "text": "取出资金到卡不成功",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "迅速取款失败怎么回事",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "怎么取出理财金",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "平安富盈5号无法取出",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "资金怎么取不出来",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "为什么取不完",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "理财通资金取不出来",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "为什么我取不出来呢",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "为什么没有取出成功",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  },
+  {
+    "text": "取出嘉实科技创新混合",
+    "domain": "test_support_mode_10",
+    "intent": "kefu_quqian_100-1369110629883752448.quqian",
+    "slots": {}
+  }
+]
